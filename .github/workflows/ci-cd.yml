@@ -1,0 +1,84 @@
+name: Aduva Garaj CI/CD Pipeline
+
+on:
+  push:
+    branches: [main, develop]
+  pull_request:
+    branches: [main]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  # 1. Gizli Bilgi Sızıntısı ve Bağımlılık Güvenlik Taraması (B1, B5)
+  security-scan:
+    name: Güvenlik & Gitleaks Taraması
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Gitleaks Secret Scan
+        uses: gitleaks/gitleaks-action@v2
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  # 2. Kod Kalitesi, Tip Kontrolü ve Entegrasyon Testleri (B3, B4)
+  lint-and-test:
+    name: Lint, Typecheck & Test (PostgreSQL 16 + Redis 7)
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:16-alpine
+        env:
+          POSTGRES_USER: aduva_test
+          POSTGRES_PASSWORD: aduva_test_password
+          POSTGRES_DB: aduva_test
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 5s
+          --health-timeout 3s
+          --health-retries 5
+      redis:
+        image: redis:7-alpine
+        ports:
+          - 6379:6379
+        options: >-
+          --health-cmd "redis-cli ping"
+          --health-interval 5s
+          --health-timeout 3s
+          --health-retries 5
+
+    env:
+      NODE_ENV: test
+      DATABASE_URL: postgresql://aduva_test:aduva_test_password@localhost:5432/aduva_test?schema=public
+      REDIS_URL: redis://localhost:6379
+      JWT_ACCESS_SECRET: ci-test-access-secret-minimum-32-chars
+      JWT_REFRESH_SECRET: ci-test-refresh-secret-minimum-32-chars
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 9.12.0
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'pnpm'
+
+      - name: Bağımlılıkları Yükle
+        run: pnpm install --no-frozen-lockfile
+
+      - name: Prisma Client Üret ve Şemayı Doğrula
+        run: pnpm --filter @aduva/api prisma:generate
+
+      - name: Sepet Modülü ve API Birim/Entegrasyon Testlerini Çalıştır
+        run: pnpm --filter @aduva/api test --coverage
+
+      - name: API Derleme Kontrolü
+        run: pnpm --filter @aduva/api build

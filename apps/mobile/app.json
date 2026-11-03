@@ -1,0 +1,29 @@
+{
+  "expo": {
+    "name": "Aduva Garaj",
+    "slug": "aduva-garaj",
+    "scheme": "aduvagaraj",
+    "version": "0.1.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "automatic",
+    "newArchEnabled": true,
+    "splash": {
+      "backgroundColor": "#0B0D10",
+      "resizeMode": "contain"
+    },
+    "ios": {
+      "bundleIdentifier": "com.aduvagaraj.app",
+      "supportsTablet": false,
+      "usesAppleSignIn": true
+    },
+    "android": {
+      "package": "com.aduvagaraj.app",
+      "adaptiveIcon": { "backgroundColor": "#0B0D10" }
+    },
+    "plugins": ["expo-router", "expo-secure-store", "expo-localization"],
+    "experiments": { "typedRoutes": true },
+    "extra": {
+      "apiUrl": "http://localhost:4000/v1"
+    }
+  }
+}

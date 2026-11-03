@@ -1,0 +1,89 @@
+{
+  "openapi": "3.0.3",
+  "info": {
+    "title": "Aduva Garaj E-Ticaret, Araç Uyumluluk ve Sepet REST API",
+    "version": "1.0.0",
+    "description": "Web (Next.js) ve Mobil (Expo) istemcilerden bağımsız, kuruş (integer) hassasiyetli, n11 senkronlu ve KVKK uyumlu REST API spesifikasyonu."
+  },
+  "servers": [
+    { "url": "http://localhost:4000", "description": "Yerel Geliştirme Sunucusu" }
+  ],
+  "paths": {
+    "/api/cart": {
+      "get": {
+        "summary": "Aktif sepeti ve kuruş bazlı toplamları getirir",
+        "tags": ["Sepet (Cart)"],
+        "responses": { "200": { "description": "CartView yanıtı" } }
+      },
+      "delete": {
+        "summary": "Sepeti tamamen boşaltır",
+        "tags": ["Sepet (Cart)"],
+        "responses": { "200": { "description": "Boşaltılmış CartView yanıtı" } }
+      }
+    },
+    "/api/cart/items": {
+      "post": {
+        "summary": "Sepete ürün ekler (Stok, maxPerOrder, Idempotency-Key ve Araç Uyumluluk kontrolü ile)",
+        "tags": ["Sepet (Cart)"],
+        "parameters": [
+          { "name": "Idempotency-Key", "in": "header", "required": false, "schema": { "type": "string" } }
+        ],
+        "responses": {
+          "200": { "description": "Güncel CartView" },
+          "409": { "description": "OUT_OF_STOCK | MAX_QUANTITY_EXCEEDED | PRODUCT_UNAVAILABLE" }
+        }
+      }
+    },
+    "/api/cart/coupon": {
+      "post": {
+        "summary": "Sepete indirim kuponu uygular",
+        "tags": ["Sepet (Cart)"],
+        "responses": {
+          "200": { "description": "Kupon uygulanmış CartView" },
+          "400": { "description": "INVALID_COUPON | COUPON_EXPIRED | MIN_TOTAL_NOT_MET" }
+        }
+      },
+      "delete": {
+        "summary": "Sepetteki kuponu kaldırır",
+        "tags": ["Sepet (Cart)"],
+        "responses": { "200": { "description": "Kupon kaldırılmış CartView" } }
+      }
+    },
+    "/api/cart/merge": {
+      "post": {
+        "summary": "Giriş sonrası misafir sepetini kullanıcı sepetiyle birleştirir",
+        "tags": ["Sepet (Cart)"],
+        "responses": { "200": { "description": "Birleştirilmiş CartView" } }
+      }
+    },
+    "/api/search": {
+      "get": {
+        "summary": "Türkçe karakter (unaccent) ve yazım hatası toleranslı (pg_trgm) ürün arama",
+        "tags": ["Katalog & Arama (A5)"],
+        "parameters": [
+          { "name": "q", "in": "query", "required": true, "schema": { "type": "string" } },
+          { "name": "vehicleId", "in": "query", "required": false, "schema": { "type": "string" } }
+        ],
+        "responses": { "200": { "description": "Sıralı arama sonuçları ve EXPLAIN ANALYZE metriği" } }
+      }
+    },
+    "/api/fitment/check": {
+      "get": {
+        "summary": "Ürün ve araç arasındaki 5 katmanlı uyumluluğu sorgular (A4)",
+        "tags": ["Araç Uyumluluk (A4)"],
+        "parameters": [
+          { "name": "productId", "in": "query", "required": true, "schema": { "type": "string" } },
+          { "name": "vehicleId", "in": "query", "required": true, "schema": { "type": "string" } }
+        ],
+        "responses": { "200": { "description": "Uyumluluk sonucu ve kullanılan indeks bilgisi" } }
+      }
+    },
+    "/api/reports/dashboard": {
+      "get": {
+        "summary": "Admin paneli için mv_daily_sales_summary ve araç markası bazlı satış analitiği (A12)",
+        "tags": ["Raporlama & Analitik (A12)"],
+        "responses": { "200": { "description": "Dashboard metrikleri" } }
+      }
+    }
+  }
+}

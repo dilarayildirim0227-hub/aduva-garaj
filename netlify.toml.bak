@@ -1,0 +1,25 @@
+[build]
+  base = "apps/web"
+  command = "pnpm build"
+  publish = "apps/web/.next"
+
+[build.environment]
+  NODE_VERSION = "20"
+  NEXT_PUBLIC_API_URL = "http://localhost:4000/api"
+
+[[redirects]]
+  from = "/api/*"
+  to = "http://localhost:4000/api/:splat"
+  status = 200
+  force = true
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+[functions]
+  node_bundler = "esbuild"
+  included_files = ["**/*"]

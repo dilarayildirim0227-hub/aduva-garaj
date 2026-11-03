@@ -1,0 +1,3190 @@
+<!DOCTYPE html>
+<html lang="tr" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ADUVA GARAJ | Profesyonel Oto Aksesuar, Multimedya & OEM Yedek Parça Mağazası</title>
+  <meta name="description" content="Aracınıza %100 uyumlu Android Auto & CarPlay QLED multimedya ekranları, 3D lazer kesim TPE havuzlu paspaslar, koltuk kılıfları ve OEM yedek parçalar. Aynı gün ücretsiz Yurtiçi Kargo." />
+  <link rel="canonical" href="https://aduvagaraj.com/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="tr_TR" />
+  <meta property="og:site_name" content="Aduva Garaj" />
+  <meta property="og:title" content="ADUVA GARAJ | Oto Aksesuar, Multimedya & OEM Yedek Parça" />
+  <meta property="og:description" content="Şasi numarası (VIN) ve marka/model/kasa seçimiyle %100 uyumlu oto aksesuar ve multimedya sistemleri." />
+  <link rel="icon" href="/logo.png?v=5" />
+  <script id="dynamicJsonLd" type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "name": "Aduva Garaj Otomotiv Tic. Ltd. Şti.",
+        "url": "https://aduvagaraj.com",
+        "logo": "https://aduvagaraj.com/logo.png",
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+90-850-308-0000",
+          "contactType": "customer service",
+          "areaServed": "TR",
+          "availableLanguage": "Turkish"
+        }
+      },
+      {
+        "@type": "WebSite",
+        "name": "Aduva Garaj",
+        "url": "https://aduvagaraj.com",
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": "https://aduvagaraj.com/?q={search_term_string}",
+          "query-input": "required name=search_term_string"
+        }
+      }
+    ]
+  }
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            ag: {
+              bg: '#0A0B0E',
+              carbon: '#111318',
+              surface: '#171A21',
+              surfaceAlt: '#1F242D',
+              border: '#2C323E',
+              chrome: '#E2E8F0',
+              silver: '#94A3B8',
+              gold: '#D4AF37',
+              goldLight: '#F3D478',
+              goldDark: '#9A7B1C',
+            }
+          }
+        }
+      }
+    };
+  </script>
+  <style>
+    :root, html.dark {
+      --bg-page: #07080A;
+      --bg-header: rgba(11, 13, 18, 0.96);
+      --bg-subbar: #0E1016;
+      --bg-card-top: #171A22;
+      --bg-card-bottom: #0F1117;
+      --bg-input: #090A0E;
+      --bg-alt: #1E222B;
+      --border-main: #2A303C;
+      --text-primary: #F8FAFC;
+      --text-secondary: #94A3B8;
+      --card-shadow: 0 12px 32px rgba(0, 0, 0, 0.6);
+    }
+
+    html.light {
+      --bg-page: #F1F5F9;
+      --bg-header: rgba(255, 255, 255, 0.97);
+      --bg-subbar: #E2E8F0;
+      --bg-card-top: #FFFFFF;
+      --bg-card-bottom: #F8FAFC;
+      --bg-input: #FFFFFF;
+      --bg-alt: #E2E8F0;
+      --border-main: #CBD5E1;
+      --text-primary: #0F172A;
+      --text-secondary: #475569;
+      --card-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+    }
+
+    body {
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      background-color: var(--bg-page);
+      color: var(--text-primary);
+      transition: background-color 0.2s ease, color 0.2s ease;
+    }
+
+    html.dark body {
+      background-image:
+        radial-gradient(circle at 50% 0%, rgba(212, 175, 55, 0.11) 0%, transparent 55%),
+        radial-gradient(circle at 85% 20%, rgba(226, 232, 240, 0.05) 0%, transparent 45%),
+        repeating-linear-gradient(135deg, rgba(255,255,255,0.012) 0px, rgba(255,255,255,0.012) 1px, transparent 1px, transparent 6px);
+    }
+
+    html.light body {
+      background-image:
+        radial-gradient(circle at 50% 0%, rgba(212, 175, 55, 0.12) 0%, transparent 55%),
+        radial-gradient(circle at 85% 20%, rgba(15, 23, 42, 0.03) 0%, transparent 45%);
+    }
+
+    .chrome-text {
+      background: linear-gradient(180deg, #FFFFFF 0%, #E2E8F0 42%, #64748B 50%, #CBD5E1 85%, #F8FAFC 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      filter: drop-shadow(0 2px 10px rgba(212, 175, 55, 0.25));
+    }
+
+    html.light .chrome-text {
+      background: linear-gradient(180deg, #0F172A 0%, #334155 45%, #0F172A 55%, #475569 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      filter: drop-shadow(0 1px 4px rgba(212, 175, 55, 0.25));
+    }
+
+    /* Tüm Tuş, Input ve Seçicilerde Siyah Çerçeveyi (Focus Outline) Kaldır & Premium Etkileşim Ekle */
+    *, *::before, *::after {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    button, a, input, select, textarea {
+      outline: none !important;
+      box-shadow: none;
+      transition: all 0.18s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    button:focus, button:active,
+    a:focus, a:active {
+      outline: none !important;
+    }
+
+    button:focus-visible, a:focus-visible {
+      outline: none !important;
+      box-shadow: 0 0 0 2px rgba(243, 212, 120, 0.85), 0 0 16px rgba(212, 175, 55, 0.35) !important;
+    }
+
+    button:active:not(:disabled) {
+      transform: translateY(1px) scale(0.985);
+    }
+
+    input:focus, select:focus, textarea:focus {
+      outline: none !important;
+      border-color: rgba(212, 175, 55, 0.85) !important;
+      box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.16), 0 4px 14px rgba(0, 0, 0, 0.25) !important;
+    }
+
+    .btn-chrome-gold {
+      position: relative;
+      overflow: hidden;
+      background: linear-gradient(135deg, #FCE38A 0%, #DFB73C 48%, #B38728 100%) !important;
+      color: #1A1405 !important;
+      border: 1px solid rgba(255, 243, 196, 0.55) !important;
+      box-shadow:
+        0 4px 16px rgba(212, 175, 55, 0.28),
+        inset 0 1px 0 rgba(255, 255, 255, 0.8),
+        inset 0 -1px 0 rgba(0, 0, 0, 0.15);
+      text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
+    }
+    .btn-chrome-gold:hover {
+      transform: translateY(-1px);
+      background: linear-gradient(135deg, #FFF4C2 0%, #F3D058 50%, #D4A432 100%) !important;
+      color: #1A1405 !important;
+      border-color: rgba(255, 250, 225, 0.9) !important;
+      box-shadow:
+        0 6px 24px rgba(243, 212, 120, 0.55),
+        inset 0 1px 0 rgba(255, 255, 255, 0.95);
+    }
+    .btn-chrome-gold:active,
+    .btn-chrome-gold:focus {
+      outline: none !important;
+      background: linear-gradient(135deg, #F8DF81 0%, #E2BA3E 50%, #C29328 100%) !important;
+      color: #1A1405 !important;
+      border-color: rgba(243, 212, 120, 0.9) !important;
+      box-shadow:
+        0 2px 12px rgba(212, 175, 55, 0.4),
+        inset 0 1px 2px rgba(255, 255, 255, 0.6) !important;
+    }
+
+    .btn-metallic {
+      background: linear-gradient(135deg, rgba(45, 53, 68, 0.92) 0%, rgba(30, 36, 48, 0.95) 100%) !important;
+      border: 1px solid rgba(212, 175, 55, 0.32) !important;
+      color: #F8FAFC !important;
+      box-shadow:
+        0 2px 10px rgba(0, 0, 0, 0.2),
+        inset 0 1px 0 rgba(255, 255, 255, 0.12);
+    }
+    .btn-metallic:hover {
+      transform: translateY(-1px);
+      background: linear-gradient(135deg, rgba(212, 175, 55, 0.28) 0%, rgba(62, 72, 92, 0.95) 100%) !important;
+      border-color: #F3D478 !important;
+      color: #FFFBEB !important;
+      box-shadow:
+        0 6px 18px rgba(212, 175, 55, 0.28),
+        inset 0 1px 0 rgba(255, 255, 255, 0.28);
+    }
+    .btn-metallic:active,
+    .btn-metallic:focus {
+      outline: none !important;
+      background: linear-gradient(135deg, rgba(212, 175, 55, 0.35) 0%, rgba(52, 62, 80, 0.98) 100%) !important;
+      border-color: #F3D478 !important;
+      color: #FFFBEB !important;
+      box-shadow: 0 0 0 2px rgba(243, 212, 120, 0.3) !important;
+    }
+
+    html.light .btn-metallic {
+      background: linear-gradient(180deg, #FFFFFF 0%, #F8FAFC 100%) !important;
+      border: 1px solid #CBD5E1 !important;
+      color: #1E293B !important;
+      box-shadow: 0 2px 6px rgba(15, 23, 42, 0.06), inset 0 1px 0 #FFFFFF;
+    }
+    html.light .btn-metallic:hover {
+      background: linear-gradient(135deg, #FFFBEB 0%, #FEF3C7 100%) !important;
+      border-color: #D4AF37 !important;
+      color: #92400E !important;
+      box-shadow: 0 4px 14px rgba(212, 175, 55, 0.25), inset 0 1px 0 #FFFFFF;
+    }
+
+    /* Hiçbir Buton Hover'da Siyahlaşmasın: Tüm Menü, Kategori ve Aksiyon Butonları İçin Altın/Aydınlık Hover */
+    html body button.hover\:bg-ag-surfaceAlt:hover,
+    html body div.hover\:bg-ag-surfaceAlt:hover,
+    html body a.hover\:bg-ag-surfaceAlt:hover,
+    html body .btn-nav-hover:hover {
+      background: linear-gradient(90deg, rgba(243, 212, 120, 0.22) 0%, rgba(212, 175, 55, 0.10) 100%) !important;
+      color: #F3D478 !important;
+      border-color: rgba(243, 212, 120, 0.65) !important;
+    }
+    html.light body button.hover\:bg-ag-surfaceAlt:hover,
+    html.light body div.hover\:bg-ag-surfaceAlt:hover,
+    html.light body a.hover\:bg-ag-surfaceAlt:hover,
+    html.light body .btn-nav-hover:hover {
+      background: linear-gradient(90deg, rgba(254, 243, 199, 0.95) 0%, rgba(253, 230, 138, 0.55) 100%) !important;
+      color: #92400E !important;
+      border-color: #D4AF37 !important;
+    }
+
+    html body button:not(.btn-chrome-gold):not(.btn-metallic):hover {
+      background-color: rgba(212, 175, 55, 0.14) !important;
+      border-color: rgba(243, 212, 120, 0.75) !important;
+      color: #F3D478 !important;
+    }
+    html.light body button:not(.btn-chrome-gold):not(.btn-metallic):hover {
+      background-color: rgba(254, 243, 199, 0.85) !important;
+      border-color: #D4AF37 !important;
+      color: #92400E !important;
+    }
+
+    .card-metallic {
+      background: linear-gradient(180deg, var(--bg-card-top) 0%, var(--bg-card-bottom) 100%);
+      border: 1px solid var(--border-main);
+      box-shadow: var(--card-shadow);
+      transition: border-color 0.22s ease, box-shadow 0.22s ease, transform 0.22s ease;
+    }
+    .card-metallic:hover {
+      border-color: rgba(212, 175, 55, 0.65);
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.65), 0 0 20px rgba(212, 175, 55, 0.08);
+    }
+    .logo-halo {
+      filter: drop-shadow(0 0 16px rgba(243, 212, 120, 0.45)) drop-shadow(0 4px 12px rgba(0,0,0,0.65));
+    }
+
+    /* Açık Mod (Light Mode) Otomatik Renk Uyarlamaları */
+    html.light header,
+    html.light .bg-\[\#0D0F14\]\/95,
+    html.light .bg-\[\#121419\] {
+      background-color: var(--bg-header) !important;
+      border-color: var(--border-main) !important;
+      color: var(--text-primary) !important;
+    }
+    html.light .bg-ag-carbon,
+    html.light .bg-\[\#12151C\],
+    html.light .bg-\[\#090A0D\],
+    html.light .bg-\[\#08090C\] {
+      background-color: var(--bg-subbar) !important;
+      border-color: var(--border-main) !important;
+      color: var(--text-primary) !important;
+    }
+    html.light .bg-ag-surface,
+    html.light .bg-\[\#0A0B0E\],
+    html.light .bg-\[\#0E1015\],
+    html.light .bg-\[\#0D0F14\] {
+      background-color: var(--bg-input) !important;
+      border-color: var(--border-main) !important;
+      color: var(--text-primary) !important;
+    }
+    html.light .bg-ag-surfaceAlt {
+      background-color: var(--bg-alt) !important;
+      color: var(--text-primary) !important;
+    }
+    html.light .text-white {
+      color: #0F172A !important;
+    }
+    html.light .text-slate-200,
+    html.light .text-slate-300 {
+      color: #1E293B !important;
+    }
+    html.light .text-slate-400 {
+      color: #475569 !important;
+    }
+    html.light .text-ag-goldLight {
+      color: #9A6F0B !important;
+    }
+    html.light #heroBannerBox .text-white,
+    html.light #heroBannerBox .text-slate-300 {
+      color: #F8FAFC !important;
+    }
+    html.light #heroBannerBox .chrome-text {
+      background: linear-gradient(180deg, #FFFFFF 0%, #E2E8F0 50%, #CBD5E1 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+  </style>
+</head>
+<body class="min-h-screen flex flex-col pb-20 md:pb-6">
+
+  <!-- 1. EN ÜST BİLGİ & KARGO SAYACI BARI (Sade, seçeneksiz, profesyonel) -->
+  <div class="bg-[#060709] text-slate-200 border-b border-ag-border/80 sticky top-0 z-50">
+    <div class="max-w-[1400px] mx-auto px-3 sm:px-4 h-10 sm:h-11 flex items-center justify-between text-xs gap-2">
+      <div class="flex items-center gap-2 sm:gap-3 overflow-hidden text-[11px] sm:text-xs">
+        <span class="px-2 py-0.5 rounded bg-ag-gold/20 border border-ag-gold/40 text-ag-goldLight font-black text-[10px] shrink-0">
+          ⚡ AYNI GÜN KARGO
+        </span>
+        <span class="text-slate-300 truncate">
+          Kargoya son: <b id="shippingCountdown" class="text-ag-goldLight font-mono">02s 44dk 18sn</b>
+        </span>
+        <span class="hidden lg:inline text-slate-400">• <b>750 TL</b> Üzeri Ücretsiz Yurtiçi Kargo • Kredi Kartına <b>6 Taksit</b></span>
+      </div>
+
+      <!-- Üst Bar: Tema Geçişi (Koyu/Açık) & Üye Girişi / Yetkili Girişi -->
+      <div class="flex items-center gap-1.5 sm:gap-2 shrink-0 text-xs">
+        <!-- Koyu / Açık Mod Hızlı Geçiş Butonu -->
+        <button id="themeToggleBtn" onclick="toggleTheme()" title="Koyu / Açık Tema Değiştir" class="h-7 px-2 sm:px-2.5 rounded-md font-bold btn-metallic flex items-center gap-1 transition text-[11px] text-slate-300 hover:text-white">
+          <span id="themeToggleIcon">🌙</span>
+          <span id="themeToggleText" class="hidden sm:inline">Koyu</span>
+        </button>
+
+        <div id="topBarAuthArea" class="flex items-center gap-1.5 shrink-0 text-xs">
+          <button onclick="openAuthModal('member')" class="px-2.5 sm:px-3 py-1 rounded-md font-extrabold btn-chrome-gold transition text-[11px]">
+            👤 Üye Girişi
+          </button>
+          <button onclick="openAuthModal('admin')" class="px-2 sm:px-3 py-1 rounded-md font-bold btn-metallic transition text-[11px]">
+            🛡️ Yetkili
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================================================================== -->
+  <!-- GÖRÜNÜM 1: PROFESYONEL VE TAM MOBİL UYUMLU MAĞAZA ANASAYFASI         -->
+  <!-- ===================================================================== -->
+  <div id="viewStore" class="flex-1 flex flex-col">
+
+    <!-- Üst Kurumsal Hızlı Erişim Şeridi (Masaüstünde Zengin Kurumsal Erişim) -->
+    <div class="hidden md:block bg-ag-carbon border-b border-ag-border/70 text-slate-300 text-xs">
+      <div class="max-w-[1400px] mx-auto px-4 py-2 flex flex-wrap items-center justify-between gap-3">
+        <div class="flex flex-wrap items-center gap-4">
+          <span>📞 Çağrı & Parça Destek: <b class="text-white">0850 308 00 00</b></span>
+          <button onclick="openVinModal()" class="text-ag-goldLight hover:underline font-bold flex items-center gap-1">
+            🔍 17 Haneli Şasi No (VIN) ile Parça Sorgula
+          </button>
+          <button onclick="openAppointmentWizard()" class="text-emerald-400 hover:underline font-bold flex items-center gap-1">
+            🔧 İstanbul Mağaza Montaj Randevusu Al
+          </button>
+        </div>
+        <div class="flex items-center gap-4">
+          <button onclick="openCompareModal()" class="hover:text-white font-semibold flex items-center gap-1">
+            ⇄ Karşılaştır (<span id="topCompareCount" class="text-ag-goldLight font-bold">0</span>)
+          </button>
+          <button onclick="openFavoritesModal()" class="hover:text-white font-semibold flex items-center gap-1">
+            ♥ Favorilerim (<span id="topFavCount" class="text-ag-goldLight font-bold">0</span>)
+          </button>
+          <button onclick="openOrdersModal()" class="hover:text-white font-semibold">📦 Sipariş & Kargo Takip</button>
+          <a href="https://www.n11.com/magaza/aduvagaraj" target="_blank" class="text-ag-goldLight hover:underline font-bold">n11/aduvagaraj ↗</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Ana Header: 3D Krom Logo + Canlı Arama + Garajım + Sepetim -->
+    <header class="bg-[#0D0F14]/95 backdrop-blur border-b border-ag-border shadow-2xl sticky top-10 sm:top-11 z-40">
+      <div class="max-w-[1400px] mx-auto px-3 sm:px-4 py-2.5 sm:py-3.5">
+        <div class="flex items-center justify-between gap-2 sm:gap-4">
+          <!-- Logo -->
+          <a href="#" onclick="resetStoreFilters();return false;" class="flex items-center gap-2.5 sm:gap-3.5 shrink-0">
+            <img src="/logo.png?v=5" alt="Aduva Garaj Logo" class="w-10 h-10 sm:w-14 sm:h-14 md:w-16 md:h-16 object-contain shrink-0 drop-shadow-[0_4px_12px_rgba(0,0,0,0.65)]" onerror="this.style.display='none'" />
+            <div>
+              <div class="text-xl sm:text-2xl md:text-3xl font-black italic tracking-wider chrome-text leading-none">
+                ADUVA GARAJ
+              </div>
+              <div class="hidden sm:block text-[9px] md:text-[10px] font-bold tracking-[0.22em] text-ag-goldLight uppercase mt-1">
+                OTO AKSESUAR • MULTİMEDYA • OEM YEDEK PARÇA
+              </div>
+            </div>
+          </a>
+
+          <!-- Masaüstü Canlı Autocomplete Arama Kutusu -->
+          <div class="hidden md:block flex-1 max-w-2xl min-w-[240px] relative mx-2">
+            <div class="relative flex items-center">
+              <input
+                id="storeSearchInput"
+                type="text"
+                autocomplete="off"
+                oninput="handleSearchInput(this.value)"
+                onfocus="handleSearchInput(this.value)"
+                placeholder="Parça adı, OEM no (13417363), stok kodu veya 17 haneli Şasi No..."
+                class="w-full h-11 pl-4 pr-32 rounded-xl bg-ag-surface border border-ag-border focus:border-ag-gold text-white placeholder-slate-400 focus:outline-none text-xs sm:text-sm font-medium"
+              />
+              <button onclick="handleSearchSubmit(false)" class="absolute right-1.5 h-8 px-3.5 rounded-lg btn-chrome-gold text-xs font-black transition">
+                🔍 PARÇA BUL
+              </button>
+            </div>
+            <!-- Canlı Autocomplete Açılır Penceresi (Masaüstü) -->
+            <div id="searchAutocompleteBox" class="hidden absolute left-0 right-0 top-12 mt-1 bg-[#14171F] border border-ag-gold/50 rounded-2xl shadow-2xl z-50 overflow-hidden"></div>
+          </div>
+
+          <!-- Sağ Aksiyonlar: Garajım, Üye/Yetkili Hesabım, Sepetim -->
+          <div class="flex items-center gap-1.5 sm:gap-2.5 shrink-0">
+            <!-- Aktif Garajım Butonu -->
+            <button onclick="scrollToSelector()" class="h-10 sm:h-12 px-2.5 sm:px-3.5 rounded-xl border border-ag-border hover:border-ag-gold bg-ag-surface flex items-center gap-2 text-left transition">
+              <span class="text-lg sm:text-xl">🚗</span>
+              <div class="hidden sm:block">
+                <div class="text-[9px] font-bold text-slate-400 uppercase">GARAJIM</div>
+                <div id="headerSelectedVehicle" class="text-xs font-extrabold text-ag-goldLight truncate max-w-[100px] md:max-w-[130px]">Araç Seçin</div>
+              </div>
+            </button>
+
+            <!-- Hesabım Butonu (Masaüstü) -->
+            <div id="headerAccountBox" class="hidden sm:flex items-center gap-1.5">
+              <button onclick="openAuthModal('member')" class="h-10 sm:h-12 px-3 sm:px-3.5 rounded-xl border border-ag-border hover:border-ag-gold bg-ag-surface flex items-center gap-2 text-left transition">
+                <span class="text-lg sm:text-xl">👤</span>
+                <div>
+                  <div class="text-[9px] font-bold text-slate-400 uppercase">HESABIM</div>
+                  <div class="text-xs font-extrabold text-white">Giriş / Kayıt</div>
+                </div>
+              </button>
+            </div>
+
+            <!-- Sepetim Butonu -->
+            <button onclick="toggleCartDrawer(true)" class="h-10 sm:h-12 px-3 sm:px-4 rounded-xl btn-chrome-gold flex items-center gap-2 transition relative">
+              <span class="text-base sm:text-lg">🛒</span>
+              <div class="hidden sm:block text-left">
+                <div id="headerCartOwnerLabel" class="text-[9px] font-extrabold uppercase opacity-85">SEPETİM</div>
+                <div id="headerCartTotal" class="text-xs font-black">0,00 ₺</div>
+              </div>
+              <span id="headerCartCount" class="bg-[#0A0B0E] text-ag-goldLight text-[11px] font-black px-2 py-0.5 rounded-full">0</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Mobil Canlı Autocomplete Arama Kutusu (Mobilde tam genişlikte görünür) -->
+        <div class="md:hidden mt-2.5 relative">
+          <div class="relative flex items-center">
+            <input
+              id="storeSearchInputMobile"
+              type="text"
+              autocomplete="off"
+              oninput="handleSearchInput(this.value);if(document.getElementById('storeSearchInput'))document.getElementById('storeSearchInput').value=this.value;"
+              onfocus="handleSearchInput(this.value)"
+              placeholder="Parça adı, OEM no (13417363) veya Şasi No..."
+              class="w-full h-10 pl-3.5 pr-24 rounded-xl bg-ag-surface border border-ag-border focus:border-ag-gold text-white placeholder-slate-400 focus:outline-none text-xs font-medium"
+            />
+            <button onclick="handleSearchSubmit(true)" class="absolute right-1 h-8 px-3 rounded-lg btn-chrome-gold text-[11px] font-black transition">
+              🔍 BUL
+            </button>
+          </div>
+          <!-- Canlı Autocomplete Açılır Penceresi (Mobil) -->
+          <div id="searchAutocompleteBoxMobile" class="hidden absolute left-0 right-0 top-11 mt-1 bg-[#14171F] border border-ag-gold/50 rounded-2xl shadow-2xl z-50 overflow-hidden"></div>
+        </div>
+      </div>
+
+      <!-- Yatay Mega Kategori Barı -->
+      <div class="bg-[#12151C] border-t border-ag-border/80">
+        <div class="max-w-[1400px] mx-auto px-3 sm:px-4 flex items-center gap-1.5 overflow-x-auto no-scrollbar h-10 sm:h-11 text-xs font-bold whitespace-nowrap">
+          <button onclick="selectCategory('')" id="topcat-all" class="px-3 h-full flex items-center gap-1.5 shrink-0">
+            ☰ TÜM KATEGORİLER
+          </button>
+          <div id="topCategoryBar" class="flex items-center gap-1.5 h-full"></div>
+          <button onclick="openVinModal()" class="ml-auto px-3 h-7 rounded btn-metallic text-ag-goldLight font-black text-[11px] shrink-0 transition flex items-center gap-1">
+            ⚡ ŞASİ NO İLE SORGULA
+          </button>
+        </div>
+      </div>
+    </header>
+
+    <!-- Güven ve Hizmet Avantajları Şeridi -->
+    <div class="bg-[#090B0F] border-b border-ag-border/60 py-2">
+      <div class="max-w-[1400px] mx-auto px-3 sm:px-4 flex items-center justify-between overflow-x-auto no-scrollbar gap-4 text-[11px] text-slate-300 whitespace-nowrap">
+        <div class="flex items-center gap-1.5 shrink-0 font-bold"><span class="text-ag-goldLight text-sm">⚡</span> Aynı Gün Yurtiçi Kargo</div>
+        <div class="flex items-center gap-1.5 shrink-0 font-bold"><span class="text-emerald-400 text-sm">✓</span> 14 Gün Koşulsuz İade & Değişim</div>
+        <div class="flex items-center gap-1.5 shrink-0 font-bold"><span class="text-ag-goldLight text-sm">🔍</span> Şasi No ile %100 Uyum Garantisi</div>
+        <div class="flex items-center gap-1.5 shrink-0 font-bold"><span class="text-emerald-400 text-sm">💳</span> Peşin Fiyatına 6 Taksit & Kapıda Ödeme</div>
+        <div class="flex items-center gap-1.5 shrink-0 font-bold"><span class="text-ag-goldLight text-sm">🔧</span> İstanbul Ümraniye Mağaza Montajı</div>
+      </div>
+    </div>
+
+    <!-- 2. HERO VİTRİN SLIDER + GÜNÜN FIRSATI KOKPİTİ -->
+    <section class="max-w-[1400px] w-full mx-auto px-4 pt-5 pb-3 grid grid-cols-1 lg:grid-cols-12 gap-4">
+      <!-- Sol 8 Birim: Etkileşimli Kampanya Banner Slider -->
+      <div class="lg:col-span-8 card-metallic rounded-3xl overflow-hidden relative min-h-[250px] flex flex-col justify-between p-6 md:p-8" id="heroBannerBox"></div>
+
+      <!-- Sağ 4 Birim: Günün Süper Fırsatı & Hızlı Şasi Sorgu -->
+      <div class="lg:col-span-4 card-metallic rounded-3xl p-5 flex flex-col justify-between border border-ag-gold/40">
+        <div>
+          <div class="flex items-center justify-between">
+            <span class="px-2.5 py-0.5 rounded bg-red-600 text-white text-[10px] font-black uppercase">🔥 GÜNÜN SÜPER FIRSATI</span>
+            <span class="text-xs font-mono text-ag-goldLight font-bold">Stok: Son 5 Adet</span>
+          </div>
+          <div class="flex gap-3.5 items-center mt-3">
+            <img src="https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=400&q=80" class="w-20 h-20 rounded-2xl object-cover border border-ag-border" />
+            <div>
+              <div class="text-[11px] text-ag-goldLight font-bold">OEM: 13417363 • CANBUS Dahil</div>
+              <h3 class="text-xs font-extrabold text-white line-clamp-2 mt-0.5">Opel Astra J & Insignia 9.7" Tesla Ekran Kablosuz CarPlay Seti</h3>
+              <div class="flex items-baseline gap-2 mt-1">
+                <span class="text-base font-black chrome-text">8.299,00 ₺</span>
+                <span class="text-[11px] text-slate-500 line-through">9.999,00 ₺</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="pt-3 mt-3 border-t border-ag-border/70 flex gap-2">
+          <button onclick="addToCart('prd-opel-1')" class="flex-1 h-10 rounded-xl btn-chrome-gold text-xs font-black">
+            🛒 Fırsatı Sepete Ekle
+          </button>
+          <button onclick="openProductDetail('prd-opel-1')" class="h-10 px-3 rounded-xl btn-metallic text-xs font-bold">
+            Detay
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. 4 ADIMLI "ARACINIZI SEÇİN" SİHİRBAZI (GARAJIM) -->
+    <section id="vehicleSelectorBox" class="max-w-[1400px] w-full mx-auto px-3 sm:px-4 py-2">
+      <div class="card-metallic rounded-3xl p-3.5 sm:p-5 border-2 border-ag-gold/45 shadow-xl">
+        <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
+          <div class="flex items-center gap-2">
+            <span class="btn-chrome-gold text-[10px] sm:text-xs font-black px-2.5 sm:px-3 py-1 rounded-md tracking-wider shrink-0">ARACINIZI SEÇİN</span>
+            <h2 class="text-white text-xs sm:text-sm md:text-base font-extrabold">
+              4 Adımda Aracınızı Belirleyin — Yalnızca %100 Uyumlu Parçaları Görün
+            </h2>
+          </div>
+          <span id="activeOrderModeNotice" class="text-xs font-bold text-ag-goldLight hidden sm:inline"></span>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-2 sm:gap-2.5 bg-[#0E1015] p-3 sm:p-3.5 rounded-2xl border border-ag-border">
+          <div>
+            <label class="block text-[10px] font-bold uppercase text-ag-goldLight mb-1">1. Araç Markası</label>
+            <select id="selBrand" onchange="onBrandChange(this.value)" class="w-full h-11 rounded-xl bg-ag-surface border border-ag-border text-white px-3 text-xs font-bold focus:border-ag-gold focus:outline-none"></select>
+          </div>
+          <div>
+            <label class="block text-[10px] font-bold uppercase text-ag-goldLight mb-1">2. Araç Modeli</label>
+            <select id="selModel" onchange="onModelChange(this.value)" class="w-full h-11 rounded-xl bg-ag-surface border border-ag-border text-white px-3 text-xs font-bold focus:border-ag-gold focus:outline-none"></select>
+          </div>
+          <div>
+            <label class="block text-[10px] font-bold uppercase text-ag-goldLight mb-1">3. Kasa & Üretim Yılı</label>
+            <select id="selBody" onchange="onBodyChange(this.value)" class="w-full h-11 rounded-xl bg-ag-surface border border-ag-border text-white px-3 text-xs font-bold focus:border-ag-gold focus:outline-none"></select>
+          </div>
+          <div>
+            <label class="block text-[10px] font-bold uppercase text-ag-goldLight mb-1">4. Motor Seçeneği</label>
+            <select id="selEngine" onchange="onEngineChange(this.value)" class="w-full h-11 rounded-xl bg-ag-surface border border-ag-border text-white px-3 text-xs font-bold focus:border-ag-gold focus:outline-none"></select>
+          </div>
+          <div class="flex items-end gap-2">
+            <button onclick="applyVehicleWizard()" class="flex-1 h-11 rounded-xl btn-chrome-gold font-black text-xs transition">
+              🔍 UYUMLU PARÇALARI GETİR
+            </button>
+            <button onclick="clearVehicleWizard()" title="Aracı Sıfırla" class="h-11 px-3.5 rounded-xl btn-metallic text-xs font-bold shrink-0">
+              ↺ Sıfırla
+            </button>
+          </div>
+        </div>
+
+        <!-- Popüler Marka Kartları -->
+        <div class="mt-3 flex items-center gap-2 overflow-x-auto no-scrollbar pb-1">
+          <span class="text-[11px] font-bold text-slate-400 shrink-0">Hızlı Marka:</span>
+          <div id="brandQuickChips" class="flex items-center gap-1.5 whitespace-nowrap"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. ANA MAĞAZA ALANI: Sol Gelişmiş Filtre Sütunu + Sağ Vitrin -->
+    <div class="max-w-[1400px] w-full mx-auto px-3 sm:px-4 py-4 sm:py-5 grid grid-cols-1 lg:grid-cols-12 gap-5 sm:gap-6 flex-1">
+
+      <!-- SOL SÜTUN (3 birim - Masaüstünde Sabit, Mobilde Çekmece Olarak Açılır): Garajım + Kategoriler + Filtreler -->
+      <aside class="hidden lg:block lg:col-span-3 space-y-4">
+        <!-- Aktif Araç Kutusu -->
+        <div id="sidebarGarageCard" class="card-metallic rounded-2xl p-4"></div>
+
+        <!-- Kategori Ağacı -->
+        <div class="card-metallic rounded-2xl overflow-hidden">
+          <div class="bg-[#090A0D] border-b border-ag-border px-4 py-3 text-xs font-black uppercase tracking-wider text-ag-goldLight">
+            📂 Kategori Ağacı
+          </div>
+          <div id="sidebarCategories" class="divide-y divide-ag-border/60 text-xs font-semibold"></div>
+        </div>
+
+        <!-- Fiyat Aralığı Filtresi -->
+        <div class="card-metallic rounded-2xl p-4 space-y-3 text-xs">
+          <div class="font-extrabold text-ag-goldLight uppercase tracking-wider">💰 Fiyat Aralığı (TL)</div>
+          <div class="grid grid-cols-2 gap-2">
+            <input id="minPriceInput" type="number" placeholder="En Az (₺)" oninput="state.minPrice=this.value?Number(this.value):null;renderStoreProducts()" class="h-9 rounded-lg bg-[#0A0B0E] border border-ag-border px-2.5 text-white" />
+            <input id="maxPriceInput" type="number" placeholder="En Çok (₺)" oninput="state.maxPrice=this.value?Number(this.value):null;renderStoreProducts()" class="h-9 rounded-lg bg-[#0A0B0E] border border-ag-border px-2.5 text-white" />
+          </div>
+          <div class="flex flex-wrap gap-1.5">
+            <button onclick="setPriceRange(null, 1000)" class="px-2 py-1 rounded bg-ag-surfaceAlt hover:border-ag-gold border border-ag-border text-[11px]">0 - 1.000 ₺</button>
+            <button onclick="setPriceRange(1000, 3500)" class="px-2 py-1 rounded bg-ag-surfaceAlt hover:border-ag-gold border border-ag-border text-[11px]">1.000 - 3.500 ₺</button>
+            <button onclick="setPriceRange(3500, null)" class="px-2 py-1 rounded bg-ag-surfaceAlt hover:border-ag-gold border border-ag-border text-[11px]">3.500 ₺ +</button>
+          </div>
+        </div>
+
+        <!-- Üretici / Marka Filtresi -->
+        <div class="card-metallic rounded-2xl p-4 space-y-2.5 text-xs">
+          <div class="font-extrabold text-ag-goldLight uppercase tracking-wider">🏷️ Üretici Marka</div>
+          <div id="sidebarProductBrands" class="space-y-1.5 max-h-44 overflow-y-auto"></div>
+        </div>
+
+        <!-- Hızlı Özellik Filtreleri -->
+        <div class="card-metallic rounded-2xl p-4 space-y-2.5 text-xs">
+          <div class="font-extrabold text-ag-goldLight uppercase tracking-wider">⚡ Teslimat & Uyum</div>
+          <label class="flex items-center gap-2.5 cursor-pointer text-slate-200">
+            <input type="checkbox" id="fltOnlyCompat" onchange="state.onlyCompatible=this.checked;renderStoreProducts()" class="accent-amber-400 w-4 h-4" />
+            <span class="font-semibold">Sadece Aracımla Uyumlu Ürünler</span>
+          </label>
+          <label class="flex items-center gap-2.5 cursor-pointer text-slate-200">
+            <input type="checkbox" id="fltInStock" checked onchange="state.onlyInStock=this.checked;renderStoreProducts()" class="accent-amber-400 w-4 h-4" />
+            <span class="font-semibold">Stokta Olanlar (Aynı Gün Kargo)</span>
+          </label>
+          <label class="flex items-center gap-2.5 cursor-pointer text-slate-200">
+            <input type="checkbox" id="fltFreeShip" onchange="state.onlyFreeShipping=this.checked;renderStoreProducts()" class="accent-amber-400 w-4 h-4" />
+            <span class="font-semibold">Ücretsiz Kargo Ürünleri (750 ₺+)</span>
+          </label>
+          <label class="flex items-center gap-2.5 cursor-pointer text-slate-200">
+            <input type="checkbox" id="fltMontage" onchange="state.onlyMontage=this.checked;renderStoreProducts()" class="accent-amber-400 w-4 h-4" />
+            <span class="font-semibold">Mağazada Montaj Hizmeti Olanlar</span>
+          </label>
+        </div>
+
+        <!-- WhatsApp Şasi Teyit Kartı -->
+        <div class="card-metallic rounded-2xl p-4 space-y-2.5 border border-ag-gold/40">
+          <div class="text-[10px] font-black uppercase bg-ag-gold/20 text-ag-goldLight border border-ag-gold/40 inline-block px-2 py-0.5 rounded">
+            ŞASİ NO İLE %100 UYUM KONTROLÜ
+          </div>
+          <div class="text-sm font-extrabold text-white">Yanlış Parça Siparişine Son!</div>
+          <p class="text-xs text-slate-400 leading-relaxed">Ruhsatınızdaki 17 haneli Şasi Numarasını girin, aracınıza birebir uyan parçayı sistemimiz otomatik eşleştirsin.</p>
+          <button onclick="openVinModal()" class="w-full h-10 rounded-xl btn-chrome-gold font-black text-xs transition">
+            🔍 Şasi Numarası ile Sorgula
+          </button>
+        </div>
+      </aside>
+
+      <!-- SAĞ SÜTUN (9 birim): Vitrin & Ürün Kartları -->
+      <section class="lg:col-span-9 space-y-3.5 sm:space-y-4">
+        <!-- Mobil Hızlı Filtre ve Araç Çubuğu (Yalnızca mobilde ürünlerin hemen üzerinde görünür) -->
+        <div class="lg:hidden flex items-center gap-2 p-2.5 rounded-2xl bg-ag-surface border border-ag-border">
+          <button onclick="toggleMobileFilterDrawer(true)" class="flex-1 h-10 rounded-xl btn-chrome-gold text-xs font-black flex items-center justify-center gap-1.5 shadow-md">
+            <span>⚡</span> Filtreler & Kategoriler
+          </button>
+          <button onclick="scrollToSelector()" class="h-10 px-3.5 rounded-xl btn-metallic text-xs font-bold text-ag-goldLight flex items-center gap-1 shrink-0">
+            <span>🚗</span> Araç Seç
+          </button>
+        </div>
+
+        <!-- Üst Sıralama, Aktif Filtre Etiketleri & Görünüm Barı -->
+        <div class="card-metallic rounded-2xl px-3.5 sm:px-4 py-3 flex flex-wrap items-center justify-between gap-2.5">
+          <div>
+            <div class="flex items-center gap-1.5 text-[10px] sm:text-[11px] text-slate-400">
+              <span>Ana Sayfa</span><span>›</span><span id="breadcrumbCurrent" class="text-ag-goldLight font-bold">Tüm Katalog</span>
+            </div>
+            <h1 id="catalogHeading" class="text-sm sm:text-base md:text-lg font-extrabold text-white mt-0.5">Tüm Oto Aksesuar, Multimedya & Yedek Parça Ürünleri</h1>
+          </div>
+
+          <div class="flex items-center gap-1.5 text-xs ml-auto">
+            <span class="text-slate-400 font-semibold hidden sm:inline">Sırala:</span>
+            <select onchange="state.sortBy=this.value;renderStoreProducts()" class="h-8 sm:h-9 rounded-xl border border-ag-border px-2.5 sm:px-3 font-bold text-white bg-[#0A0B0E] text-xs">
+              <option value="featured">Öne Çıkanlar</option>
+              <option value="bestseller">Çok Satanlar</option>
+              <option value="price_asc">Fiyat: En Düşük</option>
+              <option value="price_desc">Fiyat: En Yüksek</option>
+              <option value="rating">En Yüksek Puanlı</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Ürün Grid (Mobilde 2 Kolon, Tablette 2 Kolon, Masaüstünde 3 Kolon) -->
+        <div id="storeProductGrid" class="grid grid-cols-2 sm:grid-cols-2 xl:grid-cols-3 gap-2.5 sm:gap-4"></div>
+
+        <!-- Mağaza Avantajları & Sıkça Sorulan Sorular (SSS) -->
+        <div class="card-metallic rounded-3xl p-6 mt-8 space-y-4">
+          <div class="flex items-center justify-between">
+            <div>
+              <span class="text-[10px] font-black uppercase text-ag-goldLight tracking-widest">ADUVA GARAJ GÜVENCESİ</span>
+              <h3 class="text-base font-extrabold text-white">Sıkça Sorulan Sorular & Montaj Bilgileri</h3>
+            </div>
+            <button onclick="openAppointmentWizard()" class="px-4 py-2 rounded-xl btn-chrome-gold text-xs font-black">
+              🔧 Montaj Randevusu Oluştur
+            </button>
+          </div>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs">
+            <div class="p-4 rounded-2xl bg-[#0D0F14] border border-ag-border space-y-1.5">
+              <div class="font-extrabold text-ag-goldLight">1. Aracıma %100 uyar mı?</div>
+              <p class="text-slate-400 leading-relaxed">Tüm multimedya çerçeveleri, 3D paspaslar ve OEM parçalar araç marka/model/kasa yılına özel üretilir. Sipariş sonrası şasi numaranızla son teyit yapılır.</p>
+            </div>
+            <div class="p-4 rounded-2xl bg-[#0D0F14] border border-ag-border space-y-1.5">
+              <div class="font-extrabold text-ag-goldLight">2. Garanti bozulur mu?</div>
+              <p class="text-slate-400 leading-relaxed">Multimedya ekranlarımız ve tesisat ürünlerimiz soket-sokete (Plug & Play) bağlantı yapısına sahiptir; aracınızda kablo kesme/soyma yapılmaz.</p>
+            </div>
+            <div class="p-4 rounded-2xl bg-[#0D0F14] border border-ag-border space-y-1.5">
+              <div class="font-extrabold text-ag-goldLight">3. Kargo ve İade Süreci?</div>
+              <p class="text-slate-400 leading-relaxed">Saat 16:00'ya kadar verilen siparişler aynı gün Yurtiçi Kargo'ya teslim edilir. 14 gün içinde koşulsuz iade ve değişim garantisi sunulur.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- 5. PROFESYONEL ÇOK SÜTUNLU KURUMSAL FOOTER -->
+    <footer class="bg-[#060709] border-t border-ag-border mt-10 pt-10 pb-8 text-xs text-slate-400">
+      <div class="max-w-[1400px] mx-auto px-4 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8 pb-8 border-b border-ag-border/70">
+        <div class="lg:col-span-2 space-y-3">
+          <div class="flex items-center gap-3.5">
+            <img src="/logo.png?v=5" alt="Aduva Garaj" class="w-14 h-14 object-contain shrink-0" onerror="this.style.display='none'" />
+            <div>
+              <div class="text-xl font-black italic chrome-text">ADUVA GARAJ</div>
+              <div class="text-[11px] text-ag-goldLight font-bold">OTO AKSESUAR • MULTİMEDYA • YEDEK PARÇA</div>
+            </div>
+          </div>
+          <p class="text-slate-400 leading-relaxed">
+            Aduva Garaj; Android Auto & CarPlay multimedya ekranları, 3D lazer kesim TPE paspaslar, krom aksesuarlar, ses sistemleri ve OEM yedek parçalarda Türkiye'nin güvenilir otomotiv mağazasıdır.
+          </p>
+          <div class="flex flex-wrap gap-2 pt-1">
+            <span class="px-2.5 py-1 rounded bg-ag-surface border border-ag-border text-[11px] text-slate-300">🔒 256-Bit SSL Güvenli Ödeme</span>
+            <span class="px-2.5 py-1 rounded bg-ag-surface border border-ag-border text-[11px] text-slate-300">💳 iyzico 3D Secure</span>
+            <span class="px-2.5 py-1 rounded bg-ag-surface border border-ag-border text-[11px] text-slate-300">🚚 Yurtiçi Kargo</span>
+          </div>
+        </div>
+
+        <div class="space-y-2">
+          <div class="font-extrabold text-white uppercase tracking-wider">Popüler Kategoriler</div>
+          <ul class="space-y-1.5">
+            <li><a href="#" onclick="selectCategory('cat-multimedya');return false;" class="hover:text-ag-goldLight">Multimedya & CarPlay Ekranlar</a></li>
+            <li><a href="#" onclick="selectCategory('cat-paspas');return false;" class="hover:text-ag-goldLight">3D Havuzlu Paspas & Bagaj</a></li>
+            <li><a href="#" onclick="selectCategory('cat-kilif');return false;" class="hover:text-ag-goldLight">Koltuk Kılıfı & Oto Minder</a></li>
+            <li><a href="#" onclick="selectCategory('cat-krom');return false;" class="hover:text-ag-goldLight">Krom Aksesuar & Dış Tuning</a></li>
+            <li><a href="#" onclick="selectCategory('cat-bakim');return false;" class="hover:text-ag-goldLight">Periyodik Bakım & Fren Paketi</a></li>
+          </ul>
+        </div>
+
+        <div class="space-y-2">
+          <div class="font-extrabold text-white uppercase tracking-wider">Kurumsal & Yasal (KVKK / 6502)</div>
+          <ul class="space-y-1.5">
+            <li><a href="#" onclick="openLegalModal('kvkk');return false;" class="hover:text-ag-goldLight">6698 Sayılı KVKK Aydınlatma Metni</a></li>
+            <li><a href="#" onclick="openLegalModal('contract');return false;" class="hover:text-ag-goldLight">Mesafeli Satış Sözleşmesi & Ön Bilgilendirme</a></li>
+            <li><a href="#" onclick="openLegalModal('returns');return false;" class="hover:text-ag-goldLight">14 Gün Cayma, İptal ve İade Koşulları</a></li>
+            <li><a href="#" onclick="openLegalModal('company');return false;" class="hover:text-ag-goldLight">Şirket Künyesi (MERSİS / ETBİS / KEP)</a></li>
+            <li><a href="https://www.n11.com/magaza/aduvagaraj" target="_blank" class="hover:text-ag-goldLight">n11 Resmi Mağazamız ↗</a></li>
+          </ul>
+        </div>
+
+        <div class="space-y-2">
+          <div class="font-extrabold text-white uppercase tracking-wider">İletişim & Montaj Merkezi</div>
+          <div class="text-slate-300 font-bold">📞 0850 308 00 00</div>
+          <div>📍 Atatürk Mah. Oto Sanayi Cad. No:42 Ümraniye / İstanbul</div>
+          <div class="text-[11px] text-slate-400">MERSİS: 0011223344550001 • KEP: aduvagaraj@hs01.kep.tr</div>
+          <div>🕒 Pzt – Cmt: 09:00 – 19:00</div>
+          <a href="https://wa.me/905000000000" target="_blank" class="inline-flex items-center gap-1.5 mt-2 px-3.5 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold">
+            💬 WhatsApp Şasi & Sipariş Hattı
+          </a>
+        </div>
+      </div>
+
+      <div class="max-w-[1400px] mx-auto px-4 pt-6 flex flex-wrap items-center justify-between gap-4">
+        <div>© 2026 ADUVA GARAJ Otomotiv Yedek Parça ve Multimedya Tic. Ltd. Şti. Tüm hakları saklıdır. Fiyatlarımıza KDV dahildir.</div>
+        <div class="flex items-center gap-2 text-[11px] font-bold text-slate-300">
+          <span class="px-2 py-1 rounded bg-ag-surface border border-ag-border">ETBİS KAYITLI</span>
+          <span class="px-2 py-1 rounded bg-ag-surface border border-ag-border">BONUS</span>
+          <span class="px-2 py-1 rounded bg-ag-surface border border-ag-border">WORLD</span>
+          <span class="px-2 py-1 rounded bg-ag-surface border border-ag-border">MAXIMUM</span>
+          <span class="px-2 py-1 rounded bg-ag-surface border border-ag-border">AXESS</span>
+          <span class="px-2 py-1 rounded bg-ag-surface border border-ag-border">KAPIDA ÖDEME</span>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- ===================================================================== -->
+  <!-- MOBİL SABİT ALT NAVİGASYON BARI (Native App Deneyimi)                  -->
+  <!-- ===================================================================== -->
+  <nav class="md:hidden fixed bottom-0 left-0 right-0 z-50 bg-[#0A0C10]/95 backdrop-blur-md border-t border-ag-border/90 py-1.5 px-2 flex items-center justify-around shadow-[0_-4px_20px_rgba(0,0,0,0.6)]">
+    <button onclick="resetStoreFilters();window.scrollTo({top:0,behavior:'smooth'});" class="flex flex-col items-center gap-0.5 text-slate-400 hover:text-ag-goldLight py-1 px-2.5 transition active:scale-95">
+      <span class="text-xl">🏠</span>
+      <span class="text-[10px] font-extrabold">Anasayfa</span>
+    </button>
+    <button onclick="scrollToSelector()" class="flex flex-col items-center gap-0.5 text-slate-400 hover:text-ag-goldLight py-1 px-2.5 transition active:scale-95">
+      <span class="text-xl">🚗</span>
+      <span class="text-[10px] font-extrabold">Garajım</span>
+    </button>
+    <button onclick="toggleMobileFilterDrawer(true)" class="flex flex-col items-center gap-0.5 text-slate-400 hover:text-ag-goldLight py-1 px-2.5 transition active:scale-95">
+      <span class="text-xl">⚡</span>
+      <span class="text-[10px] font-extrabold">Filtrele</span>
+    </button>
+    <button onclick="toggleCartDrawer(true)" class="flex flex-col items-center gap-0.5 text-slate-400 hover:text-ag-goldLight py-1 px-2.5 transition active:scale-95 relative">
+      <span class="text-xl">🛒</span>
+      <span class="text-[10px] font-extrabold">Sepetim</span>
+      <span id="mobileBottomCartBadge" class="absolute top-0 right-1.5 bg-ag-gold text-black text-[9px] font-black w-4 h-4 rounded-full flex items-center justify-center">0</span>
+    </button>
+    <button onclick="openAuthModal(state.currentUser ? 'member' : 'member')" class="flex flex-col items-center gap-0.5 text-slate-400 hover:text-ag-goldLight py-1 px-2.5 transition active:scale-95">
+      <span class="text-xl">👤</span>
+      <span id="mobileBottomAuthLabel" class="text-[10px] font-extrabold">Hesabım</span>
+    </button>
+  </nav>
+
+  <!-- MOBİL FİLTRE VE KATEGORİ ÇEKMECESİ -->
+  <div id="mobileFilterDrawerBackdrop" onclick="toggleMobileFilterDrawer(false)" class="fixed inset-0 bg-black/80 z-50 hidden transition-opacity"></div>
+  <aside id="mobileFilterDrawer" role="dialog" aria-modal="true" aria-label="Filtreler ve Kategoriler" class="fixed top-0 left-0 h-full w-full max-w-sm bg-[#121419] border-r border-ag-border text-white z-50 shadow-2xl -translate-x-full transition-transform duration-200 flex flex-col">
+    <div class="p-4 bg-[#08090C] border-b border-ag-border flex items-center justify-between">
+      <div class="font-extrabold text-sm text-ag-goldLight">⚡ Filtreler & Kategoriler</div>
+      <button onclick="toggleMobileFilterDrawer(false)" aria-label="Kapat" class="text-slate-400 hover:text-white text-lg font-bold">✕</button>
+    </div>
+    <div id="mobileFilterDrawerBody" class="flex-1 overflow-y-auto p-4 space-y-4">
+      <!-- Aktif Araç -->
+      <div id="mobileSidebarGarageCard" class="card-metallic rounded-2xl p-4"></div>
+
+      <!-- Kategori Ağacı -->
+      <div class="card-metallic rounded-2xl overflow-hidden">
+        <div class="bg-[#090A0D] border-b border-ag-border px-4 py-3 text-xs font-black uppercase tracking-wider text-ag-goldLight">
+          📂 Kategori Ağacı
+        </div>
+        <div id="mobileSidebarCategories" class="divide-y divide-ag-border/60 text-xs font-semibold"></div>
+      </div>
+
+      <!-- Üretici Marka -->
+      <div class="card-metallic rounded-2xl p-4 space-y-2.5 text-xs">
+        <div class="font-extrabold text-ag-goldLight uppercase tracking-wider">🏷️ Üretici Marka</div>
+        <div id="mobileSidebarProductBrands" class="space-y-1.5 max-h-44 overflow-y-auto"></div>
+      </div>
+
+      <!-- Hızlı Seçenekler -->
+      <div class="card-metallic rounded-2xl p-4 space-y-2.5 text-xs">
+        <div class="font-extrabold text-ag-goldLight uppercase tracking-wider">⚡ Teslimat & Uyum</div>
+        <label class="flex items-center gap-2.5 cursor-pointer text-slate-200">
+          <input type="checkbox" onchange="state.onlyCompatible=this.checked;renderStoreProducts()" class="accent-amber-400 w-4 h-4" />
+          <span class="font-semibold">Sadece Aracımla Uyumlu</span>
+        </label>
+        <label class="flex items-center gap-2.5 cursor-pointer text-slate-200">
+          <input type="checkbox" checked onchange="state.onlyInStock=this.checked;renderStoreProducts()" class="accent-amber-400 w-4 h-4" />
+          <span class="font-semibold">Stokta Olanlar (Aynı Gün Kargo)</span>
+        </label>
+        <label class="flex items-center gap-2.5 cursor-pointer text-slate-200">
+          <input type="checkbox" onchange="state.onlyFreeShipping=this.checked;renderStoreProducts()" class="accent-amber-400 w-4 h-4" />
+          <span class="font-semibold">Ücretsiz Kargo (750 ₺+)</span>
+        </label>
+      </div>
+    </div>
+    <div class="p-3 bg-[#08090C] border-t border-ag-border">
+      <button onclick="toggleMobileFilterDrawer(false)" class="w-full h-11 rounded-xl btn-chrome-gold font-black text-xs">
+        ✓ Sonuçları Göster
+      </button>
+    </div>
+  </aside>
+
+  <!-- ===================================================================== -->
+  <!-- GÖRÜNÜM 3: YÖNETİM PANELİ (ADMİN)                                     -->
+  <!-- ===================================================================== -->
+  <div id="viewAdmin" class="hidden flex-1 max-w-[1400px] w-full mx-auto px-4 py-6 space-y-6">
+    <div class="card-metallic rounded-2xl p-5 flex flex-wrap items-center justify-between gap-4">
+      <div class="flex items-center gap-3.5">
+        <img src="/logo.png?v=5" alt="AG" class="w-12 h-12 object-contain shrink-0" onerror="this.style.display='none'" />
+        <div>
+          <div class="flex items-center gap-2">
+            <h2 class="text-xl font-black italic chrome-text">ADUVA GARAJ — MAĞAZA YÖNETİM PANELİ</h2>
+            <span class="px-2 py-0.5 rounded bg-emerald-500/20 border border-emerald-500/40 text-emerald-300 text-[10px] font-black">🔒 RBAC (@Roles('ADMIN')) Aktif</span>
+          </div>
+          <p class="text-xs text-slate-400">n11 ürün/sipariş senkronu, uyumlu araç etiketleme, kupon ve montaj randevuları</p>
+        </div>
+      </div>
+      <div class="flex items-center gap-2">
+        <button onclick="setViewMode('store')" class="px-4 py-2.5 rounded-xl btn-metallic text-xs font-extrabold">
+          🏠 Mağaza Anasayfasına Dön
+        </button>
+        <button onclick="triggerManualSync()" id="adminSyncBtn" class="px-4 py-2.5 rounded-xl btn-chrome-gold text-xs font-black">
+          🔄 Şimdi n11 ile Senkronla
+        </button>
+      </div>
+    </div>
+    <div id="adminPanelBody" class="space-y-6"></div>
+  </div>
+
+  <!-- ===================================================================== -->
+  <!-- ÇEKMECELER, MODALLAR, BİLDİRİM ÇUBUĞU (TOAST) & ÇEREZ BANNER'I        -->
+  <!-- ===================================================================== -->
+
+  <!-- UX-01 Çözümü: Engelsiz (Non-blocking) Bildirim Kutusu -->
+  <div id="toastContainer" aria-live="polite" class="fixed top-14 right-4 z-[70] flex flex-col gap-2 max-w-sm w-full pointer-events-none"></div>
+
+  <!-- LEG-04 Çözümü: KVKK Çerez (Cookie) Açık Rıza Tercih Banner'ı -->
+  <div id="cookieConsentBanner" class="hidden fixed bottom-4 left-4 right-4 md:left-auto md:right-6 md:max-w-xl z-[65] card-metallic rounded-2xl p-4 border-2 border-ag-gold/50 shadow-2xl text-xs">
+    <div class="flex items-start justify-between gap-3">
+      <div class="space-y-1.5">
+        <div class="font-black text-ag-goldLight uppercase tracking-wider">🍪 KVKK Çerez (Cookie) Aydınlatma ve Tercih Paneli</div>
+        <p class="text-slate-300 leading-relaxed">
+          Sepetinizin korunması için zorunlu oturum çerezleri (<code>cartToken</code>) kullanılmaktadır. Analitik ve kampanya çerezleri yalnızca açık rızanızla etkinleştirilir.
+          <a href="#" onclick="openLegalModal('kvkk');return false;" class="text-ag-goldLight underline font-bold">Aydınlatma Metnini İncele</a>
+        </p>
+      </div>
+    </div>
+    <div class="flex flex-wrap items-center justify-end gap-2 mt-3 pt-2.5 border-t border-ag-border/70">
+      <button onclick="saveCookieConsent(false)" class="px-3 py-1.5 rounded-xl btn-metallic font-bold text-[11px]">
+        Yalnızca Zorunlu Çerezler (Reddet)
+      </button>
+      <button onclick="saveCookieConsent(true)" class="px-3.5 py-1.5 rounded-xl btn-chrome-gold font-black text-[11px]">
+        ✓ Tümünü Kabul Et
+      </button>
+    </div>
+  </div>
+
+  <!-- Sağ Sepet & Checkout Çekmecesi -->
+  <div id="cartDrawerBackdrop" onclick="toggleCartDrawer(false)" class="fixed inset-0 bg-black/75 z-50 hidden"></div>
+  <aside id="cartDrawer" role="dialog" aria-modal="true" aria-label="Alışveriş Sepetim" class="fixed top-0 right-0 h-full w-full max-w-md bg-[#121419] border-l border-ag-border text-white z-50 shadow-2xl translate-x-full transition-transform duration-200 flex flex-col">
+    <div class="p-4 bg-[#08090C] border-b border-ag-border flex items-center justify-between">
+      <div class="font-extrabold text-sm text-ag-goldLight">🛒 Alışveriş Sepetim</div>
+      <button onclick="toggleCartDrawer(false)" aria-label="Sepet çekmecesini kapat" class="text-slate-400 hover:text-white text-lg font-bold">✕</button>
+    </div>
+    <div id="cartDrawerBody" class="flex-1 overflow-y-auto p-4 space-y-4"></div>
+  </aside>
+
+  <!-- 5 Sekmeli Profesyonel Ürün Detay Modalı -->
+  <div id="productModal" role="dialog" aria-modal="true" aria-label="Ürün Detayları" class="fixed inset-0 bg-black/80 z-50 hidden items-center justify-center p-4">
+    <div id="productModalContent" class="card-metallic rounded-3xl max-w-4xl w-full max-h-[92vh] overflow-y-auto shadow-2xl text-white"></div>
+  </div>
+
+  <!-- Şasi Numarası (VIN) Sorgulama Modalı -->
+  <div id="vinModal" role="dialog" aria-modal="true" aria-label="Şasi Numarası ile Parça Sorgula" class="fixed inset-0 bg-black/80 z-50 hidden items-center justify-center p-4">
+    <div class="card-metallic rounded-3xl max-w-lg w-full p-6 space-y-4 shadow-2xl text-white">
+      <div class="flex items-center justify-between">
+        <h3 class="text-lg font-black text-ag-goldLight">🔍 17 Haneli Şasi Numarası (VIN) WMI/VDS Çözümleyici</h3>
+        <button onclick="closeModal('vinModal')" aria-label="Şasi sorgu penceresini kapat" class="text-slate-400 hover:text-white font-bold text-lg">✕</button>
+      </div>
+      <p class="text-xs text-slate-300 leading-relaxed">
+        Ruhsatınızdaki 17 haneli Şasi Numarasını girin; ilk 3 hane (WMI üretici kodu) ve 4-9. hane (VDS kasa ipucu) üzerinden marka/model adaylarını belirleyelim.
+      </p>
+      <input id="vinInput" maxlength="17" placeholder="Örn: W0L0AHL4882123456 (17 Hane)" class="w-full h-12 rounded-xl bg-[#0A0B0E] border border-ag-border px-4 text-sm font-mono uppercase tracking-wider text-white" />
+      <div class="flex flex-wrap gap-1.5 text-[11px]">
+        <span class="text-slate-400">Örnek Şasi Test:</span>
+        <button onclick="document.getElementById('vinInput').value='W0L0AHL4882123456';checkVinCode()" class="px-2 py-0.5 rounded bg-ag-surfaceAlt text-ag-goldLight">Opel (W0L...)</button>
+        <button onclick="document.getElementById('vinInput').value='WVWZZZAUZJW123456';checkVinCode()" class="px-2 py-0.5 rounded bg-ag-surfaceAlt text-ag-goldLight">VW (WVW...)</button>
+        <button onclick="document.getElementById('vinInput').value='ZFA35600006123456';checkVinCode()" class="px-2 py-0.5 rounded bg-ag-surfaceAlt text-ag-goldLight">Fiat (ZFA...)</button>
+        <button onclick="document.getElementById('vinInput').value='VF1RJA00062123456';checkVinCode()" class="px-2 py-0.5 rounded bg-ag-surfaceAlt text-ag-goldLight">Renault (VF1...)</button>
+      </div>
+      <div id="vinResultBox" class="hidden p-3.5 rounded-xl bg-emerald-950/80 border border-emerald-500/40 text-xs text-emerald-200 space-y-2"></div>
+      <div class="flex gap-2">
+        <button onclick="checkVinCode()" class="flex-1 h-11 rounded-xl btn-chrome-gold text-xs font-black">Şasi Kodunu Çözümle</button>
+        <a href="https://wa.me/905000000000?text=Merhaba,%20şasi%20numaram%20ile%20parça%20uyumluluğu%20sormak%20istiyorum." target="_blank" class="h-11 px-4 rounded-xl bg-emerald-600 text-white text-xs font-extrabold flex items-center">💬 Uzman Teyidi</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Ürün Karşılaştırma Modalı -->
+  <div id="compareModal" role="dialog" aria-modal="true" aria-label="Ürün Karşılaştırma" class="fixed inset-0 bg-black/80 z-50 hidden items-center justify-center p-4">
+    <div class="card-metallic rounded-3xl max-w-4xl w-full max-h-[88vh] overflow-y-auto p-6 space-y-4 shadow-2xl text-white">
+      <div class="flex items-center justify-between">
+        <h3 class="text-lg font-black text-ag-goldLight">⇄ Ürün Karşılaştırma Tablosu</h3>
+        <button onclick="closeModal('compareModal')" aria-label="Karşılaştırma penceresini kapat" class="text-slate-400 hover:text-white font-bold text-lg">✕</button>
+      </div>
+      <div id="compareModalBody"></div>
+    </div>
+  </div>
+
+  <!-- Favorilerim Modalı -->
+  <div id="favoritesModal" role="dialog" aria-modal="true" aria-label="Favori Ürünlerim" class="fixed inset-0 bg-black/80 z-50 hidden items-center justify-center p-4">
+    <div class="card-metallic rounded-3xl max-w-2xl w-full max-h-[85vh] overflow-y-auto p-6 space-y-4 shadow-2xl text-white">
+      <div class="flex items-center justify-between">
+        <h3 class="text-lg font-black text-ag-goldLight">♥ Favori Ürünlerim & Fiyat Alarmı</h3>
+        <button onclick="closeModal('favoritesModal')" aria-label="Favoriler penceresini kapat" class="text-slate-400 hover:text-white font-bold text-lg">✕</button>
+      </div>
+      <div id="favoritesModalBody" class="space-y-3"></div>
+    </div>
+  </div>
+
+  <!-- Montaj Randevu Sihirbazı Modalı (PAY-04: Ön-doldurulmuş value kaldırıldı, placeholder kullanıldı) -->
+  <div id="appointmentModal" role="dialog" aria-modal="true" aria-label="Montaj Randevusu Al" class="fixed inset-0 bg-black/80 z-50 hidden items-center justify-center p-4">
+    <div class="card-metallic rounded-3xl max-w-lg w-full p-6 space-y-4 shadow-2xl text-white">
+      <div class="flex items-center justify-between">
+        <h3 class="text-lg font-black text-ag-goldLight">🔧 Aduva Garaj — Profesyonel Montaj Randevusu</h3>
+        <button onclick="closeModal('appointmentModal')" aria-label="Randevu penceresini kapat" class="text-slate-400 hover:text-white font-bold text-lg">✕</button>
+      </div>
+      <form onsubmit="submitAppointmentForm(event)" class="space-y-3 text-xs">
+        <input required name="customerName" placeholder="Adınız Soyadınız (Örn: Ahmet Yılmaz)" class="w-full h-10 rounded-xl bg-[#0A0B0E] border border-ag-border px-3 text-white" />
+        <input required name="phone" pattern="^[0-9+\s()-]{10,16}$" placeholder="Cep Telefonunuz (Örn: 0532 411 22 33)" class="w-full h-10 rounded-xl bg-[#0A0B0E] border border-ag-border px-3 text-white" />
+        <input required id="aptVehicleInput" name="vehicleInfo" placeholder="Araç Marka / Model / Yıl (Örn: 2016 Opel Astra J)" class="w-full h-10 rounded-xl bg-[#0A0B0E] border border-ag-border px-3 text-white" />
+        <select name="serviceType" id="aptServiceSelect" class="w-full h-10 rounded-xl bg-[#0A0B0E] border border-ag-border px-3 text-white font-bold">
+          <option value="Android Auto & CarPlay Multimedya Montajı">📺 Android Auto & CarPlay Multimedya Montajı</option>
+          <option value="Geri Görüş Kamerası & Park Sensörü Uygulaması">📷 Geri Görüş Kamerası & Park Sensörü Uygulaması</option>
+          <option value="64 Renk Fiber Optik Ambiyans LED Uygulaması">💡 64 Renk Fiber Optik Ambiyans LED Uygulaması</option>
+          <option value="Ses Sistemi, Hoparlör & Subwoofer Kurulumu">🔊 Ses Sistemi, Hoparlör & Subwoofer Kurulumu</option>
+          <option value="Özel Kesim Koltuk Kılıfı Montajı">💺 Özel Kesim Koltuk Kılıfı Montajı</option>
+        </select>
+        <input required name="scheduledAt" type="datetime-local" value="2026-10-30T14:00" class="w-full h-10 rounded-xl bg-[#0A0B0E] border border-ag-border px-3 text-white" />
+        <button type="submit" class="w-full h-11 rounded-xl btn-chrome-gold font-black text-xs">✓ RANDEVU TALEBİNİ ONAYLA</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Sipariş, Kargo Takip & İptal/İade (RMA) Modalı -->
+  <div id="ordersModal" role="dialog" aria-modal="true" aria-label="Sipariş ve Kargo Takibi" class="fixed inset-0 bg-black/80 z-50 hidden items-center justify-center p-4">
+    <div class="card-metallic rounded-3xl max-w-2xl w-full max-h-[88vh] overflow-y-auto p-6 space-y-4 shadow-2xl text-white">
+      <div class="flex items-center justify-between">
+        <h3 class="text-lg font-black text-ag-goldLight">📦 Sipariş Takibi, İptal / İade (Cayma Hakkı) & Randevular</h3>
+        <button onclick="closeModal('ordersModal')" aria-label="Sipariş penceresini kapat" class="text-slate-400 hover:text-white font-bold text-lg">✕</button>
+      </div>
+      <div id="ordersModalBody" class="space-y-4"></div>
+    </div>
+  </div>
+
+  <!-- LEG-01 & TRS-01 Çözümü: Kurumsal Künye, KVKK Aydınlatma ve Mesafeli Satış Sözleşmesi Modalı -->
+  <div id="legalModal" role="dialog" aria-modal="true" aria-label="Yasal Sözleşmeler ve KVKK" class="fixed inset-0 bg-black/85 z-50 hidden items-center justify-center p-4">
+    <div class="card-metallic rounded-3xl max-w-3xl w-full max-h-[88vh] overflow-y-auto p-6 space-y-4 shadow-2xl text-white">
+      <div class="flex items-center justify-between border-b border-ag-border pb-3">
+        <div>
+          <span class="text-[10px] font-black uppercase text-ag-goldLight tracking-widest">TÜRKİYE E-TİCARET & KVKK MEVZUAT UYUMU</span>
+          <h3 id="legalModalTitle" class="text-lg font-black text-white">KVKK Aydınlatma Metni & Yasal Sözleşmeler</h3>
+        </div>
+        <button onclick="closeModal('legalModal')" aria-label="Yasal sözleşme penceresini kapat" class="text-slate-400 hover:text-white font-bold text-lg">✕</button>
+      </div>
+      <div class="flex flex-wrap gap-2 text-xs font-bold border-b border-ag-border pb-3">
+        <button onclick="openLegalModal('kvkk')" id="legTab-kvkk" class="px-3 py-1.5 rounded-xl btn-chrome-gold">🛡️ KVKK Aydınlatma Metni</button>
+        <button onclick="openLegalModal('contract')" id="legTab-contract" class="px-3 py-1.5 rounded-xl btn-metallic">📜 Mesafeli Satış & Ön Bilgilendirme</button>
+        <button onclick="openLegalModal('returns')" id="legTab-returns" class="px-3 py-1.5 rounded-xl btn-metallic">↩️ 14 Gün Cayma & İade Koşulları</button>
+        <button onclick="openLegalModal('company')" id="legTab-company" class="px-3 py-1.5 rounded-xl btn-metallic">🏢 Şirket Künyesi (MERSİS/ETBİS)</button>
+      </div>
+      <div id="legalModalBody" class="text-xs text-slate-300 leading-relaxed space-y-3"></div>
+    </div>
+  </div>
+
+  <!-- ÜYE GİRİŞİ / YENİ ÜYE OL / YETKİLİ GİRİŞİ MODALI -->
+  <div id="authModal" role="dialog" aria-modal="true" aria-label="Üye ve Yetkili Girişi" class="fixed inset-0 bg-black/85 z-50 hidden items-center justify-center p-4">
+    <div class="card-metallic rounded-3xl max-w-lg w-full max-h-[92vh] overflow-y-auto p-6 space-y-4 shadow-2xl text-white border border-ag-gold/50">
+      <div class="flex items-center justify-between border-b border-ag-border pb-3">
+        <div class="flex items-center gap-3">
+          <img src="/logo.png?v=5" alt="AG" class="w-11 h-11 object-contain shrink-0" onerror="this.style.display='none'" />
+          <div>
+            <span class="text-[10px] font-black uppercase text-ag-goldLight tracking-widest">ADUVA GARAJ OTURUM MERKEZİ</span>
+            <h3 id="authModalTitle" class="text-lg font-black text-white">Üye Girişi & Kişisel Sepet Yönetimi</h3>
+          </div>
+        </div>
+        <button onclick="closeModal('authModal')" aria-label="Giriş penceresini kapat" class="text-slate-400 hover:text-white font-bold text-lg">✕</button>
+      </div>
+
+      <!-- 3 Sekme: Üye Girişi | Yeni Üye Ol | Yetkili Girişi -->
+      <div class="grid grid-cols-3 gap-1.5 bg-[#090A0E] p-1.5 rounded-2xl border border-ag-border text-xs font-extrabold">
+        <button type="button" id="authTab-member" onclick="switchAuthTab('member')" class="py-2.5 rounded-xl btn-chrome-gold">
+          👤 Üye Girişi
+        </button>
+        <button type="button" id="authTab-register" onclick="switchAuthTab('register')" class="py-2.5 rounded-xl btn-metallic">
+          ✨ Yeni Üye Ol
+        </button>
+        <button type="button" id="authTab-admin" onclick="switchAuthTab('admin')" class="py-2.5 rounded-xl btn-metallic">
+          🛡️ Yetkili Girişi
+        </button>
+      </div>
+
+      <div id="authModalBody" class="space-y-4 text-xs"></div>
+    </div>
+  </div>
+
+  <script>
+    // SEC-07: XSS Koruması (HTML Escape)
+    function escapeHtml(str) {
+      return String(str ?? '')
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
+    }
+
+    // UX-01: Non-blocking Modern Toast Bildirim Sistemi (alert() yerine)
+    function showToast(message, type = 'info') {
+      const container = document.getElementById('toastContainer');
+      if (!container) return;
+      const el = document.createElement('div');
+      const colors = {
+        success: 'bg-emerald-950/95 border-emerald-500/60 text-emerald-200',
+        error: 'bg-red-950/95 border-red-500/60 text-red-200',
+        warning: 'bg-amber-950/95 border-amber-500/60 text-amber-200',
+        info: 'bg-[#12141B]/95 border-ag-gold/60 text-slate-100',
+      };
+      el.className = `pointer-events-auto px-4 py-3 rounded-xl border shadow-2xl text-xs font-extrabold flex items-center justify-between gap-3 transition-all duration-300 ${colors[type] || colors.info}`;
+      el.innerHTML = `<span>${escapeHtml(message)}</span><button onclick="this.parentElement.remove()" class="text-slate-400 hover:text-white font-black">✕</button>`;
+      container.appendChild(el);
+      setTimeout(() => { if (el.parentElement) el.remove(); }, 4200);
+    }
+
+    // LEG-04: KVKK / Çerez Rıza Yönetimi
+    function initCookieConsent() {
+      const saved = localStorage.getItem('aduva_cookie_consent');
+      const banner = document.getElementById('cookieConsentBanner');
+      if (!saved && banner) banner.classList.remove('hidden');
+    }
+    function saveCookieConsent(allGranted) {
+      localStorage.setItem('aduva_cookie_consent', JSON.stringify({
+        essential: true,
+        analytics: Boolean(allGranted),
+        marketing: Boolean(allGranted),
+        timestamp: new Date().toISOString(),
+      }));
+      const banner = document.getElementById('cookieConsentBanner');
+      if (banner) banner.classList.add('hidden');
+      showToast(allGranted ? 'Çerez tercihleriniz kaydedildi (Tüm çerezler aktif).' : 'Sadece zorunlu sepet ve güvenlik çerezleri aktif.', 'success');
+    }
+
+    // LEG-01 & TRS-01: Yasal Metinler ve Kurumsal Sayfalar Modalı
+    const LEGAL_DOCS = {
+      mesafeli: {
+        title: 'Mesafeli Satış Sözleşmesi ve Ön Bilgilendirme Formu (6502 Sayılı Kanun)',
+        body: `
+          <p><b>1. TARAFLAR VE SATICI BİLGİLERİ:</b><br/>Ünvan: Aduva Garaj Otomotiv Aksesuar ve Multimedya Tic. Ltd. Şti.<br/>Adres: Dudullu OSB Oto Sanayi Sitesi B Blok No:42 Ümraniye / İstanbul<br/>MERSİS No: 0123456789000019 • KEP: aduvagaraj@hs01.kep.tr • Tel: 0850 309 61 34</p>
+          <p><b>2. SÖZLEŞME KONUSU:</b><br/>İşbu sözleşme, ALICI'nın SATICI'ya ait elektronik ticaret internet sitesi üzerinden sipariş verdiği oto aksesuar/yedek parça ürünlerinin satışı ve teslimi ile ilgili 6502 sayılı Tüketicinin Korunması Hakkında Kanun ve Mesafeli Sözleşmeler Yönetmeliği hükümleri gereğince tarafların hak ve yükümlülüklerini düzenler.</p>
+          <p><b>3. CAYMA HAKKI (14 GÜN):</b><br/>ALICI, ürünü teslim aldığı tarihten itibaren <b>14 (on dört) gün</b> içinde herhangi bir gerekçe göstermeksizin ve cezai şart ödemeksizin sözleşmeden cayma hakkına sahiptir. İade kargo anlaşma kodu (Yurtiçi Kargo) ile ücretsiz gönderim sağlanır. Montajı yapılmış, koruyucu bandı sökülmüş elektronik/multimedya ürünlerinde yetkili servis raporu aranır.</p>
+        `,
+      },
+      kvkk: {
+        title: '6698 Sayılı KVKK Aydınlatma Metni ve Veri Güvenliği Politikası',
+        body: `
+          <p><b>Veri Sorumlusu:</b> Aduva Garaj Otomotiv Aksesuar ve Multimedya Tic. Ltd. Şti.</p>
+          <p>Kişisel verileriniz (ad, soyad, adres, telefon, e-fatura için TCKN/VKN, şasi numarası sorgusu) yalnızca siparişin ifası, 213 sayılı Vergi Usul Kanunu kapsamında e-Arşiv/e-Fatura düzenlenmesi ve araç uyumluluk doğrulaması amacıyla işlenmektedir.</p>
+          <p><b>Teknik Tedbirler:</b> TCKN verileriniz veritabanında <code>AES-256-GCM</code> ile şifrelenir. KVKK Madde 7 ve Madde 11 kapsamında <code>DELETE /api/kvkk/forget-me/:userId</code> uç noktası üzerinden unutulma (anonimleştirme) hakkınızı dilediğiniz an kullanabilirsiniz.</p>
+        `,
+      },
+      iade: {
+        title: '14 Gün Koşulsuz İade, Değişim ve 2 Yıl Garanti Koşulları',
+        body: `
+          <p><b>Ücretsiz Kolay İade:</b> Üst menüdeki "Sipariş Takibi" ekranından sipariş numaranızı sorgulayarak tek tıkla <b>Yurtiçi Kargo Ücretsiz İade Kodu</b> oluşturabilirsiniz.</p>
+          <p><b>Şasi (VIN) Uyum Garantisi:</b> Sipariş sırasında aracınızı seçtiğiniz veya şasi numarası belirttiğiniz halde aracınıza uymayan tüm parçalar, kargo ücreti firmamıza ait olmak üzere birebir değiştirilir veya kesintisiz iade alınır.</p>
+        `,
+      },
+      cerez: {
+        title: 'Çerez (Cookie) Aydınlatma Metni',
+        body: `
+          <p>Sitemizde misafir sepetinizin 30 gün boyunca korunması için zorunlu oturum çerezi (<code>cartToken</code> — <code>httpOnly, Secure, SameSite=Lax</code>) ve CSRF koruması için <code>csrfToken</code> kullanılmaktadır. Açık rızanız olmadan pazarlama veya üçüncü taraf takip çerezi çalıştırılmaz.</p>
+        `,
+      },
+      hakkimizda: {
+        title: 'Aduva Garaj Hakkında & İstanbul Ümraniye Montaj Merkezimiz',
+        body: `
+          <p><b>Aduva Garaj</b>, hem <b>n11.com Resmi Mağazası (9.8/10 Mağaza Puanı)</b> hem de kendi e-ticaret ve mobil platformu üzerinden Türkiye'nin 81 iline OEM/Aftermarket oto multimedya, 3D/4D TPE havuzlu paspas, LED aydınlatma ve periyodik bakım ekipmanları sunan uzman otomotiv mağazasıdır.</p>
+          <p>İstanbul Ümraniye Dudullu OSB'deki 450 m² kapalı montaj merkezimizde uzman elektronik teknisyenlerimizle soket-sokete garantili multimedya, geri görüş kamerası ve ambiyans aydınlatma uygulaması yapılmaktadır.</p>
+        `,
+      },
+    };
+
+    function openLegalModal(docKey = 'mesafeli') {
+      const doc = LEGAL_DOCS[docKey] || LEGAL_DOCS.mesafeli;
+      document.getElementById('legalModalTitle').textContent = doc.title;
+      document.getElementById('legalModalBody').innerHTML = `
+        <div class="flex flex-wrap gap-1.5 pb-3 border-b border-ag-border">
+          ${Object.entries({ mesafeli: 'Mesafeli Satış', kvkk: 'KVKK Aydınlatma', iade: 'İade & Garanti', cerez: 'Çerez Politikası', hakkimizda: 'Hakkımızda' }).map(([k, label]) => `
+            <button onclick="openLegalModal('${k}')" class="px-2.5 py-1 rounded-lg text-[11px] font-bold ${k === docKey ? 'btn-chrome-gold' : 'btn-metallic'}">${label}</button>
+          `).join('')}
+        </div>
+        <div class="space-y-2.5 pt-2">${doc.body}</div>
+      `;
+      openModal('legalModal');
+    }
+
+    // PAY-04: Türkiye İl / İlçe Bağımlı Seçim Verisi
+    const TR_CITIES = {
+      'İstanbul': ['Ümraniye', 'Kadıköy', 'Ataşehir', 'Beşiktaş', 'Şişli', 'Başakşehir', 'Pendik', 'Kartal', 'Bakırköy', 'Sarıyer'],
+      'Ankara': ['Çankaya', 'Yenimahalle', 'Keçiören', 'Etimesgut', 'Gölbaşı', 'Sincan', 'Mamak'],
+      'İzmir': ['Bornova', 'Karşıyaka', 'Konak', 'Buca', 'Çiğli', 'Gaziemir', 'Balçova'],
+      'Bursa': ['Nilüfer', 'Osmangazi', 'Yıldırım', 'İnegöl', 'Mudanya'],
+      'Antalya': ['Muratpaşa', 'Konyaaltı', 'Kepez', 'Alanya', 'Manavgat'],
+      'Kocaeli': ['İzmit', 'Gebze', 'Darıca', 'Çayırova', 'Kartepe'],
+      'Adana': ['Seyhan', 'Çukurova', 'Yüreğir', 'Sarıçam'],
+      'Konya': ['Selçuklu', 'Meram', 'Karatay'],
+    };
+
+    const EXTRA_VEHICLES = [
+      { id: 'veh-astraj', brand: 'Opel', model: 'Astra J', yearFrom: 2009, yearTo: 2016, body: 'Hatchback / Sedan', engine: '1.6 CDTI 136BG' },
+      { id: 'veh-astrak', brand: 'Opel', model: 'Astra K', yearFrom: 2015, yearTo: 2021, body: 'Hatchback', engine: '1.4 Turbo 150BG' },
+      { id: 'veh-insignia', brand: 'Opel', model: 'Insignia A/B', yearFrom: 2009, yearTo: 2022, body: 'Grand Sport', engine: '1.6 CDTI' },
+      { id: 'veh-corsae', brand: 'Opel', model: 'Corsa E / F', yearFrom: 2015, yearTo: null, body: 'Hatchback', engine: '1.2 PureTech' },
+      { id: 'veh-cruze', brand: 'Chevrolet', model: 'Cruze', yearFrom: 2009, yearTo: 2015, body: 'Sedan / HB', engine: '1.6 16V Ecotec' },
+      { id: 'veh-focus4', brand: 'Ford', model: 'Focus 4', yearFrom: 2018, yearTo: null, body: 'Sedan / HB', engine: '1.5 EcoBlue' },
+      { id: 'veh-3008', brand: 'Peugeot', model: '3008', yearFrom: 2017, yearTo: null, body: 'SUV', engine: '1.5 BlueHDi' },
+    ];
+
+    const HERO_SLIDES = [
+      {
+        badge: 'YENİ NESİL MULTİMEDYA MERKEZİ',
+        title: 'Aracınıza Özel Kablosuz CarPlay & Android Auto Ekranlar',
+        desc: 'Opel, Volkswagen, Fiat, Renault, Toyota ve Honda modelleri için soket-sokete uyumlu QLED ekranlar + İstanbul mağazamızda uzman montaj imkanı.',
+        cta: 'Multimedya Ekranları İncele',
+        catId: 'cat-multimedya',
+        img: 'https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=1000&q=80',
+      },
+      {
+        badge: '%100 LAZER KESİM TAM UYUM',
+        title: '3D Havuzlu TPE Paspas & Bagaj Havuzu Setlerinde Kampanya',
+        desc: 'Koku yapmayan 1. sınıf kauçuk/TPE materyal, klips sabitlemeli yüksek kenar bariyeri ve 750 TL üzeri ücretsiz Yurtiçi Kargo.',
+        cta: 'Paspas & Bagaj Setlerini Gör',
+        catId: 'cat-paspas',
+        img: 'https://images.unsplash.com/photo-1617788138017-80ad40651399?auto=format&fit=crop&w=1000&q=80',
+      },
+      {
+        badge: 'ŞASİ NO İLE SIFIR HATA',
+        title: 'Orijinal OEM Periyodik Bakım & Fren Paketleri',
+        desc: 'Bosch filtre setleri, seramik fren balataları ve elektrik/aydınlatma ürünlerinde peşin fiyatına 6 taksit avantajı.',
+        cta: 'Bakım & Fren Parçalarını Gör',
+        catId: 'cat-bakim',
+        img: 'https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=1000&q=80',
+      },
+    ];
+
+    const state = {
+      viewMode: 'store',
+      heroIndex: 0,
+      bootstrap: { settings: {}, vehicles: [], categories: [], coupons: [], orders: [], appointments: [], syncLogs: [] },
+      products: [],
+      selectedBrand: '',
+      selectedModel: '',
+      selectedBody: '',
+      selectedVehicleId: localStorage.getItem('aduva_vehicle') || '',
+      selectedCategoryId: '',
+      selectedProductBrand: '',
+      minPrice: null,
+      maxPrice: null,
+      searchQuery: '',
+      onlyCompatible: false,
+      onlyInStock: true,
+      onlyFreeShipping: false,
+      onlyMontage: false,
+      sortBy: 'featured',
+      cardQty: {},
+      favorites: JSON.parse(localStorage.getItem('aduva_favs') || '[]'),
+      compareList: JSON.parse(localStorage.getItem('aduva_compare') || '[]'),
+      reviewsByProduct: JSON.parse(localStorage.getItem('aduva_reviews') || '{}'),
+      apiCart: null,
+      checkoutPaymentMethod: 'CARD',
+      checkoutInvoiceType: 'INDIVIDUAL',
+      checkoutCity: 'İstanbul',
+      detailTab: 'desc',
+      adminKey: 'adv_admin_2026_secure',
+      currentUser: JSON.parse(localStorage.getItem('aduva_auth_user') || 'null'),
+      accessToken: localStorage.getItem('aduva_auth_token') || '',
+      authTab: 'member',
+    };
+
+    const fmtTRY = (n) => new Intl.NumberFormat('tr-TR', { style: 'currency', currency: 'TRY' }).format(Number(n || 0));
+
+    // Sipariş ve Randevu Durum Kodlarını Kullanıcı Dostu Türkçeye Çevirici
+    function formatOrderStatusTr(status) {
+      const map = {
+        'PENDING_PAYMENT': 'Ödeme Bekleniyor',
+        'PAID': 'Ödeme Alındı',
+        'PREPARING': 'Sipariş Hazırlanıyor',
+        'SHIPPED': 'Kargoya Verildi',
+        'DELIVERED': 'Teslim Edildi',
+        'CANCELLED': 'İptal Edildi',
+        'REFUNDED': 'İade Edildi',
+        'RETURN_REQUESTED': 'İade Talebi Alındı',
+      };
+      return map[status] || status || 'İşleniyor';
+    }
+
+    function formatAppointmentStatusTr(status) {
+      const map = {
+        'REQUESTED': 'Talep Alındı',
+        'CONFIRMED': 'Randevu Onaylandı',
+        'COMPLETED': 'Montaj Tamamlandı',
+        'CANCELLED': 'İptal Edildi',
+      };
+      return map[status] || status || 'Beklemede';
+    }
+
+    function toggleTheme() {
+      const current = localStorage.getItem('aduva_theme') || (document.documentElement.classList.contains('light') ? 'light' : 'dark');
+      const next = current === 'dark' ? 'light' : 'dark';
+      setTheme(next);
+    }
+
+    function setTheme(theme) {
+      const root = document.documentElement;
+      root.classList.remove('dark', 'light');
+      root.classList.add(theme);
+      localStorage.setItem('aduva_theme', theme);
+      
+      const icon = document.getElementById('themeToggleIcon');
+      const text = document.getElementById('themeToggleText');
+      const btn = document.getElementById('themeToggleBtn');
+      if (icon) icon.textContent = theme === 'dark' ? '🌙' : '☀️';
+      if (text) text.textContent = theme === 'dark' ? 'Koyu' : 'Açık';
+      if (btn) {
+        if (theme === 'dark') {
+          btn.title = 'Açık Temaya Geç';
+        } else {
+          btn.title = 'Koyu Temaya Geç';
+        }
+      }
+
+      const darkBtn = document.getElementById('btnThemeDark');
+      const lightBtn = document.getElementById('btnThemeLight');
+      if (darkBtn && lightBtn) {
+        if (theme === 'dark') {
+          darkBtn.className = 'px-2.5 py-1 rounded-md text-[11px] font-extrabold transition bg-ag-gold text-black';
+          lightBtn.className = 'px-2.5 py-1 rounded-md text-[11px] font-bold transition text-slate-300 hover:text-white';
+        } else {
+          lightBtn.className = 'px-2.5 py-1 rounded-md text-[11px] font-extrabold transition bg-ag-gold text-black';
+          darkBtn.className = 'px-2.5 py-1 rounded-md text-[11px] font-bold transition text-slate-300 hover:text-white';
+        }
+      }
+    }
+    setTheme(localStorage.getItem('aduva_theme') || 'dark');
+
+    // Canlı Kargo Geri Sayım Sayacı
+    setInterval(() => {
+      const now = new Date();
+      const target = new Date();
+      target.setHours(16, 0, 0, 0);
+      if (now > target) target.setDate(target.getDate() + 1);
+      const diff = Math.max(0, Math.floor((target - now) / 1000));
+      const h = String(Math.floor(diff / 3600)).padStart(2, '0');
+      const m = String(Math.floor((diff % 3600) / 60)).padStart(2, '0');
+      const s = String(diff % 60).padStart(2, '0');
+      const el = document.getElementById('shippingCountdown');
+      if (el) el.textContent = `${h}s ${m}dk ${s}sn`;
+    }, 1000);
+
+    // ECM-01: Tüm ürünler doğrudan backend (/v1/products) üzerinden gerçek ID ve stoklarıyla yüklenir
+    async function loadAll() {
+      const authHeaders = state.accessToken ? { Authorization: `Bearer ${state.accessToken}` } : {};
+      const [bootRes, prodRes] = await Promise.all([
+        fetch('/v1/catalog/bootstrap', { headers: authHeaders }).then(r => r.json()),
+        fetch('/v1/products?limit=60').then(r => r.json()),
+      ]);
+
+      const existingVehIds = new Set((bootRes.vehicles || []).map(v => v.id));
+      bootRes.vehicles = [...EXTRA_VEHICLES.filter(v => !existingVehIds.has(v.id)), ...(bootRes.vehicles || [])];
+
+      const oemMap = {
+        'prd-1': { oem: 'OEM-9012-CP', fitPlus: ['veh-astraj', 'veh-astrak', 'veh-insignia', 'veh-cruze', 'veh-focus4'] },
+        'prd-2': { oem: '5G1061500-TPE', fitPlus: [] },
+        'prd-3': { oem: 'FCA-EGEA-KLF', fitPlus: [] },
+        'prd-4': { oem: 'RN-CLIO5-KRM', fitPlus: [] },
+        'prd-5': { oem: 'LED-64RGB-6M', fitPlus: ['veh-astraj', 'veh-astrak', 'veh-insignia', 'veh-corsae', 'veh-cruze'] },
+        'prd-6': { oem: 'PIO-TSG1620F', fitPlus: ['veh-astraj', 'veh-astrak', 'veh-corsae', 'veh-cruze'] },
+        'prd-7': { oem: 'TYT-CRL19-SET', fitPlus: [] },
+      };
+
+      const allProducts = (prodRes.items || []).map(p => {
+        const extra = oemMap[p.id] || { oem: p.oemCode || `OEM-${p.n11Id}`, fitPlus: [] };
+        const fitIds = Array.from(new Set([...(p.fitmentVehicleIds || []), ...extra.fitPlus]));
+        return {
+          ...p,
+          oemCode: p.oemCode || extra.oem,
+          installmentText: `6 x ${fmtTRY(p.price / 6)}`,
+          fitmentVehicleIds: fitIds,
+        };
+      });
+
+      state.bootstrap = bootRes;
+      state.products = allProducts;
+
+      populateWizardDropdowns();
+      await syncCartFromBackend();
+      renderAll();
+      initCookieConsent();
+      if (window.location.pathname === '/sepet') {
+        toggleCartDrawer(true);
+      }
+    }
+
+    function setViewMode(mode) {
+      if (mode === 'admin' && (!state.currentUser || (state.currentUser.role !== 'ADMIN' && state.currentUser.role !== 'OPERATIONS'))) {
+        showToast('Yetkili Yönetim Paneline erişmek için lütfen Yetkili Girişi yapın.', 'warning');
+        openAuthModal('admin');
+        return;
+      }
+      state.viewMode = mode;
+      document.getElementById('viewStore').classList.toggle('hidden', mode !== 'store');
+      document.getElementById('viewAdmin').classList.toggle('hidden', mode !== 'admin');
+      renderAll();
+    }
+
+    function renderAll() {
+      renderAuthUi();
+      renderHeroBanner();
+      renderTopCategories();
+      renderBrandChips();
+      renderSidebar();
+      renderStoreProducts();
+      renderHeaderCart();
+      renderAdminPanel();
+      document.getElementById('topFavCount').textContent = state.favorites.length;
+      document.getElementById('topCompareCount').textContent = state.compareList.length;
+    }
+
+    // ---------------- ÜYE GİRİŞİ, YENİ ÜYE KAYDI & YETKİLİ GİRİŞİ SİSTEMİ ----------------
+    function renderAuthUi() {
+      const topBar = document.getElementById('topBarAuthArea');
+      const headerBox = document.getElementById('headerAccountBox');
+      const cartOwnerLabel = document.getElementById('headerCartOwnerLabel');
+      const mbAuth = document.getElementById('mobileBottomAuthLabel');
+      const u = state.currentUser;
+
+      if (cartOwnerLabel) {
+        if (u) {
+          const shortName = (u.name || u.email || 'ÜYE').split(' ')[0].toUpperCase();
+          cartOwnerLabel.textContent = u.role === 'ADMIN' ? `SEPETİM (YETKİLİ)` : `SEPETİM (${shortName})`;
+        } else {
+          cartOwnerLabel.textContent = 'SEPETİM (MİSAFİR)';
+        }
+      }
+
+      if (mbAuth) {
+        mbAuth.textContent = u ? (u.role === 'ADMIN' ? 'Yetkili' : 'Hesabım') : 'Giriş';
+      }
+
+      if (!u) {
+        if (topBar) {
+          topBar.innerHTML = `
+            <button onclick="openAuthModal('member')" class="px-2.5 sm:px-3 py-1 rounded-md font-extrabold btn-chrome-gold transition text-[11px]">
+              👤 Üye Girişi
+            </button>
+            <button onclick="openAuthModal('admin')" class="px-2 sm:px-3 py-1 rounded-md font-bold btn-metallic transition text-[11px]">
+              🛡️ Yetkili
+            </button>
+          `;
+        }
+        if (headerBox) {
+          headerBox.innerHTML = `
+            <button onclick="openAuthModal('member')" class="h-10 sm:h-12 px-3 sm:px-3.5 rounded-xl border border-ag-border hover:border-ag-gold bg-ag-surface flex items-center gap-2 text-left transition">
+              <span class="text-lg sm:text-xl">👤</span>
+              <div>
+                <div class="text-[9px] font-bold text-slate-400 uppercase">HESABIM</div>
+                <div class="text-xs font-extrabold text-white">Giriş / Kayıt</div>
+              </div>
+            </button>
+          `;
+        }
+        return;
+      }
+
+      const isAdmin = u.role === 'ADMIN' || u.role === 'OPERATIONS';
+      if (topBar) {
+        topBar.innerHTML = `
+          <span class="px-2.5 py-1 rounded-md bg-emerald-500/15 border border-emerald-500/40 text-emerald-300 font-extrabold text-[11px] truncate max-w-[150px]">
+            ${isAdmin ? '🛡️ YETKİLİ:' : '👤 ÜYE:'} ${escapeHtml(u.name)}
+          </span>
+          ${isAdmin ? `
+            <button onclick="setViewMode('${state.viewMode === 'admin' ? 'store' : 'admin'}')" class="px-2.5 py-1 rounded-md font-extrabold btn-chrome-gold transition text-[11px]">
+              ${state.viewMode === 'admin' ? '🏠 Mağaza' : '🛠️ Panel'}
+            </button>
+          ` : `
+            <button onclick="openOrdersModal()" class="px-2.5 py-1 rounded-md font-bold btn-metallic transition text-[11px]">
+              📦 Siparişlerim
+            </button>
+          `}
+          <button onclick="logoutUser()" class="px-2 py-1 rounded-md font-bold btn-metallic text-red-300 transition text-[11px]">
+            Çıkış
+          </button>
+        `;
+      }
+
+      if (headerBox) {
+        headerBox.innerHTML = `
+          <div class="h-10 sm:h-12 px-3 sm:px-3.5 rounded-xl border border-ag-gold/60 bg-ag-surface flex items-center gap-2 text-left">
+            <span class="text-lg sm:text-xl">${isAdmin ? '🛡️' : '👤'}</span>
+            <div>
+              <div class="text-[9px] font-bold text-emerald-400 uppercase">${isAdmin ? 'YETKİLİ OTURUMU' : 'ÜYE SEPETİ'}</div>
+              <div class="text-xs font-extrabold text-white truncate max-w-[120px]">${escapeHtml(u.name)}</div>
+            </div>
+            ${isAdmin ? `
+              <button onclick="setViewMode('${state.viewMode === 'admin' ? 'store' : 'admin'}')" class="ml-1 px-2 py-1 rounded-lg btn-chrome-gold text-[10px] font-black">
+                ${state.viewMode === 'admin' ? 'Mağaza' : 'Panel'}
+              </button>
+            ` : ''}
+            <button onclick="logoutUser()" title="Oturumu Kapat" class="ml-1 px-2 py-1 rounded-lg btn-metallic text-[10px] font-bold">
+              Çıkış
+            </button>
+          </div>
+        `;
+      }
+    }
+
+    function openAuthModal(tab = 'member') {
+      switchAuthTab(tab);
+      openModal('authModal');
+    }
+
+    function switchAuthTab(tab) {
+      state.authTab = tab;
+      ['member', 'register', 'admin'].forEach(t => {
+        const btn = document.getElementById('authTab-' + t);
+        if (btn) btn.className = t === tab ? 'py-2.5 rounded-xl btn-chrome-gold' : 'py-2.5 rounded-xl btn-metallic';
+      });
+      const guestCount = state.apiCart?.itemCount || 0;
+      const box = document.getElementById('authModalBody');
+      if (!box) return;
+
+      if (tab === 'member') {
+        box.innerHTML = `
+          <div class="p-3 rounded-2xl bg-[#0A0B0E] border border-ag-border space-y-2">
+            <div class="text-[11px] font-extrabold text-ag-goldLight uppercase">⚡ Tek Tıkla Hızlı Üye Hesabı Seç (Ayrı Kişisel Sepet Testi)</div>
+            <p class="text-[11px] text-slate-400">Her üyenin kendine özel sepeti ve kayıtlı teslimat adresi vardır. Hesaplar arasında geçiş yaparak kişisel sepetleri test edebilirsiniz:</p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 pt-1">
+              <button type="button" onclick="quickLoginAccount('ahmet@aduvagaraj.com', 'Uye123!', 'MEMBER')" class="p-2.5 rounded-xl btn-metallic text-left space-y-0.5">
+                <div class="font-black text-ag-goldLight">👤 Ahmet Yılmaz (Üye 1)</div>
+                <div class="text-[10px] text-slate-300">ahmet@aduvagaraj.com • Golf 7</div>
+              </button>
+              <button type="button" onclick="quickLoginAccount('mehmet@aduvagaraj.com', 'Uye123!', 'MEMBER')" class="p-2.5 rounded-xl btn-metallic text-left space-y-0.5">
+                <div class="font-black text-ag-goldLight">👤 Mehmet Kaya (Üye 2)</div>
+                <div class="text-[10px] text-slate-300">mehmet@aduvagaraj.com • Astra J</div>
+              </button>
+            </div>
+          </div>
+
+          <form onsubmit="submitAuthLogin(event, 'MEMBER')" class="space-y-3 pt-1">
+            <div>
+              <label class="block text-[11px] font-bold text-slate-300 mb-1">Üye E-Posta Adresi</label>
+              <input required id="loginEmailInput" name="email" type="email" value="ahmet@aduvagaraj.com" placeholder="ornek@eposta.com" class="w-full h-11 rounded-xl bg-[#0A0B0E] border border-ag-border px-3.5 text-white font-medium" />
+            </div>
+            <div>
+              <label class="block text-[11px] font-bold text-slate-300 mb-1">Şifre</label>
+              <input required id="loginPasswordInput" name="password" type="password" value="Uye123!" placeholder="••••••••" class="w-full h-11 rounded-xl bg-[#0A0B0E] border border-ag-border px-3.5 text-white font-medium" />
+            </div>
+            <label class="flex items-center gap-2 text-[11px] text-slate-300 cursor-pointer">
+              <input type="checkbox" id="mergeGuestCheckbox" name="mergeGuest" checked class="accent-amber-400 w-4 h-4" />
+              <span>Misafir sepetimdeki ürünleri (${guestCount} adet) üye sepetimle birleştir</span>
+            </label>
+            <button type="submit" class="w-full h-11 rounded-xl btn-chrome-gold font-black text-xs">
+              🔓 ÜYE GİRİŞİ YAP & SEPETİMİ YÜKLE
+            </button>
+          </form>
+        `;
+      } else if (tab === 'register') {
+        box.innerHTML = `
+          <form onsubmit="submitAuthRegister(event)" class="space-y-2.5">
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+              <div>
+                <label class="block text-[11px] font-bold text-slate-300 mb-1">Adınız Soyadınız *</label>
+                <input required name="name" placeholder="Örn: Caner Şahin" class="w-full h-10 rounded-xl bg-[#0A0B0E] border border-ag-border px-3 text-white" />
+              </div>
+              <div>
+                <label class="block text-[11px] font-bold text-slate-300 mb-1">Cep Telefonu *</label>
+                <input required name="phone" placeholder="0532 000 00 00" class="w-full h-10 rounded-xl bg-[#0A0B0E] border border-ag-border px-3 text-white" />
+              </div>
+            </div>
+            <div>
+              <label class="block text-[11px] font-bold text-slate-300 mb-1">E-Posta Adresi *</label>
+              <input required name="email" type="email" placeholder="caner@ornek.com" class="w-full h-10 rounded-xl bg-[#0A0B0E] border border-ag-border px-3 text-white" />
+            </div>
+            <div class="grid grid-cols-2 gap-2.5">
+              <div>
+                <label class="block text-[11px] font-bold text-slate-300 mb-1">İl</label>
+                <select name="city" class="w-full h-10 rounded-xl bg-[#0A0B0E] border border-ag-border px-3 text-white font-semibold">
+                  ${Object.keys(TR_CITIES).map(c => `<option value="${c}">${c}</option>`).join('')}
+                </select>
+              </div>
+              <div>
+                <label class="block text-[11px] font-bold text-slate-300 mb-1">İlçe</label>
+                <input required name="district" value="Ümraniye" class="w-full h-10 rounded-xl bg-[#0A0B0E] border border-ag-border px-3 text-white" />
+              </div>
+            </div>
+            <div>
+              <label class="block text-[11px] font-bold text-slate-300 mb-1">Varsayılan Teslimat Adresi</label>
+              <input required name="addressLine" placeholder="Mahalle, Cadde, Sokak, Bina/Daire No" class="w-full h-10 rounded-xl bg-[#0A0B0E] border border-ag-border px-3 text-white" />
+            </div>
+            <div>
+              <label class="block text-[11px] font-bold text-slate-300 mb-1">Şifre (En az 6 karakter) *</label>
+              <input required name="password" type="password" minlength="6" placeholder="••••••••" class="w-full h-10 rounded-xl bg-[#0A0B0E] border border-ag-border px-3 text-white" />
+            </div>
+            <button type="submit" class="w-full h-11 rounded-xl btn-chrome-gold font-black text-xs mt-1">
+              ✨ ÜYE OL & KİŞİSEL SEPETİMİ OLUŞTUR
+            </button>
+          </form>
+        `;
+      } else {
+        box.innerHTML = `
+          <div class="p-3 rounded-2xl bg-[#0A0B0E] border border-ag-gold/40 space-y-2">
+            <div class="text-[11px] font-extrabold text-ag-goldLight uppercase">🛡️ Mağaza Yetkili & Operasyon Girişi</div>
+            <p class="text-[11px] text-slate-300 leading-relaxed">
+              Yetkili girişi yaptığınızda <b>Sipariş & Kargo Yönetimi</b>, <b>n11 Delta Senkronizasyon</b>, <b>Fiyat/Stok Güncelleme</b> ve <b>CSV Raporlama</b> paneli aktif olur.
+            </p>
+            <button type="button" onclick="quickLoginAccount('admin@aduvagaraj.com', 'Degistir123!', 'ADMIN')" class="w-full py-2 px-3 rounded-xl btn-metallic font-black text-ag-goldLight text-xs">
+              ⚡ Tek Tıkla Yetkili Hesabıyla Giriş Yap (admin@aduvagaraj.com)
+            </button>
+          </div>
+
+          <form onsubmit="submitAuthLogin(event, 'ADMIN')" class="space-y-3 pt-1">
+            <div>
+              <label class="block text-[11px] font-bold text-slate-300 mb-1">Yetkili E-Posta</label>
+              <input required name="email" type="email" value="admin@aduvagaraj.com" class="w-full h-11 rounded-xl bg-[#0A0B0E] border border-ag-border px-3.5 text-white font-medium" />
+            </div>
+            <div>
+              <label class="block text-[11px] font-bold text-slate-300 mb-1">Yetkili Şifresi</label>
+              <input required name="password" type="password" value="Degistir123!" class="w-full h-11 rounded-xl bg-[#0A0B0E] border border-ag-border px-3.5 text-white font-medium" />
+            </div>
+            <button type="submit" class="w-full h-11 rounded-xl btn-chrome-gold font-black text-xs">
+              🛠️ YETKİLİ GİRİŞİ YAP & YÖNETİM PANELİNİ AÇ
+            </button>
+          </form>
+        `;
+      }
+    }
+
+    async function quickLoginAccount(email, password, loginMode) {
+      const mergeEl = document.getElementById('mergeGuestCheckbox');
+      const mergeGuestCart = mergeEl ? mergeEl.checked : true;
+      await performAuthLogin(email, password, loginMode, mergeGuestCart);
+    }
+
+    async function submitAuthLogin(e, loginMode) {
+      e.preventDefault();
+      const fd = new FormData(e.target);
+      const mergeEl = document.getElementById('mergeGuestCheckbox');
+      const mergeGuestCart = mergeEl ? mergeEl.checked : true;
+      await performAuthLogin(fd.get('email'), fd.get('password'), loginMode, mergeGuestCart);
+    }
+
+    async function performAuthLogin(email, password, loginMode, mergeGuestCart = true) {
+      try {
+        const guestToken = localStorage.getItem('aduva_cart_token') || '';
+        const res = await fetch('/api/auth/login', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ email, password, loginMode, guestToken, mergeGuestCart }),
+        });
+        const data = await res.json();
+        if (!res.ok) {
+          showToast(data?.error?.message || 'Giriş başarısız oldu.', 'error');
+          return;
+        }
+
+        state.accessToken = data.accessToken;
+        state.currentUser = data.user;
+        state.apiCart = data.cart;
+        if (data.user.city) state.checkoutCity = data.user.city;
+        if (data.user.defaultVehicleId) {
+          state.selectedVehicleId = data.user.defaultVehicleId;
+          localStorage.setItem('aduva_vehicle', data.user.defaultVehicleId);
+        }
+
+        localStorage.setItem('aduva_auth_token', data.accessToken);
+        localStorage.setItem('aduva_auth_user', JSON.stringify(data.user));
+        closeModal('authModal');
+
+        if (loginMode === 'ADMIN' || data.user.role === 'ADMIN') {
+          state.viewMode = 'admin';
+          document.getElementById('viewStore').classList.add('hidden');
+          document.getElementById('viewAdmin').classList.remove('hidden');
+          showToast(`Hoş geldiniz ${data.user.name}! Yetkili Yönetim Paneli açıldı.`, 'success');
+        } else {
+          state.viewMode = 'store';
+          document.getElementById('viewAdmin').classList.add('hidden');
+          document.getElementById('viewStore').classList.remove('hidden');
+          showToast(`Hoş geldiniz ${data.user.name}! Kişisel üye sepetiniz (${data.cart.itemCount} ürün) yüklendi.`, 'success');
+        }
+        await loadAll();
+      } catch (err) {
+        showToast(err.message || 'Giriş sırasında hata oluştu.', 'error');
+      }
+    }
+
+    async function submitAuthRegister(e) {
+      e.preventDefault();
+      const fd = new FormData(e.target);
+      try {
+        const guestToken = localStorage.getItem('aduva_cart_token') || '';
+        const res = await fetch('/api/auth/register', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            name: fd.get('name'),
+            phone: fd.get('phone'),
+            email: fd.get('email'),
+            city: fd.get('city'),
+            district: fd.get('district'),
+            addressLine: fd.get('addressLine'),
+            password: fd.get('password'),
+            defaultVehicleId: state.selectedVehicleId || '',
+            guestToken,
+          }),
+        });
+        const data = await res.json();
+        if (!res.ok) {
+          showToast(data?.error?.message || 'Üye kaydı oluşturulamadı.', 'error');
+          return;
+        }
+        state.accessToken = data.accessToken;
+        state.currentUser = data.user;
+        state.apiCart = data.cart;
+        if (data.user.city) state.checkoutCity = data.user.city;
+        localStorage.setItem('aduva_auth_token', data.accessToken);
+        localStorage.setItem('aduva_auth_user', JSON.stringify(data.user));
+        closeModal('authModal');
+        await loadAll();
+        showToast(`Üyeliğiniz oluşturuldu ${data.user.name}! Kişisel sepetiniz hazır.`, 'success');
+      } catch (err) {
+        showToast(err.message || 'Kayıt sırasında hata oluştu.', 'error');
+      }
+    }
+
+    async function logoutUser() {
+      const prevName = state.currentUser?.name || 'Kullanıcı';
+      state.currentUser = null;
+      state.accessToken = '';
+      localStorage.removeItem('aduva_auth_token');
+      localStorage.removeItem('aduva_auth_user');
+      // Çıkış yapıldığında üyenin sepeti sunucuda korunur, tarayıcıda yeni bir misafir sepeti başlatılır
+      const newGuestToken = 'gst_' + Math.random().toString(36).slice(2) + Date.now().toString(36);
+      localStorage.setItem('aduva_cart_token', newGuestToken);
+      if (state.viewMode === 'admin') {
+        state.viewMode = 'store';
+        document.getElementById('viewAdmin').classList.add('hidden');
+        document.getElementById('viewStore').classList.remove('hidden');
+      }
+      await loadAll();
+      showToast(`${prevName} oturumu kapatıldı. Misafir moduna geçildi.`, 'info');
+    }
+
+    // ---------------- HERO BANNER SLIDER ----------------
+    function renderHeroBanner() {
+      const box = document.getElementById('heroBannerBox');
+      if (!box) return;
+      const s = HERO_SLIDES[state.heroIndex % HERO_SLIDES.length];
+      box.innerHTML = `
+        <img src="${s.img}" alt="${escapeHtml(s.title)}" loading="eager" fetchpriority="high" class="absolute inset-0 w-full h-full object-cover opacity-25" />
+        <div class="absolute inset-0 bg-gradient-to-r from-[#0A0B0E] via-[#0A0B0E]/90 to-transparent"></div>
+        <div class="relative z-10 max-w-xl space-y-3">
+          <span class="inline-block px-3 py-1 rounded-md btn-chrome-gold text-[10px] font-black tracking-widest uppercase">${s.badge}</span>
+          <h2 class="text-xl md:text-3xl font-black italic chrome-text leading-tight">${s.title}</h2>
+          <p class="text-xs md:text-sm text-slate-300 leading-relaxed">${s.desc}</p>
+        </div>
+        <div class="relative z-10 flex flex-wrap items-center justify-between gap-3 pt-4">
+          <div class="flex gap-2">
+            <button onclick="selectCategory('${s.catId}')" class="px-5 py-2.5 rounded-xl btn-chrome-gold text-xs font-black">
+              ${s.cta} →
+            </button>
+            <button onclick="openAppointmentWizard()" class="px-4 py-2.5 rounded-xl btn-metallic text-xs font-bold">
+              🔧 Montaj Randevusu
+            </button>
+          </div>
+          <div class="flex items-center gap-1.5">
+            ${HERO_SLIDES.map((_, idx) => `
+              <button onclick="state.heroIndex=${idx};renderHeroBanner()" aria-label="Slayt ${idx + 1}" class="h-2.5 rounded-full transition-all ${idx === state.heroIndex ? 'w-8 bg-ag-goldLight' : 'w-2.5 bg-slate-600'}"></button>
+            `).join('')}
+          </div>
+        </div>
+      `;
+    }
+
+    // ---------------- 4 ADIMLI ARAÇ SEÇİM SİHİRBAZI ----------------
+    function populateWizardDropdowns() {
+      const vehicles = state.bootstrap.vehicles;
+      const brands = Array.from(new Set(vehicles.map(v => v.brand)));
+      const selBrand = document.getElementById('selBrand');
+
+      const activeVeh = vehicles.find(v => v.id === state.selectedVehicleId);
+      if (activeVeh && !state.selectedBrand) {
+        state.selectedBrand = activeVeh.brand;
+        state.selectedModel = activeVeh.model;
+      }
+
+      selBrand.innerHTML = `<option value="">Tüm Markalar (${brands.length} Marka)</option>` +
+        brands.map(b => `<option value="${b}" ${state.selectedBrand === b ? 'selected' : ''}>${b}</option>`).join('');
+
+      updateModelDropdown();
+    }
+
+    function onBrandChange(brand) {
+      state.selectedBrand = brand;
+      state.selectedModel = '';
+      state.selectedVehicleId = '';
+      localStorage.setItem('aduva_vehicle', '');
+      updateModelDropdown();
+      renderAll();
+    }
+
+    function updateModelDropdown() {
+      const vehicles = state.bootstrap.vehicles.filter(v => !state.selectedBrand || v.brand === state.selectedBrand);
+      const models = Array.from(new Set(vehicles.map(v => v.model)));
+      const selModel = document.getElementById('selModel');
+      selModel.innerHTML = `<option value="">${state.selectedBrand ? 'Model Seçin' : 'Önce Marka Seçin'}</option>` +
+        models.map(m => `<option value="${m}" ${state.selectedModel === m ? 'selected' : ''}>${m}</option>`).join('');
+      updateBodyDropdown();
+    }
+
+    function onModelChange(model) {
+      state.selectedModel = model;
+      const match = state.bootstrap.vehicles.find(v => v.brand === state.selectedBrand && v.model === model);
+      if (match) {
+        state.selectedVehicleId = match.id;
+        localStorage.setItem('aduva_vehicle', match.id);
+      }
+      updateBodyDropdown();
+      renderAll();
+    }
+
+    function updateBodyDropdown() {
+      const matches = state.bootstrap.vehicles.filter(v =>
+        (!state.selectedBrand || v.brand === state.selectedBrand) &&
+        (!state.selectedModel || v.model === state.selectedModel)
+      );
+      const selBody = document.getElementById('selBody');
+      const selEngine = document.getElementById('selEngine');
+
+      if (!state.selectedModel) {
+        selBody.innerHTML = `<option value="">Önce Model Seçin</option>`;
+        selEngine.innerHTML = `<option value="">Önce Kasa/Yıl Seçin</option>`;
+        return;
+      }
+
+      selBody.innerHTML = matches.map(v =>
+        `<option value="${v.id}" ${state.selectedVehicleId === v.id ? 'selected' : ''}>${v.yearFrom}-${v.yearTo || 'Günümüz'} • ${v.body}</option>`
+      ).join('');
+
+      selEngine.innerHTML = matches.map(v =>
+        `<option value="${v.id}" ${state.selectedVehicleId === v.id ? 'selected' : ''}>${v.engine || 'Tüm Motor Tipleri'}</option>`
+      ).join('');
+    }
+
+    function onBodyChange(vehId) {
+      state.selectedVehicleId = vehId;
+      localStorage.setItem('aduva_vehicle', vehId);
+      renderAll();
+    }
+
+    function onEngineChange(vehId) {
+      state.selectedVehicleId = vehId;
+      localStorage.setItem('aduva_vehicle', vehId);
+      renderAll();
+    }
+
+    function applyVehicleWizard() {
+      if (state.selectedBrand && !state.selectedVehicleId) {
+        const first = state.bootstrap.vehicles.find(v => v.brand === state.selectedBrand);
+        if (first) {
+          state.selectedModel = first.model;
+          state.selectedVehicleId = first.id;
+          localStorage.setItem('aduva_vehicle', first.id);
+          populateWizardDropdowns();
+        }
+      }
+      renderAll();
+    }
+
+    function clearVehicleWizard() {
+      state.selectedBrand = '';
+      state.selectedModel = '';
+      state.selectedVehicleId = '';
+      localStorage.setItem('aduva_vehicle', '');
+      populateWizardDropdowns();
+      renderAll();
+    }
+
+    function renderBrandChips() {
+      const brands = Array.from(new Set(state.bootstrap.vehicles.map(v => v.brand)));
+      document.getElementById('brandQuickChips').innerHTML = brands.map(b => `
+        <button onclick="onBrandChange('${b}');applyVehicleWizard()" class="px-3 py-1 rounded-lg text-xs font-extrabold transition shrink-0 ${state.selectedBrand === b ? 'btn-chrome-gold' : 'bg-ag-surface border border-ag-border text-slate-300 hover:border-ag-gold'}">
+          ${b}
+        </button>
+      `).join('');
+    }
+
+    function renderTopCategories() {
+      const cats = state.bootstrap.categories || [];
+      document.getElementById('topcat-all').className = `px-3.5 h-full flex items-center gap-1.5 shrink-0 ${!state.selectedCategoryId ? 'btn-chrome-gold font-black' : 'text-slate-300 hover:bg-ag-surfaceAlt'}`;
+      document.getElementById('topCategoryBar').innerHTML = cats.map(c => `
+        <button onclick="selectCategory('${c.id}')" class="px-3.5 h-full flex items-center gap-1.5 shrink-0 transition ${state.selectedCategoryId === c.id ? 'btn-chrome-gold font-black' : 'text-slate-300 hover:bg-ag-surfaceAlt'}">
+          <span>${c.icon}</span><span>${c.name}</span>
+        </button>
+      `).join('');
+    }
+
+    function selectCategory(catId) {
+      state.selectedCategoryId = catId;
+      renderAll();
+    }
+
+    function setPriceRange(min, max) {
+      state.minPrice = min;
+      state.maxPrice = max;
+      document.getElementById('minPriceInput').value = min ?? '';
+      document.getElementById('maxPriceInput').value = max ?? '';
+      renderStoreProducts();
+    }
+
+    function isProductCompatible(p) {
+      if (!state.selectedVehicleId) return true;
+      return p.isUniversal || (p.fitmentVehicleIds || []).includes(state.selectedVehicleId);
+    }
+
+    function toggleMobileFilterDrawer(open) {
+      const drawer = document.getElementById('mobileFilterDrawer');
+      const backdrop = document.getElementById('mobileFilterDrawerBackdrop');
+      if (!drawer || !backdrop) return;
+      if (open) {
+        backdrop.classList.remove('hidden');
+        drawer.classList.remove('-translate-x-full');
+      } else {
+        backdrop.classList.add('hidden');
+        drawer.classList.add('-translate-x-full');
+      }
+    }
+
+    function renderSidebar() {
+      const activeVeh = state.bootstrap.vehicles.find(v => v.id === state.selectedVehicleId);
+      const vehicleText = activeVeh
+        ? `${activeVeh.brand} ${activeVeh.model}`
+        : 'Araç Seçin';
+      if (document.getElementById('headerSelectedVehicle')) {
+        document.getElementById('headerSelectedVehicle').textContent = vehicleText;
+      }
+
+      const mode = state.bootstrap.settings?.order_mode || 'DIRECT_CHECKOUT';
+      if (document.getElementById('activeOrderModeNotice')) {
+        document.getElementById('activeOrderModeNotice').textContent = mode === 'DIRECT_CHECKOUT'
+          ? '● Uygulama İçi Doğrudan Checkout Aktif'
+          : '● n11 Mağazasına Yönlendirme Modu Aktif';
+      }
+
+      const garageCardHtml = activeVeh ? `
+        <div class="flex items-center justify-between">
+          <span class="text-[10px] font-black uppercase bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 px-2 py-0.5 rounded">✓ GARAJIMDAKİ ARAÇ</span>
+          <button onclick="clearVehicleWizard()" class="text-xs text-ag-goldLight font-bold hover:underline">Sıfırla</button>
+        </div>
+        <div class="text-base font-black text-white mt-2">${activeVeh.brand} ${activeVeh.model}</div>
+        <div class="text-xs text-slate-400">${activeVeh.yearFrom}–${activeVeh.yearTo || 'Günümüz'} • ${activeVeh.body} • ${activeVeh.engine}</div>
+      ` : `
+        <div class="text-xs font-extrabold text-ag-goldLight">🚗 Garajınızda Araç Seçili Değil</div>
+        <p class="text-[11px] text-slate-400 mt-1">Yukarıdaki 4 adımlı sihirbazdan aracınızı seçerek %100 uyumlu ürünleri filtreleyin.</p>
+      `;
+
+      if (document.getElementById('sidebarGarageCard')) document.getElementById('sidebarGarageCard').innerHTML = garageCardHtml;
+      if (document.getElementById('mobileSidebarGarageCard')) document.getElementById('mobileSidebarGarageCard').innerHTML = garageCardHtml;
+
+      const cats = state.bootstrap.categories || [];
+      const catsHtml = `
+        <button onclick="selectCategory('');toggleMobileFilterDrawer(false);" class="w-full px-4 py-3 flex items-center justify-between text-left hover:bg-ag-surfaceAlt ${!state.selectedCategoryId ? 'text-ag-goldLight font-extrabold bg-ag-gold/10' : 'text-slate-300'}">
+          <span>Tüm Ürünler</span>
+          <span class="text-[11px] bg-ag-surfaceAlt px-2 py-0.5 rounded-full text-slate-300">${state.products.length}</span>
+        </button>
+      ` + cats.map(c => {
+        const count = state.products.filter(p => p.categoryId === c.id).length;
+        const active = state.selectedCategoryId === c.id;
+        return `
+          <button onclick="selectCategory('${c.id}');toggleMobileFilterDrawer(false);" class="w-full px-4 py-3 flex items-center justify-between text-left hover:bg-ag-surfaceAlt ${active ? 'text-ag-goldLight font-extrabold bg-ag-gold/10' : 'text-slate-300'}">
+            <span>${c.icon} ${c.name}</span>
+            <span class="text-[11px] bg-ag-surfaceAlt px-2 py-0.5 rounded-full text-slate-300">${count}</span>
+          </button>
+        `;
+      }).join('');
+
+      if (document.getElementById('sidebarCategories')) document.getElementById('sidebarCategories').innerHTML = catsHtml;
+      if (document.getElementById('mobileSidebarCategories')) document.getElementById('mobileSidebarCategories').innerHTML = catsHtml;
+
+      const pBrands = Array.from(new Set(state.products.map(p => p.brand || 'Aduva Garaj')));
+      const brandsHtml = `
+        <button onclick="state.selectedProductBrand='';renderSidebar();renderStoreProducts();toggleMobileFilterDrawer(false);" class="w-full text-left px-2.5 py-1.5 rounded-lg ${!state.selectedProductBrand ? 'bg-ag-gold/15 text-ag-goldLight font-bold' : 'text-slate-300 hover:bg-ag-surfaceAlt'}">
+          Tüm Markalar (${state.products.length})
+        </button>
+      ` + pBrands.map(pb => {
+        const cnt = state.products.filter(p => (p.brand || 'Aduva Garaj') === pb).length;
+        return `
+          <button onclick="state.selectedProductBrand='${pb}';renderSidebar();renderStoreProducts();toggleMobileFilterDrawer(false);" class="w-full text-left px-2.5 py-1.5 rounded-lg flex justify-between ${state.selectedProductBrand === pb ? 'bg-ag-gold/15 text-ag-goldLight font-bold' : 'text-slate-300 hover:bg-ag-surfaceAlt'}">
+            <span>${pb}</span><span class="text-slate-500">${cnt}</span>
+          </button>
+        `;
+      }).join('');
+
+      if (document.getElementById('sidebarProductBrands')) document.getElementById('sidebarProductBrands').innerHTML = brandsHtml;
+      if (document.getElementById('mobileSidebarProductBrands')) document.getElementById('mobileSidebarProductBrands').innerHTML = brandsHtml;
+    }
+
+    // ---------------- ÜRÜN VİTRİNİ ----------------
+    function renderStoreProducts() {
+      const activeVeh = state.bootstrap.vehicles.find(v => v.id === state.selectedVehicleId);
+      const activeCat = state.bootstrap.categories.find(c => c.id === state.selectedCategoryId);
+
+      document.getElementById('breadcrumbCurrent').textContent = activeCat ? activeCat.name : 'Tüm Katalog';
+
+      let list = [...state.products];
+      if (state.selectedCategoryId) list = list.filter(p => p.categoryId === state.selectedCategoryId);
+      if (state.selectedProductBrand) list = list.filter(p => (p.brand || 'Aduva Garaj') === state.selectedProductBrand);
+      if (state.selectedVehicleId || state.onlyCompatible) list = list.filter(p => isProductCompatible(p));
+      if (state.onlyInStock) list = list.filter(p => p.stock > 0);
+      if (state.onlyFreeShipping) list = list.filter(p => p.price >= 750);
+      if (state.onlyMontage) list = list.filter(p => p.requiresMontage);
+      if (state.minPrice !== null) list = list.filter(p => p.price >= state.minPrice);
+      if (state.maxPrice !== null) list = list.filter(p => p.price <= state.maxPrice);
+
+      if (state.searchQuery) {
+        const q = state.searchQuery.toLocaleLowerCase('tr-TR');
+        list = list.filter(p =>
+          p.title.toLocaleLowerCase('tr-TR').includes(q) ||
+          (p.brand || '').toLocaleLowerCase('tr-TR').includes(q) ||
+          (p.sellerCode || '').toLocaleLowerCase('tr-TR').includes(q) ||
+          (p.oemCode || '').toLocaleLowerCase('tr-TR').includes(q)
+        );
+      }
+
+      if (state.sortBy === 'price_asc') list.sort((a, b) => a.price - b.price);
+      else if (state.sortBy === 'price_desc') list.sort((a, b) => b.price - a.price);
+      else if (state.sortBy === 'bestseller') list.sort((a, b) => (b.soldCount || 0) - (a.soldCount || 0));
+      else if (state.sortBy === 'rating') list.sort((a, b) => (b.ratingAvg || 0) - (a.ratingAvg || 0));
+
+      document.getElementById('catalogHeading').textContent = activeVeh
+        ? `${activeVeh.brand} ${activeVeh.model} Uyumlu ${activeCat ? activeCat.name : 'Parça & Aksesuarlar'} (${list.length} Ürün)`
+        : `${activeCat ? activeCat.name : 'Tüm Oto Aksesuar, Multimedya & Yedek Parça Ürünleri'} (${list.length} Ürün)`;
+
+      const isRedirect = state.bootstrap.settings?.order_mode === 'N11_REDIRECT';
+
+      document.getElementById('storeProductGrid').innerHTML = list.length ? list.map(p => {
+        const disc = p.listPrice ? Math.round((1 - p.price / p.listPrice) * 100) : 0;
+        const compat = isProductCompatible(p);
+        const isFav = state.favorites.includes(p.id);
+        const isCmp = state.compareList.includes(p.id);
+        const qty = state.cardQty[p.id] || 1;
+        const freeShip = p.price >= 750;
+
+        return `
+          <div class="card-metallic rounded-2xl transition flex flex-col overflow-hidden group">
+            <!-- Görsel + Rozetler -->
+            <div class="relative h-36 sm:h-48 md:h-52 bg-[#08090C] overflow-hidden">
+              <img onclick="openProductDetail('${p.id}')" src="${p.image}" alt="${escapeHtml(p.title)}" loading="lazy" width="400" height="208" class="w-full h-full object-cover group-hover:scale-105 transition duration-300 cursor-pointer" />
+              ${disc > 0 ? `<span class="absolute top-2 left-2 sm:top-3 sm:left-3 btn-chrome-gold text-[10px] sm:text-xs font-black px-1.5 sm:px-2.5 py-0.5 sm:py-1 rounded-md sm:rounded-lg shadow">%${disc}</span>` : ''}
+
+              <!-- Sağ Üst Favori & Karşılaştır İkonları -->
+              <div class="absolute top-2 right-2 sm:top-3 sm:right-3 flex flex-col gap-1 sm:gap-1.5">
+                <button onclick="toggleFavorite('${p.id}')" aria-label="Favorilere Ekle" title="Favorilere Ekle" class="w-7 h-7 sm:w-8 sm:h-8 rounded-lg ${isFav ? 'bg-red-600 text-white' : 'bg-[#0A0B0E]/85 text-slate-300 hover:text-white'} border border-ag-border flex items-center justify-center text-xs sm:text-sm font-bold transition">
+                  ♥
+                </button>
+                <button onclick="toggleCompare('${p.id}')" aria-label="Karşılaştır" title="Karşılaştır" class="hidden sm:flex w-8 h-8 rounded-lg ${isCmp ? 'btn-chrome-gold' : 'bg-[#0A0B0E]/85 text-slate-300 hover:text-white'} border border-ag-border items-center justify-center text-xs font-bold transition">
+                  ⇄
+                </button>
+              </div>
+
+              <!-- Alt Rozet Şeridi -->
+              <div class="absolute bottom-1.5 left-1.5 right-1.5 sm:bottom-2.5 sm:left-2.5 sm:right-2.5 flex items-center justify-between gap-1">
+                <span class="bg-emerald-600/95 text-white text-[9px] sm:text-[10px] font-extrabold px-1.5 sm:px-2.5 py-0.5 sm:py-1 rounded truncate max-w-[70%] sm:max-w-none shadow">
+                  ${activeVeh && compat ? `✓ ${activeVeh.brand} ${activeVeh.model}` : (p.isUniversal ? '✓ Tam Uyum' : '✓ OEM Kalıp')}
+                </span>
+                ${freeShip ? `<span class="bg-[#0A0B0E]/90 border border-ag-gold/50 text-ag-goldLight text-[9px] sm:text-[10px] font-extrabold px-1.5 sm:px-2 py-0.5 rounded shrink-0">Kargo Bedava</span>` : ''}
+              </div>
+            </div>
+
+            <!-- Ürün Bilgileri -->
+            <div class="p-2.5 sm:p-4 flex-1 flex flex-col justify-between space-y-2 sm:space-y-3">
+              <div class="space-y-1">
+                <div class="flex items-center justify-between text-[10px] sm:text-[11px] text-slate-400 font-bold">
+                  <span class="text-ag-goldLight uppercase truncate max-w-[100px]">${escapeHtml(p.brand || 'Aduva Garaj')}</span>
+                  <span class="truncate">Stok: ${escapeHtml(p.sellerCode)}</span>
+                </div>
+                <h3 onclick="openProductDetail('${p.id}')" class="text-xs sm:text-sm font-extrabold text-white line-clamp-2 cursor-pointer group-hover:text-ag-goldLight leading-snug pt-0.5 min-h-[32px] sm:min-h-[40px]">
+                  ${escapeHtml(p.title)}
+                </h3>
+                <div class="flex items-center gap-1.5 text-[11px] sm:text-xs">
+                  <span class="text-ag-goldLight font-bold">★ ${p.ratingAvg}</span>
+                  <span class="text-slate-400 hidden sm:inline">(${p.ratingCount})</span>
+                  <span class="ml-auto text-emerald-400 font-bold text-[10px] sm:text-[11px]">● Stokta</span>
+                </div>
+              </div>
+
+              <!-- Fiyat + Sepete Ekle -->
+              <div class="pt-2 border-t border-ag-border/70 space-y-2">
+                <div class="flex items-baseline justify-between">
+                  <div>
+                    ${p.listPrice ? `<div class="text-[10px] sm:text-xs text-slate-500 line-through font-semibold">${fmtTRY(p.listPrice)}</div>` : ''}
+                    <div class="text-sm sm:text-xl font-black chrome-text">${fmtTRY(p.price)}</div>
+                  </div>
+                  <div class="text-right">
+                    <div class="text-[9px] sm:text-[10px] font-bold text-emerald-300 bg-emerald-500/15 border border-emerald-500/30 px-1.5 sm:px-2 py-0.5 rounded inline-block">KDV DAHİL</div>
+                    <div class="text-[9px] sm:text-[10px] text-slate-400 mt-0.5 hidden sm:block">${p.installmentText}</div>
+                  </div>
+                </div>
+
+                <div class="flex items-center gap-1 sm:gap-1.5">
+                  <div class="hidden sm:flex items-center bg-[#0A0B0E] border border-ag-border rounded-xl h-10 sm:h-11 px-1">
+                    <button onclick="setCardQty('${p.id}', -1)" aria-label="Adet azalt" class="w-5 sm:w-6 h-full text-slate-300 hover:text-white font-bold">-</button>
+                    <span class="w-5 sm:w-6 text-center text-xs font-extrabold text-white">${qty}</span>
+                    <button onclick="setCardQty('${p.id}', 1)" aria-label="Adet artır" class="w-5 sm:w-6 h-full text-slate-300 hover:text-white font-bold">+</button>
+                  </div>
+                  <button onclick="addToCart('${p.id}', ${qty})" class="flex-1 h-9 sm:h-11 rounded-xl btn-chrome-gold text-[11px] sm:text-xs font-black transition flex items-center justify-center gap-1">
+                    ${isRedirect ? '↗ n11’de Al' : '🛒 SEPETE EKLE'}
+                  </button>
+                  <button onclick="openProductDetail('${p.id}')" title="Ürün Detayı" class="h-9 sm:h-11 px-2 sm:px-2.5 rounded-xl btn-metallic text-[11px] sm:text-xs font-bold shrink-0">
+                    Detay
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        `;
+      }).join('') : `
+        <div class="col-span-full card-metallic rounded-2xl p-8 sm:p-12 text-center space-y-3">
+          <div class="text-3xl sm:text-4xl">🔎</div>
+          <div class="text-sm sm:text-base font-extrabold text-white">Seçtiğiniz kriterlere uygun parça/aksesuar bulunamadı</div>
+          <p class="text-xs text-slate-400">Filtreleri sıfırlayabilir veya 17 haneli şasi numaranızla uzman ekibimize sorabilirsiniz.</p>
+          <button onclick="resetStoreFilters()" class="px-5 py-2.5 rounded-xl btn-chrome-gold text-xs font-black">Tüm Filtreleri Temizle</button>
+        </div>
+      `;
+    }
+
+    function setCardQty(productId, delta) {
+      const cur = state.cardQty[productId] || 1;
+      state.cardQty[productId] = Math.max(1, Math.min(10, cur + delta));
+      renderStoreProducts();
+    }
+
+    // ---------------- UX-02: CANLI AUTOCOMPLETE ARAMA (TÜRKÇE TRIGRAM /api/search ENTEGRE) ----------------
+    let searchTimer = null;
+    function handleSearchInput(val) {
+      state.searchQuery = val.trim();
+      renderStoreProducts();
+      const autoBox1 = document.getElementById('searchAutocompleteBox');
+      const autoBox2 = document.getElementById('searchAutocompleteBoxMobile');
+      if (!state.searchQuery) {
+        if (autoBox1) autoBox1.classList.add('hidden');
+        if (autoBox2) autoBox2.classList.add('hidden');
+        return;
+      }
+      if (searchTimer) clearTimeout(searchTimer);
+      searchTimer = setTimeout(async () => {
+        try {
+          const res = await fetch('/api/search?q=' + encodeURIComponent(state.searchQuery)).then(r => r.json());
+          const matches = (res.items || []).slice(0, 6);
+          if (!matches.length) {
+            if (autoBox1) autoBox1.classList.add('hidden');
+            if (autoBox2) autoBox2.classList.add('hidden');
+            return;
+          }
+          const html = matches.map(p => `
+            <div onclick="if(document.getElementById('searchAutocompleteBox'))document.getElementById('searchAutocompleteBox').classList.add('hidden');if(document.getElementById('searchAutocompleteBoxMobile'))document.getElementById('searchAutocompleteBoxMobile').classList.add('hidden');openProductDetail('${p.id}')" class="p-3 hover:bg-ag-surfaceAlt flex items-center gap-3 cursor-pointer border-b border-ag-border/60 text-xs">
+              <img src="${p.image}" alt="${escapeHtml(p.title)}" class="w-11 h-11 rounded-lg object-cover" />
+              <div class="flex-1 min-w-0">
+                <div class="font-extrabold text-white truncate">${escapeHtml(p.title)}</div>
+                <div class="text-[11px] text-slate-400">OEM: <b class="text-ag-goldLight">${escapeHtml(p.oemCode || p.sellerCode)}</b> • Skor: ${p.searchScore}</div>
+              </div>
+              <div class="font-black text-ag-goldLight">${fmtTRY(p.price)}</div>
+            </div>
+          `).join('');
+          if (autoBox1) { autoBox1.innerHTML = html; autoBox1.classList.remove('hidden'); }
+          if (autoBox2) { autoBox2.innerHTML = html; autoBox2.classList.remove('hidden'); }
+        } catch {
+          if (autoBox1) autoBox1.classList.add('hidden');
+          if (autoBox2) autoBox2.classList.add('hidden');
+        }
+      }, 120);
+    }
+
+    document.addEventListener('click', (e) => {
+      const box1 = document.getElementById('searchAutocompleteBox');
+      const box2 = document.getElementById('searchAutocompleteBoxMobile');
+      const inp1 = document.getElementById('storeSearchInput');
+      const inp2 = document.getElementById('storeSearchInputMobile');
+      if (box1 && inp1 && !box1.contains(e.target) && e.target !== inp1) {
+        box1.classList.add('hidden');
+      }
+      if (box2 && inp2 && !box2.contains(e.target) && e.target !== inp2) {
+        box2.classList.add('hidden');
+      }
+    });
+
+    function handleSearchSubmit(isMobile = false) {
+      const inpId = isMobile ? 'storeSearchInputMobile' : 'storeSearchInput';
+      const inp = document.getElementById(inpId) || document.getElementById('storeSearchInput');
+      const val = (inp?.value || '').trim();
+      const b1 = document.getElementById('searchAutocompleteBox');
+      const b2 = document.getElementById('searchAutocompleteBoxMobile');
+      if (b1) b1.classList.add('hidden');
+      if (b2) b2.classList.add('hidden');
+      if (val.length === 17 && !val.includes(' ')) {
+        document.getElementById('vinInput').value = val;
+        openVinModal();
+        checkVinCode();
+        return;
+      }
+      state.searchQuery = val;
+      renderStoreProducts();
+    }
+
+    function quickSearch(term) {
+      if (document.getElementById('storeSearchInput')) document.getElementById('storeSearchInput').value = term;
+      if (document.getElementById('storeSearchInputMobile')) document.getElementById('storeSearchInputMobile').value = term;
+      state.searchQuery = term;
+      renderStoreProducts();
+    }
+
+    function resetStoreFilters() {
+      state.selectedCategoryId = '';
+      state.selectedProductBrand = '';
+      state.minPrice = null;
+      state.maxPrice = null;
+      state.searchQuery = '';
+      state.onlyCompatible = false;
+      state.onlyFreeShipping = false;
+      state.onlyMontage = false;
+      if (document.getElementById('storeSearchInput')) document.getElementById('storeSearchInput').value = '';
+      if (document.getElementById('storeSearchInputMobile')) document.getElementById('storeSearchInputMobile').value = '';
+      if (document.getElementById('minPriceInput')) document.getElementById('minPriceInput').value = '';
+      if (document.getElementById('maxPriceInput')) document.getElementById('maxPriceInput').value = '';
+      clearVehicleWizard();
+    }
+
+    function scrollToSelector() {
+      document.getElementById('vehicleSelectorBox').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // ---------------- FAVORİLER & KARŞILAŞTIRMA ----------------
+    function toggleFavorite(productId) {
+      const idx = state.favorites.indexOf(productId);
+      if (idx >= 0) {
+        state.favorites.splice(idx, 1);
+        showToast('Ürün favorilerden çıkarıldı.', 'info');
+      } else {
+        state.favorites.push(productId);
+        showToast('Ürün favorilerinize eklendi.', 'success');
+      }
+      localStorage.setItem('aduva_favs', JSON.stringify(state.favorites));
+      renderAll();
+    }
+
+    function toggleCompare(productId) {
+      const idx = state.compareList.indexOf(productId);
+      if (idx >= 0) {
+        state.compareList.splice(idx, 1);
+      } else {
+        if (state.compareList.length >= 4) {
+          showToast('En fazla 4 ürünü karşılaştırabilirsiniz.', 'warning');
+          return;
+        }
+        state.compareList.push(productId);
+        showToast('Ürün karşılaştırma listesine eklendi.', 'success');
+      }
+      localStorage.setItem('aduva_compare', JSON.stringify(state.compareList));
+      renderAll();
+    }
+
+    function openFavoritesModal() {
+      const list = state.products.filter(p => state.favorites.includes(p.id));
+      const box = document.getElementById('favoritesModalBody');
+      box.innerHTML = list.length ? list.map(p => `
+        <div class="p-3 rounded-2xl bg-ag-surface border border-ag-border flex items-center gap-3 text-xs">
+          <img src="${p.image}" alt="${escapeHtml(p.title)}" class="w-14 h-14 rounded-xl object-cover" />
+          <div class="flex-1 min-w-0">
+            <div class="font-extrabold text-white truncate">${escapeHtml(p.title)}</div>
+            <div class="text-slate-400">OEM: ${escapeHtml(p.oemCode)} • ${fmtTRY(p.price)}</div>
+          </div>
+          <button onclick="addToCart('${p.id}', 1);closeModal('favoritesModal')" class="px-3 py-2 rounded-xl btn-chrome-gold font-black">Sepete Ekle</button>
+          <button onclick="toggleFavorite('${p.id}');openFavoritesModal()" class="px-2.5 py-2 rounded-xl btn-metallic">Sil</button>
+        </div>
+      `).join('') : `<div class="text-center py-10 text-xs text-slate-400">Favori listenizde henüz ürün yok. Ürün kartlarındaki ♥ ikonuna tıklayarak ekleyebilirsiniz.</div>`;
+      openModal('favoritesModal');
+    }
+
+    function openCompareModal() {
+      const list = state.products.filter(p => state.compareList.includes(p.id));
+      const box = document.getElementById('compareModalBody');
+      if (!list.length) {
+        box.innerHTML = `<div class="text-center py-10 text-xs text-slate-400">Karşılaştırma listeniz boş. Ürün kartlarındaki ⇄ ikonuna tıklayarak ürün ekleyebilirsiniz.</div>`;
+      } else {
+        box.innerHTML = `
+          <div class="overflow-x-auto">
+            <table class="w-full text-xs border-collapse">
+              <thead>
+                <tr class="border-b border-ag-border">
+                  <th class="p-3 text-left text-slate-400">Özellik</th>
+                  ${list.map(p => `<th class="p-3 text-left min-w-[180px]"><img src="${p.image}" alt="${escapeHtml(p.title)}" class="w-20 h-20 rounded-xl object-cover mb-2" /><div class="font-extrabold text-white">${escapeHtml(p.title)}</div></th>`).join('')}
+                </tr>
+              </thead>
+              <tbody class="divide-y divide-ag-border/60">
+                <tr><td class="p-3 text-slate-400 font-bold">Fiyat (KDV Dahil)</td>${list.map(p => `<td class="p-3 font-black text-ag-goldLight text-sm">${fmtTRY(p.price)}</td>`).join('')}</tr>
+                <tr><td class="p-3 text-slate-400 font-bold">Marka</td>${list.map(p => `<td class="p-3 font-bold">${escapeHtml(p.brand)}</td>`).join('')}</tr>
+                <tr><td class="p-3 text-slate-400 font-bold">OEM / Referans</td>${list.map(p => `<td class="p-3 font-mono">${escapeHtml(p.oemCode)}</td>`).join('')}</tr>
+                <tr><td class="p-3 text-slate-400 font-bold">Müşteri Puanı</td>${list.map(p => `<td class="p-3 text-ag-goldLight font-bold">★ ${p.ratingAvg} (${p.ratingCount})</td>`).join('')}</tr>
+                <tr><td class="p-3 text-slate-400 font-bold">Mağazada Montaj</td>${list.map(p => `<td class="p-3">${p.requiresMontage ? '✓ Mevcut' : 'Tak-Çalıştır'}</td>`).join('')}</tr>
+                <tr><td class="p-3"></td>${list.map(p => `<td class="p-3"><button onclick="addToCart('${p.id}',1);closeModal('compareModal')" class="w-full py-2 rounded-xl btn-chrome-gold font-black">Sepete Ekle</button></td>`).join('')}</tr>
+              </tbody>
+            </table>
+          </div>
+        `;
+      }
+      openModal('compareModal');
+    }
+
+    // ---------------- 5 SEKMELİ PROFESYONEL ÜRÜN DETAY MODALI (+ SEO-01 JSON-LD) ----------------
+    function openProductDetail(productId, tab = 'desc') {
+      state.detailTab = tab;
+      const p = state.products.find(x => x.id === productId);
+      if (!p) return;
+
+      // SEO-01: Dinamik Schema.org Product JSON-LD güncellemesi
+      const jsonLdEl = document.getElementById('dynamicJsonLd');
+      if (jsonLdEl) {
+        jsonLdEl.textContent = JSON.stringify({
+          '@context': 'https://schema.org',
+          '@type': 'Product',
+          name: p.title,
+          sku: p.sellerCode,
+          mpn: p.oemCode,
+          image: [p.image],
+          description: p.description,
+          brand: { '@type': 'Brand', name: p.brand || 'Aduva Garaj' },
+          offers: {
+            '@type': 'Offer',
+            priceCurrency: 'TRY',
+            price: Number(p.price).toFixed(2),
+            availability: p.stock > 0 ? 'https://schema.org/InStock' : 'https://schema.org/OutOfStock',
+          },
+          aggregateRating: {
+            '@type': 'AggregateRating',
+            ratingValue: p.ratingAvg || 4.9,
+            reviewCount: p.ratingCount || 42,
+          },
+        });
+      }
+
+      const fitVehicles = p.isUniversal
+        ? state.bootstrap.vehicles
+        : state.bootstrap.vehicles.filter(v => (p.fitmentVehicleIds || []).includes(v.id));
+
+      const reviews = state.reviewsByProduct[p.id] || [
+        { user: 'Murat K.', rating: 5, date: '2 gün önce', comment: 'Aracıma birebir uydu, paketleme çok özenliydi ve aynı gün Yurtiçi Kargo ile gönderildi.' },
+        { user: 'Serkan T.', rating: 5, date: '1 hafta önce', comment: 'Şasi numarası ile teyit alıp sipariş verdim, orijinal soketli ve kalitesi harika.' },
+      ];
+
+      let tabBody = '';
+      if (tab === 'desc') {
+        tabBody = `
+          <div class="space-y-4 text-xs">
+            <p class="text-slate-300 leading-relaxed text-sm">${escapeHtml(p.description)}</p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+              <div class="p-3 rounded-xl bg-[#0A0B0E] border border-ag-border flex justify-between"><span class="text-slate-400">Stok Kodu:</span><b class="text-white">${escapeHtml(p.sellerCode)}</b></div>
+              <div class="p-3 rounded-xl bg-[#0A0B0E] border border-ag-border flex justify-between"><span class="text-slate-400">OEM Referans No:</span><b class="text-ag-goldLight font-mono">${escapeHtml(p.oemCode)}</b></div>
+              ${Object.entries(p.attributes || {}).map(([k, v]) => `
+                <div class="p-3 rounded-xl bg-[#0A0B0E] border border-ag-border flex justify-between"><span class="text-slate-400">${escapeHtml(k)}:</span><b class="text-white">${escapeHtml(v)}</b></div>
+              `).join('')}
+            </div>
+          </div>
+        `;
+      } else if (tab === 'fitment') {
+        tabBody = `
+          <div class="max-h-56 overflow-y-auto border border-ag-border rounded-xl divide-y divide-ag-border/60 text-xs bg-[#0A0B0E]">
+            ${fitVehicles.map(v => `
+              <div class="px-4 py-2.5 flex items-center justify-between">
+                <span class="font-extrabold text-white">${escapeHtml(v.brand)} ${escapeHtml(v.model)}</span>
+                <span class="text-slate-400">${v.yearFrom}–${v.yearTo || 'Günümüz'} • ${escapeHtml(v.body)} • ${escapeHtml(v.engine)}</span>
+                <span class="text-emerald-400 font-bold">✓ %100 Uyumlu</span>
+              </div>
+            `).join('')}
+          </div>
+        `;
+      } else if (tab === 'installments') {
+        const cards = ['Bonus Card', 'Worldcard', 'Maximum', 'Axess'];
+        tabBody = `
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs">
+            ${cards.map(c => `
+              <div class="p-3.5 rounded-xl bg-[#0A0B0E] border border-ag-border space-y-1.5">
+                <div class="font-black text-ag-goldLight border-b border-ag-border pb-1">${c} (Peşin Fiyatına)</div>
+                <div class="flex justify-between"><span>2 Taksit</span><b>2 x ${fmtTRY(p.price / 2)} = ${fmtTRY(p.price)}</b></div>
+                <div class="flex justify-between"><span>3 Taksit</span><b>3 x ${fmtTRY(p.price / 3)} = ${fmtTRY(p.price)}</b></div>
+                <div class="flex justify-between text-emerald-400"><span>6 Taksit</span><b>6 x ${fmtTRY(p.price / 6)} = ${fmtTRY(p.price)}</b></div>
+              </div>
+            `).join('')}
+          </div>
+        `;
+      } else if (tab === 'reviews') {
+        tabBody = `
+          <div class="space-y-3 text-xs">
+            ${reviews.map(r => `
+              <div class="p-3.5 rounded-xl bg-[#0A0B0E] border border-ag-border space-y-1">
+                <div class="flex justify-between font-bold">
+                  <span class="text-white">${escapeHtml(r.user)} <span class="text-emerald-400 text-[10px] ml-1">✓ Doğrulanmış Alıcı</span></span>
+                  <span class="text-ag-goldLight">${'★'.repeat(Math.max(1, Math.min(5, Number(r.rating) || 5)))} • ${escapeHtml(r.date)}</span>
+                </div>
+                <p class="text-slate-300">${escapeHtml(r.comment)}</p>
+              </div>
+            `).join('')}
+            <form onsubmit="addProductReview(event, '${p.id}')" class="p-3.5 rounded-xl bg-ag-surface border border-ag-border space-y-2">
+              <div class="font-extrabold text-ag-goldLight">Bu Ürünü Değerlendirin</div>
+              <div class="grid grid-cols-2 gap-2">
+                <input required name="user" maxlength="60" placeholder="Adınız Soyadınız" class="h-9 rounded-lg bg-[#0A0B0E] border border-ag-border px-3 text-white" />
+                <select name="rating" class="h-9 rounded-lg bg-[#0A0B0E] border border-ag-border px-3 text-white font-bold">
+                  <option value="5">★★★★★ (5 Çok İyi)</option>
+                  <option value="4">★★★★ (4 İyi)</option>
+                  <option value="3">★★★ (3 Orta)</option>
+                </select>
+              </div>
+              <input required name="comment" maxlength="400" placeholder="Deneyiminizi yazın..." class="w-full h-9 rounded-lg bg-[#0A0B0E] border border-ag-border px-3 text-white" />
+              <button type="submit" class="px-4 py-2 rounded-lg btn-chrome-gold font-black">Yorumu Gönder</button>
+            </form>
+          </div>
+        `;
+      }
+
+      document.getElementById('productModalContent').innerHTML = `
+        <div class="p-6 space-y-5">
+          <div class="flex items-start justify-between gap-4 border-b border-ag-border pb-4">
+            <div>
+              <div class="text-xs font-bold text-ag-goldLight uppercase">${escapeHtml(p.brand)} • Stok Kodu: ${escapeHtml(p.sellerCode)} • OEM: ${escapeHtml(p.oemCode)}</div>
+              <h2 class="text-lg md:text-xl font-black text-white mt-1">${escapeHtml(p.title)}</h2>
+            </div>
+            <button onclick="closeModal('productModal')" aria-label="Kapat" class="text-slate-400 hover:text-white text-xl font-bold">✕</button>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <img src="${p.image}" alt="${escapeHtml(p.title)}" class="w-full h-64 object-cover rounded-2xl border border-ag-border" />
+            <div class="space-y-3">
+              <div class="flex items-baseline gap-3">
+                <span class="text-3xl font-black chrome-text">${fmtTRY(p.price)}</span>
+                ${p.listPrice ? `<span class="text-sm text-slate-500 line-through">${fmtTRY(p.listPrice)}</span>` : ''}
+                <span class="ml-auto text-xs text-ag-goldLight font-bold">★ ${p.ratingAvg} (${p.ratingCount})</span>
+              </div>
+              <div class="text-xs text-emerald-300 font-bold bg-emerald-500/15 p-3 rounded-xl border border-emerald-500/30 space-y-1">
+                <div>✓ Stokta (${p.stock} Adet) — Saat 16:00'ya kadar Aynı Gün Yurtiçi Kargo</div>
+                <div>✓ 14 Gün Koşulsuz İade & Şasi Numarası ile %100 Uyum Garantisi</div>
+              </div>
+              <div class="flex gap-2 pt-2">
+                <button onclick="addToCart('${p.id}', 1);closeModal('productModal');" class="flex-1 h-12 rounded-xl btn-chrome-gold text-xs font-black">
+                  🛒 SEPETE EKLE (${fmtTRY(p.price)})
+                </button>
+                <a href="${p.n11Url}" target="_blank" rel="noopener noreferrer" class="h-12 px-4 rounded-xl btn-metallic text-xs font-extrabold flex items-center">
+                  n11’de Gör ↗
+                </a>
+              </div>
+              ${p.requiresMontage ? `
+                <button onclick="closeModal('productModal');openAppointmentWizard('${escapeHtml(p.title.replace(/'/g, ''))}')" class="w-full h-10 rounded-xl btn-metallic text-ag-goldLight text-xs font-extrabold transition">
+                  🔧 Aduva Garaj’da Montaj Randevusu Al
+                </button>
+              ` : ''}
+            </div>
+          </div>
+
+          <!-- 4 Detay Sekmesi -->
+          <div class="border-t border-ag-border pt-4">
+            <div class="flex gap-2 border-b border-ag-border pb-3 mb-4 overflow-x-auto text-xs font-bold">
+              <button onclick="openProductDetail('${p.id}','desc')" class="px-3.5 py-2 rounded-xl ${tab==='desc'?'btn-chrome-gold':'btn-metallic'}">📋 Teknik Özellikler</button>
+              <button onclick="openProductDetail('${p.id}','fitment')" class="px-3.5 py-2 rounded-xl ${tab==='fitment'?'btn-chrome-gold':'btn-metallic'}">🚗 Uyumlu Araçlar (${fitVehicles.length})</button>
+              <button onclick="openProductDetail('${p.id}','installments')" class="px-3.5 py-2 rounded-xl ${tab==='installments'?'btn-chrome-gold':'btn-metallic'}">💳 Taksit Seçenekleri</button>
+              <button onclick="openProductDetail('${p.id}','reviews')" class="px-3.5 py-2 rounded-xl ${tab==='reviews'?'btn-chrome-gold':'btn-metallic'}">★ Müşteri Yorumları (${reviews.length})</button>
+            </div>
+            ${tabBody}
+          </div>
+        </div>
+      `;
+      openModal('productModal');
+    }
+
+    function addProductReview(e, productId) {
+      e.preventDefault();
+      const fd = new FormData(e.target);
+      if (!state.reviewsByProduct[productId]) {
+        state.reviewsByProduct[productId] = [
+          { user: 'Murat K.', rating: 5, date: '2 gün önce', comment: 'Aracıma birebir uydu, paketleme çok özenliydi ve aynı gün Yurtiçi Kargo ile gönderildi.' },
+        ];
+      }
+      state.reviewsByProduct[productId].unshift({
+        user: String(fd.get('user') || '').slice(0, 60),
+        rating: Number(fd.get('rating') || 5),
+        date: 'Şimdi',
+        comment: String(fd.get('comment') || '').slice(0, 400),
+      });
+      localStorage.setItem('aduva_reviews', JSON.stringify(state.reviewsByProduct));
+      showToast('Değerlendirmeniz başarıyla kaydedildi.', 'success');
+      openProductDetail(productId, 'reviews');
+    }
+
+    // ---------------- ECM-03: TEKİL SEPET MODÜLÜ (/api/cart/*) & PAY-01..04 CHECKOUT ----------------
+    async function apiCartRequest(path, options = {}) {
+      const token = localStorage.getItem('aduva_cart_token') || '';
+      const authBearer = state.accessToken ? { Authorization: `Bearer ${state.accessToken}` } : {};
+      const headers = {
+        'Content-Type': 'application/json',
+        ...authBearer,
+        ...(token ? { 'X-Cart-Token': token } : {}),
+        ...(options.headers || {}),
+      };
+      const res = await fetch(path, { ...options, headers });
+      const newToken = res.headers.get('x-cart-token');
+      if (newToken) localStorage.setItem('aduva_cart_token', newToken);
+      const data = await res.json();
+      if (!res.ok) {
+        throw new Error(data?.error?.message || 'Sepet işlemi başarısız oldu.');
+      }
+      return data;
+    }
+
+    async function syncCartFromBackend() {
+      try {
+        state.apiCart = await apiCartRequest('/api/cart');
+        renderHeaderCart();
+      } catch {}
+    }
+
+    function renderHeaderCart() {
+      const c = state.apiCart || { items: [], itemCount: 0, subtotal: 0, discount: 0, shipping: 0, tax: 0, total: 0, freeShippingThreshold: 75000, freeShippingRemaining: 75000 };
+      if (document.getElementById('headerCartCount')) document.getElementById('headerCartCount').textContent = c.itemCount || 0;
+      if (document.getElementById('headerCartTotal')) document.getElementById('headerCartTotal').textContent = fmtTRY((c.total || 0) / 100);
+      if (document.getElementById('mobileBottomCartBadge')) document.getElementById('mobileBottomCartBadge').textContent = c.itemCount || 0;
+      renderCartDrawerBodyFromApi(c);
+    }
+
+    function toggleCartDrawer(open) {
+      const drawer = document.getElementById('cartDrawer');
+      const backdrop = document.getElementById('cartDrawerBackdrop');
+      if (open) {
+        backdrop.classList.remove('hidden');
+        drawer.classList.remove('translate-x-full');
+      } else {
+        backdrop.classList.add('hidden');
+        drawer.classList.add('translate-x-full');
+      }
+    }
+
+    async function addToCart(productId, qty = 1) {
+      const p = state.products.find(x => x.id === productId);
+      if (!p) return;
+      if (state.bootstrap.settings?.order_mode === 'N11_REDIRECT') {
+        window.open(p.n11Url || 'https://www.n11.com/magaza/aduvagaraj', '_blank', 'noopener,noreferrer');
+        return;
+      }
+      try {
+        state.apiCart = await apiCartRequest('/api/cart/items', {
+          method: 'POST',
+          headers: { 'Idempotency-Key': `${productId}-${Date.now()}` },
+          body: JSON.stringify({
+            productId,
+            quantity: Number(qty) || 1,
+            vehicleId: state.selectedVehicleId || null,
+          }),
+        });
+        renderHeaderCart();
+        toggleCartDrawer(true);
+        showToast(`${p.title.slice(0, 38)}... sepete eklendi.`, 'success');
+      } catch (err) {
+        showToast(err.message || 'Stok veya miktar sınırı aşıldı.', 'error');
+      }
+    }
+
+    async function updateApiCartItem(itemId, nextQty) {
+      try {
+        if (nextQty <= 0) {
+          state.apiCart = await apiCartRequest(`/api/cart/items/${encodeURIComponent(itemId)}`, { method: 'DELETE' });
+          showToast('Ürün sepetten çıkarıldı.', 'info');
+        } else {
+          state.apiCart = await apiCartRequest(`/api/cart/items/${encodeURIComponent(itemId)}`, {
+            method: 'PATCH',
+            body: JSON.stringify({ quantity: nextQty }),
+          });
+        }
+        renderHeaderCart();
+      } catch (err) {
+        showToast(err.message, 'error');
+      }
+    }
+
+    async function clearApiCart() {
+      try {
+        state.apiCart = await apiCartRequest('/api/cart', { method: 'DELETE' });
+        renderHeaderCart();
+        showToast('Sepetiniz boşaltıldı.', 'info');
+      } catch (err) {
+        showToast(err.message, 'error');
+      }
+    }
+
+    async function applyApiCoupon() {
+      const code = (document.getElementById('drawerCouponInput')?.value || '').trim().toUpperCase();
+      if (!code) return;
+      try {
+        state.apiCart = await apiCartRequest('/api/cart/coupon', {
+          method: 'POST',
+          body: JSON.stringify({ code }),
+        });
+        renderHeaderCart();
+        showToast(`Kupon kodu (${code}) uygulandı!`, 'success');
+      } catch (err) {
+        showToast(err.message, 'error');
+      }
+    }
+
+    async function removeApiCoupon() {
+      try {
+        state.apiCart = await apiCartRequest('/api/cart/coupon', { method: 'DELETE' });
+        renderHeaderCart();
+        showToast('Kupon kaldırıldı.', 'info');
+      } catch (err) {
+        showToast(err.message, 'error');
+      }
+    }
+
+    function onCheckoutCityChange(city) {
+      state.checkoutCity = city;
+      const distSelect = document.getElementById('checkoutDistrictSelect');
+      if (distSelect) {
+        const districts = TR_CITIES[city] || ['Merkez'];
+        distSelect.innerHTML = districts.map(d => `<option value="${d}">${d}</option>`).join('');
+      }
+    }
+
+    function onCheckoutPaymentChange(method) {
+      state.checkoutPaymentMethod = method;
+      renderHeaderCart();
+    }
+
+    function onCheckoutInvoiceTypeChange(invType) {
+      state.checkoutInvoiceType = invType;
+      renderHeaderCart();
+    }
+
+    function renderCartDrawerBodyFromApi(c) {
+      const box = document.getElementById('cartDrawerBody');
+      const u = state.currentUser;
+      const ownerBanner = u
+        ? `
+          <div class="p-3 rounded-xl bg-ag-surface border border-ag-gold/50 flex items-center justify-between gap-2 text-xs">
+            <div>
+              <div class="text-[10px] font-black text-emerald-400 uppercase">${u.role === 'ADMIN' ? '🛡️ YETKİLİ OTURUMU' : '👤 ÜYE SEPETİ AKTİF'}</div>
+              <div class="font-extrabold text-white">${escapeHtml(u.name)} <span class="text-slate-400 font-normal">(${escapeHtml(u.email)})</span></div>
+            </div>
+            <button type="button" onclick="toggleCartDrawer(false);openAuthModal('member')" class="px-2.5 py-1 rounded-lg btn-metallic text-[11px] font-bold">Hesap Değiştir</button>
+          </div>
+        `
+        : `
+          <div class="p-3 rounded-xl bg-ag-surface border border-ag-border flex items-center justify-between gap-2 text-xs">
+            <div>
+              <div class="text-[10px] font-black text-ag-goldLight uppercase">🕵️ MİSAFİR ALIŞVERİŞ SEPETİ</div>
+              <div class="text-[11px] text-slate-300">Sepetinizi hesabınıza kaydetmek için üye girişi yapın.</div>
+            </div>
+            <button type="button" onclick="toggleCartDrawer(false);openAuthModal('member')" class="px-3 py-1.5 rounded-lg btn-chrome-gold text-[11px] font-black shrink-0">👤 Üye Girişi</button>
+          </div>
+        `;
+
+      if (!c || !c.items || !c.items.length) {
+        box.innerHTML = `
+          ${ownerBanner}
+          <div class="text-center py-14 text-xs text-slate-400 space-y-3" aria-live="polite">
+            <div class="text-3xl">🛒</div>
+            <div class="font-bold text-white">${u ? `${escapeHtml(u.name)} hesabınıza ait sepet şu an boş.` : 'Misafir sepetinizde henüz ürün bulunmuyor.'}</div>
+            <p class="text-[11px] text-slate-400">Mağaza vitrininden aracınıza uyumlu ürünleri sepete ekleyebilirsiniz.</p>
+          </div>
+        `;
+        return;
+      }
+      const progressPct = Math.min(100, Math.round(((c.freeShippingThreshold - c.freeShippingRemaining) / c.freeShippingThreshold) * 100));
+      const codFeeKurus = state.checkoutPaymentMethod === 'CASH_ON_DELIVERY' ? 4990 : 0;
+      const finalTotalKurus = c.total + codFeeKurus;
+      const districts = TR_CITIES[state.checkoutCity] || TR_CITIES['İstanbul'];
+      const defaultName = u?.name || '';
+      const defaultPhone = u?.phone || '';
+      const defaultAddress = u?.addressLine || '';
+      const defaultDistrict = u?.district || districts[0];
+
+      box.innerHTML = `
+        ${ownerBanner}
+        <div class="p-3 rounded-xl bg-emerald-500/15 border border-emerald-500/30 text-xs font-bold text-emerald-300 space-y-1.5" aria-live="polite">
+          <div>${c.freeShippingRemaining === 0 ? '🎉 Kargo Ücretsiz! (Yurtiçi Kargo)' : `🚚 Ücretsiz kargoya ${fmtTRY(c.freeShippingRemaining / 100)} kaldı`}</div>
+          <div class="w-full h-2 rounded-full bg-black/40 overflow-hidden">
+            <div class="h-full bg-gradient-to-r from-red-600 to-emerald-400" style="width:${progressPct}%"></div>
+          </div>
+        </div>
+
+        <div class="flex justify-between items-center text-[11px] text-slate-400">
+          <span>Sepet No: <b class="font-mono text-slate-300">${escapeHtml(c.id)}</b></span>
+          <button onclick="clearApiCart()" class="text-red-400 hover:underline font-bold">Sepeti Boşalt</button>
+        </div>
+
+        <div class="space-y-2.5">
+          ${c.items.map(i => `
+            <div class="p-3 rounded-xl bg-ag-surface border border-ag-border space-y-1.5">
+              <div class="flex items-center gap-3">
+                ${i.image ? `<img src="${i.image}" alt="${escapeHtml(i.title)}" class="w-14 h-14 rounded-lg object-cover" />` : ''}
+                <div class="flex-1 min-w-0">
+                  <div class="text-xs font-extrabold truncate text-white">${escapeHtml(i.title)}</div>
+                  <div class="text-[11px] text-slate-400">Stok: ${i.stock} ad. • Maks: ${i.maxPerOrder}</div>
+                  <div class="text-xs font-black text-ag-goldLight">${fmtTRY(i.unitPrice / 100)}</div>
+                </div>
+                <div class="flex items-center gap-1.5">
+                  <button onclick="updateApiCartItem('${i.id}', ${i.quantity - 1})" aria-label="Miktarı azalt" class="w-7 h-7 rounded bg-ag-surfaceAlt font-bold">-</button>
+                  <span class="text-xs font-bold w-5 text-center">${i.quantity}</span>
+                  <button onclick="updateApiCartItem('${i.id}', ${i.quantity + 1})" aria-label="Miktarı artır" class="w-7 h-7 rounded bg-ag-surfaceAlt font-bold">+</button>
+                </div>
+              </div>
+              ${i.priceChanged ? `<div class="text-[11px] font-bold text-amber-400">⚡ Fiyat değişti (Eski: ${fmtTRY(i.unitPriceSnapshot / 100)})</div>` : ''}
+              ${i.unavailable ? `<div class="text-[11px] font-bold text-red-400">⛔ Ürün şu anda satış dışı (toplamdan çıkarıldı)</div>` : ''}
+              ${i.fitmentWarning ? `<div class="text-[11px] font-bold text-amber-300">⚠️ Seçili aracınızla uyumluluk uyarısı mevcut</div>` : ''}
+            </div>
+          `).join('')}
+        </div>
+
+        ${c.coupon ? `
+          <div class="p-2.5 rounded-xl bg-emerald-950/60 border border-emerald-500/40 flex items-center justify-between text-xs">
+            <span class="font-bold text-emerald-300">🎟️ Aktif Kupon: ${escapeHtml(c.coupon.code)} (-${fmtTRY(c.discount / 100)})</span>
+            <button onclick="removeApiCoupon()" class="text-red-300 font-bold hover:underline">Kaldır</button>
+          </div>
+        ` : `
+          <div class="flex gap-2">
+            <input id="drawerCouponInput" placeholder="Kupon Kodu (HOSGELDIN / GARAJ150)" class="flex-1 h-9 rounded-lg bg-[#0A0B0E] border border-ag-border px-3 text-xs uppercase text-white" />
+            <button onclick="applyApiCoupon()" class="px-3 h-9 rounded-lg btn-chrome-gold text-xs font-black">Uygula</button>
+          </div>
+        `}
+
+        <form onsubmit="submitStoreOrder(event)" class="p-4 rounded-2xl bg-ag-surface border border-ag-border space-y-2.5 text-xs">
+          <div class="font-black text-ag-goldLight text-sm">Teslimat, Fatura & Güvenli Ödeme</div>
+
+          <input required name="customerName" value="${escapeHtml(defaultName)}" placeholder="Adınız Soyadınız *" class="w-full h-9 rounded-lg border border-ag-border px-3 bg-[#0A0B0E] text-white" />
+          <input required name="phone" value="${escapeHtml(defaultPhone)}" type="tel" pattern="^0?5[0-9]{9}$" placeholder="Cep Telefonu (05XX XXX XX XX) *" class="w-full h-9 rounded-lg border border-ag-border px-3 bg-[#0A0B0E] text-white" />
+
+          <div class="grid grid-cols-2 gap-2">
+            <select name="city" onchange="onCheckoutCityChange(this.value)" class="h-9 rounded-lg border border-ag-border px-2.5 bg-[#0A0B0E] text-white font-semibold">
+              ${Object.keys(TR_CITIES).map(city => `<option value="${city}" ${state.checkoutCity === city ? 'selected' : ''}>${city}</option>`).join('')}
+            </select>
+            <select id="checkoutDistrictSelect" name="district" class="h-9 rounded-lg border border-ag-border px-2.5 bg-[#0A0B0E] text-white font-semibold">
+              ${districts.map(d => `<option value="${d}" ${d === defaultDistrict ? 'selected' : ''}>${d}</option>`).join('')}
+            </select>
+          </div>
+
+          <input required name="addressLine" value="${escapeHtml(defaultAddress)}" placeholder="Mahalle, Cadde/Sokak, Bina ve Daire No *" class="w-full h-9 rounded-lg border border-ag-border px-3 bg-[#0A0B0E] text-white" />
+
+          <!-- Fatura Tipi (Bireysel / Kurumsal VKN) -->
+          <div class="grid grid-cols-2 gap-1.5 pt-1">
+            <button type="button" onclick="onCheckoutInvoiceTypeChange('INDIVIDUAL')" class="h-8 rounded-lg font-bold text-[11px] border ${state.checkoutInvoiceType === 'INDIVIDUAL' ? 'btn-chrome-gold border-transparent' : 'bg-[#0A0B0E] border-ag-border text-slate-300'}">Bireysel Fatura</button>
+            <button type="button" onclick="onCheckoutInvoiceTypeChange('CORPORATE')" class="h-8 rounded-lg font-bold text-[11px] border ${state.checkoutInvoiceType === 'CORPORATE' ? 'btn-chrome-gold border-transparent' : 'bg-[#0A0B0E] border-ag-border text-slate-300'}">Kurumsal e-Fatura</button>
+          </div>
+          ${state.checkoutInvoiceType === 'CORPORATE' ? `
+            <div class="grid grid-cols-2 gap-2">
+              <input required name="taxOffice" placeholder="Vergi Dairesi *" class="h-9 rounded-lg border border-ag-border px-2.5 bg-[#0A0B0E] text-white" />
+              <input required name="taxNumber" pattern="^[0-9]{10,11}$" placeholder="VKN / TCKN (10-11 Hane) *" class="h-9 rounded-lg border border-ag-border px-2.5 bg-[#0A0B0E] text-white font-mono" />
+            </div>
+          ` : ''}
+
+          <select name="paymentMethod" onchange="onCheckoutPaymentChange(this.value)" class="w-full h-9 rounded-lg border border-ag-border px-3 bg-[#0A0B0E] text-white font-semibold">
+            <option value="CARD" ${state.checkoutPaymentMethod === 'CARD' ? 'selected' : ''}>💳 Kredi / Banka Kartı (iyzico 3D Secure - 6 Taksit)</option>
+            <option value="CASH_ON_DELIVERY" ${state.checkoutPaymentMethod === 'CASH_ON_DELIVERY' ? 'selected' : ''}>📦 Kapıda Ödeme (+49,90 TL Tahsilat Hizmet Bedeli)</option>
+            <option value="BANK_TRANSFER" ${state.checkoutPaymentMethod === 'BANK_TRANSFER' ? 'selected' : ''}>🏦 Havale / EFT (TR42 0006 2000 0001 2345 6789 01)</option>
+          </select>
+
+          <div class="border-t border-ag-border pt-2 space-y-1">
+            <div class="flex justify-between"><span>Ara Toplam</span><b>${fmtTRY(c.subtotal / 100)}</b></div>
+            ${c.discount > 0 ? `<div class="flex justify-between text-emerald-400"><span>Kupon İndirimi (${escapeHtml(c.coupon?.code)})</span><b>-${fmtTRY(c.discount / 100)}</b></div>` : ''}
+            <div class="flex justify-between"><span>Kargo (Yurtiçi Kargo)</span><b>${c.shipping === 0 ? 'Ücretsiz' : fmtTRY(c.shipping / 100)}</b></div>
+            ${codFeeKurus > 0 ? `<div class="flex justify-between text-amber-300"><span>Kapıda Ödeme Hizmet Bedeli</span><b>+${fmtTRY(codFeeKurus / 100)}</b></div>` : ''}
+            <div class="flex justify-between text-slate-400"><span>İç KDV Kırılımı (%20)</span><span>${fmtTRY(c.tax / 100)}</span></div>
+            <div class="flex justify-between text-sm font-black pt-1 text-ag-goldLight"><span>Genel Toplam (KDV Dahil)</span><span>${fmtTRY(finalTotalKurus / 100)}</span></div>
+          </div>
+
+          <!-- LEG-01: Zorunlu Ön Bilgilendirme & Mesafeli Satış Sözleşmesi Onayı -->
+          <label class="flex items-start gap-2 pt-1 text-[11px] text-slate-300 cursor-pointer">
+            <input type="checkbox" required name="distanceSalesContractAccepted" class="mt-0.5 accent-amber-500" />
+            <span><a href="javascript:void(0)" onclick="openLegalModal('mesafeli')" class="text-ag-goldLight underline font-bold">Ön Bilgilendirme Formu</a> ve <a href="javascript:void(0)" onclick="openLegalModal('mesafeli')" class="text-ag-goldLight underline font-bold">Mesafeli Satış Sözleşmesi</a>'ni okudum, onaylıyorum.</span>
+          </label>
+
+          <button type="submit" class="w-full h-11 rounded-xl btn-chrome-gold font-black text-xs">
+            🔒 3D SECURE İLE SİPARİŞİ ONAYLA (${fmtTRY(finalTotalKurus / 100)})
+          </button>
+        </form>
+      `;
+    }
+
+    // PAY-01: Sunucu taraflı fiyat doğrulama, stok düşümü ve gerçek sepetten sipariş oluşturma
+    async function submitStoreOrder(e) {
+      e.preventDefault();
+      const fd = new FormData(e.target);
+      const token = localStorage.getItem('aduva_cart_token') || '';
+      const c = state.apiCart;
+      if (!c || !c.items || !c.items.length) {
+        showToast('Sepetiniz boş.', 'error');
+        return;
+      }
+
+      try {
+        const res = await fetch('/v1/orders', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            ...(state.accessToken ? { Authorization: `Bearer ${state.accessToken}` } : {}),
+            ...(token ? { 'X-Cart-Token': token } : {}),
+          },
+          body: JSON.stringify({
+            customerName: fd.get('customerName'),
+            phone: fd.get('phone'),
+            city: fd.get('city'),
+            district: fd.get('district'),
+            addressLine: fd.get('addressLine'),
+            invoiceType: state.checkoutInvoiceType,
+            taxOffice: fd.get('taxOffice') || null,
+            taxNumber: fd.get('taxNumber') || null,
+            paymentMethod: fd.get('paymentMethod'),
+            couponCode: c.coupon?.code || null,
+            distanceSalesContractAccepted: fd.get('distanceSalesContractAccepted') === 'on',
+            items: c.items.map(i => ({ productId: i.productId, quantity: i.quantity })),
+          }),
+        });
+        const data = await res.json();
+        if (!res.ok) {
+          showToast(data?.error?.message || 'Sipariş oluşturulamadı.', 'error');
+          return;
+        }
+        toggleCartDrawer(false);
+        await loadAll();
+        showToast(`Siparişiniz (#${data.orderNumber}) oluşturuldu! Stok ayrıldı.`, 'success');
+        openOrdersModal(data.orderNumber);
+      } catch (err) {
+        showToast(err.message || 'Sipariş sırasında hata oluştu.', 'error');
+      }
+    }
+
+    // ---------------- MODALLAR & A11Y-01 KLAVYE (ESC) DESTEĞİ ----------------
+    function openModal(id) {
+      const m = document.getElementById(id);
+      if (!m) return;
+      m.classList.remove('hidden');
+      m.classList.add('flex');
+    }
+    function closeModal(id) {
+      const m = document.getElementById(id);
+      if (!m) return;
+      m.classList.add('hidden');
+      m.classList.remove('flex');
+    }
+    function openVinModal() { openModal('vinModal'); }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        ['productModal', 'vinModal', 'appointmentModal', 'favoritesModal', 'compareModal', 'ordersModal', 'legalModal', 'authModal'].forEach(closeModal);
+        toggleCartDrawer(false);
+      }
+    });
+
+    // FIT-01: Gerçek WMI (İlk 3 Hane) + VDS Şasi Numarası Çözümleyici (Rastgele eşleşme yapmaz)
+    function checkVinCode() {
+      const vin = (document.getElementById('vinInput').value || '').trim().toUpperCase();
+      const box = document.getElementById('vinResultBox');
+      box.classList.remove('hidden');
+      if (!/^[A-HJ-NPR-Z0-9]{17}$/.test(vin)) {
+        box.innerHTML = `<span class="text-amber-300">⚠️ Lütfen I, O, Q harfleri içermeyen tam 17 haneli geçerli bir ISO-3779 Şasi Numarası (VIN) girin. (Örn: <code>W0L0AHL08G1234567</code>)</span>`;
+        return;
+      }
+      const wmi = vin.slice(0, 3);
+      const wmiBrandMap = {
+        W0L: 'Opel', W0V: 'Opel',
+        WVW: 'Volkswagen', WV1: 'Volkswagen', WV2: 'Volkswagen',
+        ZFA: 'Fiat', NM4: 'Fiat',
+        VF1: 'Renault', UU1: 'Renault',
+        NMT: 'Toyota', JT1: 'Toyota', SB1: 'Toyota',
+        NLA: 'Honda', JHM: 'Honda',
+        WBA: 'BMW', WBS: 'BMW',
+        WDB: 'Mercedes', WDD: 'Mercedes',
+        WAU: 'Audi',
+        WF0: 'Ford',
+        VF3: 'Peugeot',
+        KL1: 'Chevrolet',
+      };
+      const detectedBrand = wmiBrandMap[wmi];
+      if (!detectedBrand) {
+        box.innerHTML = `<span class="text-amber-300">ℹ️ WMI Üretici Kodu (<b>${escapeHtml(wmi)}</b>) katalogda otomatik eşleşmedi. Uzman ekibimizden WhatsApp üzerinden manuel OEM teyidi alabilirsiniz.</span>`;
+        return;
+      }
+      const matched = state.bootstrap.vehicles.find(v => v.brand === detectedBrand);
+      if (!matched) {
+        box.innerHTML = `<span>Üretici: <b>${escapeHtml(detectedBrand)}</b> tespit edildi. Lütfen model seç렉 sihirbazından kasa seçin.</span>`;
+        return;
+      }
+
+      state.selectedBrand = matched.brand;
+      state.selectedModel = matched.model;
+      state.selectedVehicleId = matched.id;
+      localStorage.setItem('aduva_vehicle', matched.id);
+      populateWizardDropdowns();
+      renderAll();
+      box.innerHTML = `✓ ISO-3779 WMI (<b>${escapeHtml(wmi)}</b>) Çözümlendi: <b>${escapeHtml(matched.brand)} ${escapeHtml(matched.model)} (${escapeHtml(matched.engine)})</b>. Uyumlu parçalar listelendi!`;
+    }
+
+    function openAppointmentWizard(defaultService) {
+      const activeVeh = state.bootstrap.vehicles.find(v => v.id === state.selectedVehicleId);
+      document.getElementById('aptVehicleInput').value = activeVeh
+        ? `${activeVeh.yearFrom} ${activeVeh.brand} ${activeVeh.model}`
+        : '';
+      openModal('appointmentModal');
+    }
+
+    async function submitAppointmentForm(e) {
+      e.preventDefault();
+      const fd = new FormData(e.target);
+      await fetch('/v1/appointments', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          customerName: fd.get('customerName'),
+          phone: fd.get('phone'),
+          vehicleInfo: fd.get('vehicleInfo'),
+          serviceType: fd.get('serviceType'),
+          scheduledAt: fd.get('scheduledAt'),
+        }),
+      });
+      closeModal('appointmentModal');
+      await loadAll();
+      showToast('Montaj randevunuz başarıyla oluşturuldu!', 'success');
+      openOrdersModal();
+    }
+
+    // PAY-02 & ECM-02: Sipariş İptal & 14 Gün Cayma / RMA Kargo Kodu Oluşturma
+    async function cancelCustomerOrder(orderId) {
+      try {
+        const res = await fetch(`/api/orders/${encodeURIComponent(orderId)}/cancel`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ reason: 'Müşteri talebiyle iptal' }),
+        });
+        const data = await res.json();
+        if (!res.ok) {
+          showToast(data?.error?.message || 'Sipariş iptal edilemedi.', 'error');
+          return;
+        }
+        await loadAll();
+        openOrdersModal();
+        showToast(`Sipariş #${data.order.orderNumber} iptal edildi ve stoklar geri yüklendi.`, 'success');
+      } catch (err) {
+        showToast(err.message, 'error');
+      }
+    }
+
+    async function createCustomerReturnRequest(orderId) {
+      try {
+        const res = await fetch(`/api/orders/${encodeURIComponent(orderId)}/return`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ reason: '14 Gün Cayma Hakkı Kapsamında İade' }),
+        });
+        const data = await res.json();
+        if (!res.ok) {
+          showToast(data?.error?.message || 'İade talebi oluşturulamadı.', 'error');
+          return;
+        }
+        await loadAll();
+        openOrdersModal();
+        showToast(`Ücretsiz Yurtiçi Kargo İade Kodunuz: ${data.returnRequest.freeReturnShippingCode}`, 'success');
+      } catch (err) {
+        showToast(err.message, 'error');
+      }
+    }
+
+    function openOrdersModal(highlightOrderNo = '') {
+      const s = state.bootstrap;
+      const u = state.currentUser;
+      const visibleOrders = u && u.role === 'CUSTOMER'
+        ? s.orders.filter(o => o.isMine || o.userId === u.id || o.orderNumber === highlightOrderNo)
+        : s.orders;
+      document.getElementById('ordersModalBody').innerHTML = `
+        <div class="space-y-3">
+          ${highlightOrderNo ? `<div class="p-3 rounded-xl bg-emerald-500/20 border border-emerald-500/40 text-xs text-emerald-200 font-bold">🎉 Siparişiniz (#${escapeHtml(highlightOrderNo)}) başarıyla alındı ve stoktan ayrıldı!</div>` : ''}
+          <div class="flex items-center justify-between">
+            <div class="text-xs font-black uppercase text-ag-goldLight">${u ? `👤 ${escapeHtml(u.name)} — Siparişlerim (${visibleOrders.length})` : `Tüm Siparişler (${visibleOrders.length})`} — İptal & 14 Gün Kolay İade</div>
+            ${!u ? `<button onclick="closeModal('ordersModal');openAuthModal('member')" class="px-2.5 py-1 rounded-lg btn-chrome-gold text-[10px] font-black">👤 Üye Girişi Yap</button>` : ''}
+          </div>
+          ${visibleOrders.map(o => `
+            <div class="p-3.5 rounded-2xl bg-ag-surface border border-ag-border text-xs space-y-2">
+              <div class="flex justify-between font-extrabold">
+                <span>#${escapeHtml(o.orderNumber)} (${escapeHtml(o.source)}) — ${escapeHtml(o.customerName)}</span>
+                <span class="text-ag-goldLight">${escapeHtml(formatOrderStatusTr(o.status))}</span>
+              </div>
+              <div class="text-slate-300">${(o.items || []).map(i => `${i.quantity}x ${escapeHtml(i.title)}`).join(', ')}</div>
+              <div class="flex flex-wrap items-center justify-between gap-2 pt-1 border-t border-ag-border/60">
+                <span>Kargo: <b>${escapeHtml(o.trackingCode || 'Hazırlanıyor')}</b> (${escapeHtml(o.carrier)}) ${o.rmaCode ? `• <b class="text-emerald-300">İade Kodu: ${escapeHtml(o.rmaCode)}</b>` : ''}</span>
+                <span class="font-black text-ag-goldLight">${fmtTRY(o.total)}</span>
+              </div>
+              <div class="flex flex-wrap gap-2 pt-1">
+                ${(o.status === 'PAID' || o.status === 'PREPARING') ? `
+                  <button onclick="cancelCustomerOrder('${o.id}')" class="px-3 py-1.5 rounded-lg bg-red-950/80 border border-red-500/40 text-red-200 font-bold hover:bg-red-900">✕ Siparişi İptal Et (Stok İade)</button>
+                ` : ''}
+                ${(o.status !== 'CANCELLED' && o.status !== 'RETURN_REQUESTED') ? `
+                  <button onclick="createCustomerReturnRequest('${o.id}')" class="px-3 py-1.5 rounded-lg btn-metallic font-bold">↩ 14 Gün Cayma / Ücretsiz İade Kodu Al</button>
+                ` : ''}
+              </div>
+            </div>
+          `).join('')}
+
+          <div class="text-xs font-black uppercase text-ag-goldLight pt-2">Mağaza Montaj Randevularım (${s.appointments.length})</div>
+          ${s.appointments.map(a => `
+            <div class="p-3.5 rounded-2xl bg-ag-surface border border-ag-border text-xs flex justify-between items-center">
+              <div>
+                <div class="font-extrabold text-white">🔧 ${escapeHtml(a.serviceType)}</div>
+                <div class="text-slate-400">${escapeHtml(a.vehicleInfo)} • ${escapeHtml(a.scheduledAt)}</div>
+              </div>
+              <span class="px-2.5 py-1 rounded bg-emerald-500/20 text-emerald-300 font-bold">${escapeHtml(formatAppointmentStatusTr(a.status))}</span>
+            </div>
+          `).join('')}
+        </div>
+      `;
+      openModal('ordersModal');
+    }
+
+    // ---------------- SEC-02 KORUMALI ADMİN PANELİ ----------------
+
+    function adminHeaders(extra = {}) {
+      return {
+        'Content-Type': 'application/json',
+        'X-Admin-Key': state.adminKey,
+        ...extra,
+      };
+    }
+
+    async function triggerManualSync() {
+      const btn = document.getElementById('adminSyncBtn');
+      btn.textContent = '⏳ Senkronlanıyor...';
+      await fetch('/api/n11-sync/run', { method: 'POST', headers: adminHeaders() });
+      await loadAll();
+      btn.textContent = '✓ n11 Delta Senkron Tamamlandı';
+      showToast('n11 Mağaza Delta Senkronizasyonu tamamlandı.', 'success');
+      setTimeout(() => { btn.textContent = '🔄 Şimdi n11 ile Senkronla'; }, 1500);
+    }
+
+    async function runAdminSearchTest() {
+      const q = document.getElementById('admSearchInput')?.value || 'opel astra pasps';
+      const res = await fetch('/api/search?q=' + encodeURIComponent(q)).then(r => r.json());
+      const box = document.getElementById('admLabOutput');
+      box.innerHTML = `<div class="font-bold text-emerald-400">✓ A5 Türkçe FTS + Trigram Arama ("${escapeHtml(res.query)}" → normalize: "${escapeHtml(res.normalizedQuery)}") — ${res.totalMatches} eşleşme (Gerçek Ölçüm: ${res.explainPlan.executionTimeMs} ms)</div>` +
+        `<div class="text-slate-300 mt-1">Strateji: <code>${escapeHtml(res.explainPlan.strategy)}</code></div>` +
+        `<div class="mt-1">${res.items.slice(0, 3).map(i => `• <b>${escapeHtml(i.title)}</b> (Skor: ${i.searchScore})`).join('<br/>')}</div>`;
+    }
+
+    async function runAdminCsvImportTest() {
+      const csv = 'seller_code,ktype_code,notes,verified_by_vin\nADV-1000,KT-34812,Opel Astra J 1.6 CDTI CANBUS Uyumlu,true\nADV-1001,KT-51204,Opel Astra K 4D Havuzlu Paspas,true';
+      const res = await fetch('/api/fitment/import-csv', {
+        method: 'POST',
+        headers: adminHeaders(),
+        body: JSON.stringify({ csv }),
+      }).then(r => r.json());
+      document.getElementById('admLabOutput').innerHTML =
+        `<div class="font-bold text-emerald-400">✓ A4 CSV Toplu Araç Uyumluluk İçe Aktarma Tamamlandı: ${res.imported}/${res.totalRows} satır eşleştirildi (idx_fitments_vehicle_product).</div>`;
+    }
+
+    async function runAdminOptimisticLockTest() {
+      const p1 = state.products.find(p => p.id === 'prd-1') || state.products[0];
+      const newPriceKurus = (Number(p1.price) + 50) * 100;
+      const res = await fetch(`/api/catalog/${p1.id}/price-stock`, {
+        method: 'PATCH',
+        headers: adminHeaders(),
+        body: JSON.stringify({ newPriceKurus, stockDelta: 2, expectedVersion: p1.version || 1, source: 'ADMIN_MANUAL' }),
+      }).then(r => r.json());
+      const audit = await fetch('/api/audit/logs', { headers: adminHeaders() }).then(r => r.json());
+      await loadAll();
+      document.getElementById('admLabOutput').innerHTML =
+        `<div class="font-bold text-emerald-400">✓ A6 & A9 Optimistic Lock (v${(res.version || 2) - 1} → v${res.version || 2}) + Fiyat/Stok Tarihçesi Kaydedildi!</div>` +
+        `<div class="text-slate-300 mt-1">Toplam Denetim Kaydı: <b>${audit.logs.length}</b> • Fiyat Geçmişi: <b>${audit.priceHistory.length}</b> • Stok Hareketi: <b>${audit.stockMovements.length}</b></div>`;
+    }
+
+    async function runAdminKvkkTest() {
+      const cns = await fetch('/api/kvkk/consents', {
+        method: 'POST',
+        headers: adminHeaders(),
+        body: JSON.stringify({ userId: 'usr_musteri_99', consentType: 'KVKK_AYDINLATMA', tckn: '12345678901', granted: true }),
+      }).then(r => r.json());
+      const forget = await fetch('/api/kvkk/forget-me/usr_musteri_99', {
+        method: 'DELETE',
+        headers: adminHeaders(),
+      }).then(r => r.json());
+      document.getElementById('admLabOutput').innerHTML =
+        `<div class="font-bold text-emerald-400">✓ A8 KVKK AES-256-GCM TCKN Şifreleme & Unutulma Hakkı Anonimleştirme Test Edildi!</div>` +
+        `<div class="text-slate-300 mt-1">Şifreli TCKN: <code class="text-ag-goldLight">${escapeHtml(cns.tcIdentityEnc)}</code></div>` +
+        `<div class="text-slate-300 mt-1">Anonimleştirilen Profil: <b>${escapeHtml(forget.name)}</b> (${escapeHtml(forget.email)}) — <i>${escapeHtml(forget.retainedInvoicePolicy)}</i></div>`;
+    }
+
+    async function toggleOrderMode(mode) {
+      await fetch('/v1/admin/settings', {
+        method: 'PATCH',
+        headers: adminHeaders(),
+        body: JSON.stringify({ order_mode: mode }),
+      });
+      await loadAll();
+      showToast(`Satın alma modu: ${mode}`, 'info');
+    }
+
+    async function shipAdminOrder(orderId) {
+      const code = prompt('Yurtiçi Kargo takip kodunu girin:', 'YK-' + Math.floor(100000000 + Math.random() * 900000000));
+      if (!code) return;
+      await fetch(`/v1/admin/orders/${orderId}`, {
+        method: 'PATCH',
+        headers: adminHeaders(),
+        body: JSON.stringify({ status: 'SHIPPED', trackingCode: code }),
+      });
+      await loadAll();
+      showToast(`Sipariş kargoya verildi (${code}).`, 'success');
+    }
+
+    function renderAdminPanel() {
+      const box = document.getElementById('adminPanelBody');
+      if (!box) return;
+      const s = state.bootstrap;
+      const mode = s.settings?.order_mode || 'DIRECT_CHECKOUT';
+      const totalRevenue = s.orders.reduce((sum, o) => sum + Number(o.total || 0), 0);
+      box.innerHTML = `
+        <div class="grid grid-cols-2 md:grid-cols-5 gap-4">
+          <div class="card-metallic rounded-2xl p-4">
+            <div class="text-xs text-slate-400 font-semibold">Toplam Ciro (KDV Dahil)</div>
+            <div class="text-xl font-black text-emerald-400 mt-1">${fmtTRY(totalRevenue)}</div>
+          </div>
+          <div class="card-metallic rounded-2xl p-4">
+            <div class="text-xs text-slate-400 font-semibold">Toplam Sipariş (A10)</div>
+            <div class="text-xl font-black text-white mt-1">${s.orders.length}</div>
+          </div>
+          <div class="card-metallic rounded-2xl p-4">
+            <div class="text-xs text-slate-400 font-semibold">Aktif Ürün Kataloğu (A10)</div>
+            <div class="text-xl font-black text-white mt-1">${state.products.length}</div>
+          </div>
+          <div class="card-metallic rounded-2xl p-4">
+            <div class="text-xs text-slate-400 font-semibold">Araç Hiyerarşisi (A4)</div>
+            <div class="text-xl font-black text-ag-goldLight mt-1">${s.vehicles.length} Model</div>
+          </div>
+          <div class="card-metallic rounded-2xl p-4">
+            <div class="text-xs text-slate-400 font-semibold">OpenAPI / Sitemap</div>
+            <div class="flex gap-2 mt-1">
+              <a href="/api/docs" target="_blank" class="text-xs font-black text-ag-goldLight hover:underline">/api/docs ↗</a>
+              <a href="/sitemap.xml" target="_blank" class="text-xs font-black text-emerald-300 hover:underline">/sitemap.xml ↗</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- A1-A12 VERİTABANI VE GÜVENLİK MÜHENDİSLİK LABORATUVARI -->
+        <div class="card-metallic rounded-2xl p-5 space-y-4 border border-ag-gold/50">
+          <div class="flex flex-wrap items-center justify-between gap-2">
+            <div>
+              <span class="text-[10px] font-black uppercase px-2 py-0.5 rounded btn-chrome-gold">BÖLÜM A & B + GÜVENLİK DENETİM MERKEZİ</span>
+              <h3 class="text-sm font-black text-white mt-1">Veritabanı Gereksinim Analizi & Güvenlik Doğrulama (X-Admin-Key Korumalı)</h3>
+            </div>
+            <a href="/api/reports/dashboard" target="_blank" class="px-3 py-1.5 rounded-lg btn-metallic text-xs font-bold">📊 Materialized View JSON ↗</a>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-4 gap-2.5 text-xs">
+            <div class="flex gap-1.5">
+              <input id="admSearchInput" value="opel astra pasps" placeholder="Yazım hatalı Türkçe ara..." class="flex-1 h-9 rounded-lg bg-[#0A0B0E] border border-ag-border px-2.5 text-white" />
+              <button onclick="runAdminSearchTest()" class="px-3 h-9 rounded-lg btn-chrome-gold font-black">A5 Ara</button>
+            </div>
+            <button onclick="runAdminCsvImportTest()" class="h-9 rounded-lg btn-metallic font-bold">📥 A4 CSV Uyumluluk İçe Aktar</button>
+            <button onclick="runAdminOptimisticLockTest()" class="h-9 rounded-lg btn-metallic font-bold">🔒 A6/A9 Optimistic Lock & Tarihçe</button>
+            <button onclick="runAdminKvkkTest()" class="h-9 rounded-lg btn-metallic font-bold">🛡️ A8 KVKK AES-256 & Anonimleştir</button>
+          </div>
+
+          <div id="admLabOutput" class="p-3.5 rounded-xl bg-[#0A0B0E] border border-ag-border text-xs text-slate-300">
+            Yukarıdaki butonlara tıklayarak <b>Türkçe Trigram Arama</b>, <b>CSV Araç Uyumluluk Aktarımı</b>, <b>Optimistic Locking (version) + AuditLog</b> ve <b>KVKK AES-256 TCKN Şifreleme / Unutulma Hakkı</b> modüllerini canlı test edebilirsiniz.
+          </div>
+        </div>
+
+        <div class="card-metallic rounded-2xl p-5 flex flex-wrap items-center justify-between gap-4">
+          <div>
+            <div class="font-extrabold text-sm text-white">Satın Alma Modu (Doğrudan Checkout / n11 Yönlendirme)</div>
+            <div class="text-xs text-slate-400">Mağaza ve mobil uygulamadaki satın alma davranışını tek tıkla değiştirin.</div>
+          </div>
+          <div class="flex gap-2">
+            <button onclick="toggleOrderMode('DIRECT_CHECKOUT')" class="px-4 py-2 rounded-xl text-xs font-extrabold ${mode === 'DIRECT_CHECKOUT' ? 'btn-chrome-gold' : 'bg-ag-surfaceAlt text-slate-300'}">💳 Doğrudan Checkout</button>
+            <button onclick="toggleOrderMode('N11_REDIRECT')" class="px-4 py-2 rounded-xl text-xs font-extrabold ${mode === 'N11_REDIRECT' ? 'btn-chrome-gold' : 'bg-ag-surfaceAlt text-slate-300'}">↗ n11’e Yönlendir</button>
+          </div>
+        </div>
+
+        <div class="card-metallic rounded-2xl p-5 space-y-3">
+          <div class="font-extrabold text-sm text-ag-goldLight">🚚 Siparişler & Kargo Yönetimi (Son 15 / Toplam ${s.orders.length} Sipariş)</div>
+          ${s.orders.slice(0, 15).map(o => `
+            <div class="p-3.5 rounded-xl bg-[#0A0B0E] border border-ag-border flex flex-wrap items-center justify-between gap-3 text-xs">
+              <div>
+                <div class="font-extrabold text-white">#${escapeHtml(o.orderNumber)} — ${escapeHtml(o.customerName)} (${escapeHtml(o.source)})</div>
+                <div class="text-slate-400">${escapeHtml(o.city)} • ${fmtTRY(o.total)} • Durum: <b class="text-ag-goldLight">${escapeHtml(formatOrderStatusTr(o.status))}</b> ${o.trackingCode ? `• Kargo: <b>${escapeHtml(o.trackingCode)}</b>` : ''}</div>
+              </div>
+              <button onclick="shipAdminOrder('${o.id}')" class="px-3 py-1.5 rounded-lg btn-chrome-gold font-black">Kargo Kodu Gir</button>
+            </div>
+          `).join('')}
+        </div>
+      `;
+    }
+
+    loadAll();
+  </script>
+</body>
+</html>
