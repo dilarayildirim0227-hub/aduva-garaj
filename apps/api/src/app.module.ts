@@ -6,10 +6,12 @@ import { readFileSync } from 'fs';
 import { join } from 'path';
 import { PrismaModule, PrismaService } from './common/prisma';
 import { AuthGuard, Public } from './common/security';
+import { LoggerModule } from './common/logger';
 import { AdminModule } from './modules/admin/admin.module';
 import { AuthModule } from './modules/auth/auth.module';
 import { CartModule } from './modules/cart/cart.module';
 import { EnterpriseModule } from './modules/enterprise/enterprise.module';
+import { HealthModule } from './modules/health/health.module';
 import { NotificationsModule } from './modules/notifications/notifications.module';
 import { OrdersModule } from './modules/orders/orders.module';
 import { ProductsModule } from './modules/products/products.module';
@@ -62,6 +64,7 @@ class RootPreviewController {
   imports: [
     configImport,
     ThrottlerModule.forRoot([{ ttl: 60_000, limit: 240 }]),
+    LoggerModule.forRoot(),
     PrismaModule,
     AuthModule,
     ProductsModule,
@@ -71,6 +74,7 @@ class RootPreviewController {
     NotificationsModule,
     AdminModule,
     EnterpriseModule,
+    HealthModule,
   ],
   controllers: [RootPreviewController],
   providers: [
