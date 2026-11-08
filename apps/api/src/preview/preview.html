@@ -389,7 +389,7 @@
             ♥ Favorilerim (<span id="topFavCount" class="text-ag-goldLight font-bold">0</span>)
           </button>
           <button onclick="openOrdersModal()" class="hover:text-white font-semibold">📦 Sipariş & Kargo Takip</button>
-          <a href="https://www.n11.com/magaza/aduvagaraj" target="_blank" class="text-ag-goldLight hover:underline font-bold">n11/aduvagaraj ↗</a>
+          <!-- n11 mağaza linki kaldırıldı -->
         </div>
       </div>
     </div>
@@ -769,7 +769,7 @@
             <li><a href="#" onclick="openLegalModal('contract');return false;" class="hover:text-ag-goldLight">Mesafeli Satış Sözleşmesi & Ön Bilgilendirme</a></li>
             <li><a href="#" onclick="openLegalModal('returns');return false;" class="hover:text-ag-goldLight">14 Gün Cayma, İptal ve İade Koşulları</a></li>
             <li><a href="#" onclick="openLegalModal('company');return false;" class="hover:text-ag-goldLight">Şirket Künyesi (MERSİS / ETBİS / KEP)</a></li>
-            <li><a href="https://www.n11.com/magaza/aduvagaraj" target="_blank" class="hover:text-ag-goldLight">n11 Resmi Mağazamız ↗</a></li>
+            <!-- n11 mağaza linki kaldırıldı -->
           </ul>
         </div>
 
@@ -887,7 +887,7 @@
             <h2 class="text-xl font-black italic chrome-text">ADUVA GARAJ — MAĞAZA YÖNETİM PANELİ</h2>
             <span class="px-2 py-0.5 rounded bg-emerald-500/20 border border-emerald-500/40 text-emerald-300 text-[10px] font-black">🔒 RBAC (@Roles('ADMIN')) Aktif</span>
           </div>
-          <p class="text-xs text-slate-400">n11 ürün/sipariş senkronu, uyumlu araç etiketleme, kupon ve montaj randevuları</p>
+          <p class="text-xs text-slate-400">Ürün/sipariş senkronu, uyumlu araç etiketleme, kupon ve montaj randevuları</p>
         </div>
       </div>
       <div class="flex items-center gap-2">
@@ -895,7 +895,7 @@
           🏠 Mağaza Anasayfasına Dön
         </button>
         <button onclick="triggerManualSync()" id="adminSyncBtn" class="px-4 py-2.5 rounded-xl btn-chrome-gold text-xs font-black">
-          🔄 Şimdi n11 ile Senkronla
+          🔄 Şimdi Senkronla
         </button>
       </div>
     </div>
@@ -1159,7 +1159,7 @@
       hakkimizda: {
         title: 'Aduva Garaj Hakkında & İstanbul Ümraniye Montaj Merkezimiz',
         body: `
-          <p><b>Aduva Garaj</b>, hem <b>n11.com Resmi Mağazası (9.8/10 Mağaza Puanı)</b> hem de kendi e-ticaret ve mobil platformu üzerinden Türkiye'nin 81 iline OEM/Aftermarket oto multimedya, 3D/4D TPE havuzlu paspas, LED aydınlatma ve periyodik bakım ekipmanları sunan uzman otomotiv mağazasıdır.</p>
+          <p><b>Aduva Garaj</b>, kendi e-ticaret ve mobil platformu üzerinden Türkiye'nin 81 iline OEM/Aftermarket oto multimedya, 3D/4D TPE havuzlu paspas, LED aydınlatma ve periyodik bakım ekipmanları sunan uzman otomotiv mağazasıdır.</p>
           <p>İstanbul Ümraniye Dudullu OSB'deki 450 m² kapalı montaj merkezimizde uzman elektronik teknisyenlerimizle soket-sokete garantili multimedya, geri görüş kamerası ve ambiyans aydınlatma uygulaması yapılmaktadır.</p>
         `,
       },
@@ -1364,7 +1364,7 @@
       };
 
       const allProducts = (prodRes.items || []).map(p => {
-        const extra = oemMap[p.id] || { oem: p.oemCode || `OEM-${p.n11Id}`, fitPlus: [] };
+        const extra = oemMap[p.id] || { oem: p.oemCode || `OEM-${p.sellerCode}`, fitPlus: [] };
         const fitIds = Array.from(new Set([...(p.fitmentVehicleIds || []), ...extra.fitPlus]));
         return {
           ...p,
@@ -1596,7 +1596,7 @@
           <div class="p-3 rounded-2xl bg-[#0A0B0E] border border-ag-gold/40 space-y-2">
             <div class="text-[11px] font-extrabold text-ag-goldLight uppercase">🛡️ Mağaza Yetkili & Operasyon Girişi</div>
             <p class="text-[11px] text-slate-300 leading-relaxed">
-              Yetkili girişi yaptığınızda <b>Sipariş & Kargo Yönetimi</b>, <b>n11 Delta Senkronizasyon</b>, <b>Fiyat/Stok Güncelleme</b> ve <b>CSV Raporlama</b> paneli aktif olur.
+              Yetkili girişi yaptığınızda <b>Sipariş & Kargo Yönetimi</b>, <b>Senkronizasyon</b>, <b>Fiyat/Stok Güncelleme</b> ve <b>CSV Raporlama</b> paneli aktif olur.
             </p>
             <button type="button" onclick="quickLoginAccount('admin@aduvagaraj.com', 'Degistir123!', 'ADMIN')" class="w-full py-2 px-3 rounded-xl btn-metallic font-black text-ag-goldLight text-xs">
               ⚡ Tek Tıkla Yetkili Hesabıyla Giriş Yap (admin@aduvagaraj.com)
@@ -1933,7 +1933,7 @@
       if (document.getElementById('activeOrderModeNotice')) {
         document.getElementById('activeOrderModeNotice').textContent = mode === 'DIRECT_CHECKOUT'
           ? '● Uygulama İçi Doğrudan Checkout Aktif'
-          : '● n11 Mağazasına Yönlendirme Modu Aktif';
+          : '● Mağaza Yönlendirme Modu Aktif';
       }
 
       const garageCardHtml = activeVeh ? `
@@ -2098,7 +2098,7 @@
                     <button onclick="setCardQty('${p.id}', 1)" aria-label="Adet artır" class="w-5 sm:w-6 h-full text-slate-300 hover:text-white font-bold">+</button>
                   </div>
                   <button onclick="addToCart('${p.id}', ${qty})" class="flex-1 h-9 sm:h-11 rounded-xl btn-chrome-gold text-[11px] sm:text-xs font-black transition flex items-center justify-center gap-1">
-                    ${isRedirect ? '↗ n11’de Al' : '🛒 SEPETE EKLE'}
+                    ${isRedirect ? ‘↗ Mağazada Al’ : ‘🛒 SEPETE EKLE’}
                   </button>
                   <button onclick="openProductDetail('${p.id}')" title="Ürün Detayı" class="h-9 sm:h-11 px-2 sm:px-2.5 rounded-xl btn-metallic text-[11px] sm:text-xs font-bold shrink-0">
                     Detay
@@ -2433,12 +2433,10 @@
                 <div>✓ 14 Gün Koşulsuz İade & Şasi Numarası ile %100 Uyum Garantisi</div>
               </div>
               <div class="flex gap-2 pt-2">
-                <button onclick="addToCart('${p.id}', 1);closeModal('productModal');" class="flex-1 h-12 rounded-xl btn-chrome-gold text-xs font-black">
+                <button onclick="addToCart(‘${p.id}’, 1);closeModal(‘productModal’);" class="flex-1 h-12 rounded-xl btn-chrome-gold text-xs font-black">
                   🛒 SEPETE EKLE (${fmtTRY(p.price)})
                 </button>
-                <a href="${p.n11Url}" target="_blank" rel="noopener noreferrer" class="h-12 px-4 rounded-xl btn-metallic text-xs font-extrabold flex items-center">
-                  n11’de Gör ↗
-                </a>
+                <!-- n11 butonu kaldırıldı -->
               </div>
               ${p.requiresMontage ? `
                 <button onclick="closeModal('productModal');openAppointmentWizard('${escapeHtml(p.title.replace(/'/g, ''))}')" class="w-full h-10 rounded-xl btn-metallic text-ag-goldLight text-xs font-extrabold transition">
@@ -2532,10 +2530,6 @@
     async function addToCart(productId, qty = 1) {
       const p = state.products.find(x => x.id === productId);
       if (!p) return;
-      if (state.bootstrap.settings?.order_mode === 'N11_REDIRECT') {
-        window.open(p.n11Url || 'https://www.n11.com/magaza/aduvagaraj', '_blank', 'noopener,noreferrer');
-        return;
-      }
       try {
         state.apiCart = await apiCartRequest('/api/cart/items', {
           method: 'POST',
@@ -3020,11 +3014,11 @@
     async function triggerManualSync() {
       const btn = document.getElementById('adminSyncBtn');
       btn.textContent = '⏳ Senkronlanıyor...';
-      await fetch('/api/n11-sync/run', { method: 'POST', headers: adminHeaders() });
+      await fetch('/api/sync/run', { method: 'POST', headers: adminHeaders() });
       await loadAll();
-      btn.textContent = '✓ n11 Delta Senkron Tamamlandı';
-      showToast('n11 Mağaza Delta Senkronizasyonu tamamlandı.', 'success');
-      setTimeout(() => { btn.textContent = '🔄 Şimdi n11 ile Senkronla'; }, 1500);
+      btn.textContent = '✓ Senkron Tamamlandı';
+      showToast('Senkronizasyon tamamlandı.', 'success');
+      setTimeout(() => { btn.textContent = '🔄 Şimdi Senkronla'; }, 1500);
     }
 
     async function runAdminSearchTest() {
@@ -3160,12 +3154,11 @@
 
         <div class="card-metallic rounded-2xl p-5 flex flex-wrap items-center justify-between gap-4">
           <div>
-            <div class="font-extrabold text-sm text-white">Satın Alma Modu (Doğrudan Checkout / n11 Yönlendirme)</div>
+            <div class="font-extrabold text-sm text-white">Satın Alma Modu (Doğrudan Checkout)</div>
             <div class="text-xs text-slate-400">Mağaza ve mobil uygulamadaki satın alma davranışını tek tıkla değiştirin.</div>
           </div>
           <div class="flex gap-2">
-            <button onclick="toggleOrderMode('DIRECT_CHECKOUT')" class="px-4 py-2 rounded-xl text-xs font-extrabold ${mode === 'DIRECT_CHECKOUT' ? 'btn-chrome-gold' : 'bg-ag-surfaceAlt text-slate-300'}">💳 Doğrudan Checkout</button>
-            <button onclick="toggleOrderMode('N11_REDIRECT')" class="px-4 py-2 rounded-xl text-xs font-extrabold ${mode === 'N11_REDIRECT' ? 'btn-chrome-gold' : 'bg-ag-surfaceAlt text-slate-300'}">↗ n11’e Yönlendir</button>
+            <button onclick="toggleOrderMode(‘DIRECT_CHECKOUT’)" class="px-4 py-2 rounded-xl text-xs font-extrabold btn-chrome-gold">💳 Doğrudan Checkout</button>
           </div>
         </div>
 

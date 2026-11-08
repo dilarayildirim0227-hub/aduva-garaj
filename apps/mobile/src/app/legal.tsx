@@ -41,7 +41,7 @@ const documentContent: Record<string, string> = {
     </ul>
 
     <h3>3. Veri Paylaşımı</h3>
-    <p>Verileriniz; kargo firmaları, ödeme sağlayıcılar, yasal kurumlar (gerektiğinde) ve n11 entegrasyonu için yetkili taraflarla paylaşılabilir. Hiçbir durumda verileriniz üçüncü şahıslara satılmaz.</p>
+    <p>Verileriniz; kargo firmaları, ödeme sağlayıcılar, yasal kurumlar (gerektiğinde) ile paylaşılabilir. Hiçbir durumda verileriniz üçüncü şahıslara satılmaz.</p>
 
     <h3>4. KVKK Kapsamında Haklarınız</h3>
     <p>KVKK Madde 11 uyarınca; verilerinizin işlenip işlenmediğini öğrenme, talep etme, düzeltme, silme, itiraz etme ve tahliye haklarınız vardır. Bu haklarınızı <strong>kvkk@aduvagaraj.com</strong> adresine yazdırarak kullanabilirsiniz.</p>
@@ -58,7 +58,7 @@ const documentContent: Record<string, string> = {
     <p>ADUVA GARAJ platformunu kullanarak aşağıdaki şartları kabul etmiş sayılırsınız.</p>
 
     <h3>1. Hizmet Tanımı</h3>
-    <p>Platform, oto yedek parça satışı, randevu sistemi ve n11 entegrasyonlu marketplace hizmetleri sunar.</p>
+    <p>Platform, oto yedek parça satışı ve randevu sistemi sunar.</p>
 
     <h3>2. Kullanıcı Yükümlülükleri</h3>
     <ul>
@@ -106,7 +106,7 @@ const documentContent: Record<string, string> = {
     </ul>
 
     <h3>Veri Aktarımı</h3>
-    <p>Yurt içinde: Kargo, ödeme, muhasebe, n11 entegrasyonu.<br>
+    <p>Yurt içinde: Kargo, ödeme, muhasebe.<br>
     Yurt dışına: Aktarım yoktur.</p>
 
     <h3>Haklarınız (Madde 11)</h3>

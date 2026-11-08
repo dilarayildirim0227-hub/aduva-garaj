@@ -6,6 +6,7 @@
 generator client {
   provider        = "prisma-client-js"
   previewFeatures = ["fullTextSearch", "views"]
+  output          = "../../node_modules/.prisma/client"
 }
 
 datasource db {
@@ -155,7 +156,6 @@ model UserVehicle {
 
 model Category {
   id        String     @id @default(uuid())
-  n11Id     String?    @unique
   name      String
   slug      String     @unique
   icon      String?
@@ -177,7 +177,6 @@ enum ProductStatus {
 
 model Product {
   id              String           @id @default(uuid())
-  n11Id           String           @unique
   sellerCode      String           @unique
   oemCode         String?
   title           String
@@ -197,7 +196,6 @@ model Product {
   maxPerOrder     Int              @default(10)
   status          ProductStatus    @default(ACTIVE)
   categoryId      String?
-  n11Url          String?
   isUniversal     Boolean          @default(false)
   isFeatured      Boolean          @default(false)
   isHidden        Boolean          @default(false)
@@ -207,7 +205,6 @@ model Product {
   ratingCount     Int              @default(0)
   soldCount       Int              @default(0)
   version         Int              @default(1) // Optimistic locking (A6)
-  lastSyncedAt    DateTime         @default(now()) @db.Timestamptz(3)
   createdAt       DateTime         @default(now()) @db.Timestamptz(3)
   updatedAt       DateTime         @updatedAt @db.Timestamptz(3)
   deletedAt       DateTime?        @db.Timestamptz(3)
@@ -242,7 +239,6 @@ model ProductImage {
 model ProductVariant {
   id          String    @id @default(uuid())
   productId   String
-  n11Id       String?
   sku         String?   @unique
   name        String
   attributes  Json
@@ -363,7 +359,6 @@ model Campaign {
 enum OrderSource {
   APP
   WEB
-  N11
 }
 
 enum OrderStatus {
@@ -386,7 +381,6 @@ model Order {
   id                      String               @id @default(uuid())
   orderNumber             String               @unique
   source                  OrderSource          @default(WEB)
-  n11OrderId              String?              @unique
   userId                  String?
   couponId                String?
   status                  OrderStatus          @default(PENDING_PAYMENT)
@@ -454,7 +448,7 @@ model OrderStatusEvent {
   orderId    String
   fromStatus OrderStatus?
   toStatus   OrderStatus
-  changedBy  String?     // userId veya 'SYSTEM_N11_SYNC'
+  changedBy  String?     // userId veya 'SYSTEM'
   note       String?
   createdAt  DateTime    @default(now()) @db.Timestamptz(3)
 
@@ -577,19 +571,6 @@ model PasswordResetToken {
   @@index([userId, expiresAt])
 }
 
-model N11StagingProduct {
-  id             String   @id @default(uuid())
-  n11ProductId   String   @unique
-  sellerCode     String
-  rawPayload     Json
-  payloadHash    String
-  syncStatus     String   @default("PENDING") // PENDING | APPLIED | CONFLICT | FAILED
-  conflictReason String?
-  fetchedAt      DateTime @default(now()) @db.Timestamptz(3)
-
-  @@index([sellerCode, syncStatus])
-}
-
 enum AppointmentStatus {
   REQUESTED
   CONFIRMED
@@ -632,7 +613,7 @@ model Notification {
 }
 
 // ----------------------------------------------------------------------------
-// 7. N11 SENKRONİZASYON, DENETİM (AUDIT), STOK/FİYAT GEÇMİŞİ VE AYARLAR (A6-A9)
+// 7. DENETİM (AUDIT), STOK/FİYAT GEÇMİŞİ VE AYARLAR (A6-A9)
 // ----------------------------------------------------------------------------
 
 model IdempotencyRecord {
@@ -650,48 +631,12 @@ model IdempotencyRecord {
   @@index([expiresAt])
 }
 
-model SyncLog {
-  id         String    @id @default(uuid())
-  type       String    // PRODUCTS | STOCK_PRICE | ORDERS
-  status     String    // RUNNING | SUCCESS | PARTIAL | FAILED
-  trigger    String    @default("CRON")
-  startedAt  DateTime  @default(now()) @db.Timestamptz(3)
-  finishedAt DateTime? @db.Timestamptz(3)
-  total      Int       @default(0)
-  created    Int       @default(0)
-  updated    Int       @default(0)
-  failed     Int       @default(0)
-  error      String?
-
-  syncErrors N11SyncError[]
-
-  @@index([type, startedAt])
-}
-
-model N11SyncError {
-  id               String    @id @default(uuid())
-  syncLogId        String
-  externalEntityId String
-  errorCode        String
-  errorMessage     String
-  rawPayload       Json?
-  retryCount       Int       @default(0)
-  nextRetryAt      DateTime? @db.Timestamptz(3)
-  resolvedAt       DateTime? @db.Timestamptz(3)
-  createdAt        DateTime  @default(now()) @db.Timestamptz(3)
-
-  syncLog          SyncLog   @relation(fields: [syncLogId], references: [id], onDelete: Cascade)
-
-  @@index([syncLogId])
-  @@index([nextRetryAt])
-}
-
 model PriceHistory {
   id            String   @id @default(uuid())
   productId     String
   oldPriceKurus Int
   newPriceKurus Int
-  source        String   // N11_SYNC | ADMIN_MANUAL | CAMPAIGN
+  source        String   // ADMIN_MANUAL | CAMPAIGN
   changedBy     String?
   createdAt     DateTime @default(now()) @db.Timestamptz(3)
 
@@ -706,7 +651,7 @@ model StockMovement {
   delta         Int
   previousStock Int
   newStock      Int
-  reason        String   // ORDER_RESERVED | ORDER_CANCELLED | N11_SYNC | RETURN_RESTOCK
+  reason        String   // ORDER_RESERVED | ORDER_CANCELLED | RETURN_RESTOCK
   referenceId   String?
   createdAt     DateTime @default(now()) @db.Timestamptz(3)
 
@@ -747,19 +692,3 @@ model Setting {
   value     Json
   updatedAt DateTime @updatedAt @db.Timestamptz(3)
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

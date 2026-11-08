@@ -3,22 +3,14 @@ import { CurrentUser, JwtPayload, Public, Roles } from '../../common/security';
 import { EnterpriseDatabaseService } from './enterprise.service';
 
 /**
- * SEC-02 Çözümü:
- * - Sınıf seviyesindeki `@Public()` kaldırıldı.
- * - Yalnızca katalog arama ve uyumluluk sorgusu halka açık (`@Public()`).
- * - Fiyat/stok güncelleme, CSV içe aktarma, n11 senkron, denetim logları ve raporlar `@Roles('ADMIN', 'OPERATIONS')` ile korunur.
- * - KVKK unutulma hakkı (`DELETE /kvkk/forget-me/:userId`) yalnızca ilgili kullanıcının kendisi veya ADMIN tarafından çağrılabilir.
+ * Enterprise Admin API
+ * - Katalog arama ve uyumluluk sorgusu halka açık (`@Public()`)
+ * - Fiyat/stok güncelleme, CSV içe aktarma, denetim logları ve raporlar `@Roles('ADMIN', 'OPERATIONS')` ile korunur
+ * - KVKK unutulma hakkı (`DELETE /kvkk/forget-me/:userId`) yalnızca ilgili kullanıcının kendisi veya ADMIN tarafından çağrılabilir
  */
 @Controller()
 export class EnterpriseDatabaseController {
   constructor(private readonly service: EnterpriseDatabaseService) {}
-
-  /** A4: Ürün - Araç Uyumluluk Sorgusu (Index-Only Scan + gerçek metrik) */
-  @Public()
-  @Get('fitment/check')
-  checkFitment(@Query('productId') productId: string, @Query('vehicleId') vehicleId: string) {
-    return this.service.checkProductFitment(productId, vehicleId);
-  }
 
   /** A4: CSV ile Toplu Araç Uyumluluk İçe Aktarma (Yalnızca ADMIN/OPERATIONS) */
   @Roles('ADMIN', 'OPERATIONS')
@@ -44,7 +36,7 @@ export class EnterpriseDatabaseController {
       newPriceKurus: number;
       stockDelta?: number;
       expectedVersion?: number;
-      source?: 'N11_SYNC' | 'ADMIN_MANUAL' | 'CAMPAIGN';
+      source?: 'ADMIN_MANUAL' | 'CAMPAIGN';
     },
     @CurrentUser() user?: JwtPayload,
   ) {
@@ -56,13 +48,6 @@ export class EnterpriseDatabaseController {
       source: body.source || 'ADMIN_MANUAL',
       actorId: user?.sub || 'ADMIN',
     });
-  }
-
-  /** A7: n11 Delta Senkronizasyon ve Alan Bazlı Çakışma Çözümü (Yalnızca ADMIN/OPERATIONS) */
-  @Roles('ADMIN', 'OPERATIONS')
-  @Post('n11-sync/run')
-  runN11Sync(@Body() body?: { trigger?: 'CRON' | 'WEBHOOK' | 'MANUAL_ADMIN' }) {
-    return this.service.runN11DeltaSync(body?.trigger || 'MANUAL_ADMIN');
   }
 
   /** A8: KVKK Açık Rıza ve İYS Ticari İleti Kaydı */

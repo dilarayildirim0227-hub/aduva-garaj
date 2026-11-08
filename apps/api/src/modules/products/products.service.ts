@@ -1,9 +1,14 @@
 import { Injectable } from '@nestjs/common';
 import { Prisma } from '@prisma/client';
 import type { ProductListQuery } from '@aduva/shared';
+
+// Local type definitions for Prisma input types (workaround for pnpm + Prisma type export issue)
+type ProductWhereInput = Record<string, any>;
+type ProductOrderByWithRelationInput = Record<string, any>;
 import { AppDomainError, ErrorCode } from '../../common/error-codes';
 import { PrismaService } from '../../common/prisma';
 import { normalizeTurkishSearch } from '../../common/catalog-generator';
+import { ProductStatus } from '@aduva/shared';
 import type {
   AdminProductCreateInput,
   AutocompleteQuery,
@@ -101,7 +106,7 @@ export class ProductsService {
       };
     }
 
-    const where: Prisma.ProductWhereInput = {
+    const where: ProductWhereInput = {
       isHidden: false,
       deletedAt: null,
       status: { in: q.inStock ? ['ACTIVE'] : ['ACTIVE', 'OUT_OF_STOCK'] },
@@ -114,7 +119,7 @@ export class ProductsService {
         price: { gte: q.minPrice, lte: q.maxPrice },
       }),
     };
-    const orderBy: Prisma.ProductOrderByWithRelationInput[] = {
+    const orderBy: ProductOrderByWithRelationInput[] = {
       newest: [{ createdAt: 'desc' as const }],
       price_asc: [{ price: 'asc' as const }],
       price_desc: [{ price: 'desc' as const }],
@@ -149,7 +154,7 @@ export class ProductsService {
     const hasMore = items.length > q.limit;
     const page = hasMore ? items.slice(0, q.limit) : items;
     return {
-      items: page.map(({ images, ...p }) => ({
+      items: page.map(({ images, ...p }: { images: Array<{ url: string }>; [key: string]: any }) => ({
         ...p,
         price: Number(p.price),
         listPrice: p.listPrice ? Number(p.listPrice) : null,
@@ -271,8 +276,8 @@ export class ProductsService {
         generation: v.generation ?? `${v.model} (${v.yearFrom}-${v.yearTo ?? 'Günümüz'})`,
         yearFrom: v.yearFrom,
         yearTo: v.yearTo ?? null,
-        body: v.body,
-        engine: v.engine,
+        body: v.body ?? '',
+        engine: v.engine ?? '',
         ktypeCode: v.ktypeCode,
       });
     }
@@ -342,8 +347,8 @@ export class ProductsService {
         generation: vehicle.generation,
         yearFrom: vehicle.yearFrom,
         yearTo: vehicle.yearTo ?? null,
-        body: vehicle.body,
-        engine: vehicle.engine,
+        body: vehicle.body ?? '',
+        engine: vehicle.engine ?? '',
       },
     };
 
@@ -383,11 +388,11 @@ export class ProductsService {
     const price = Number((input.priceKurus / 100).toFixed(2));
     const listPrice = input.listPriceKurus
       ? Number((input.listPriceKurus / 100).toFixed(2))
-      : null;
+      : undefined;
 
+    const now = new Date().toISOString();
     const created = {
       id: `prd-custom-${Date.now()}`,
-      n11Id: `${Math.floor(200000 + Math.random() * 799999)}`,
       sellerCode: input.sellerCode,
       oemCode: input.oemCode ?? `OEM-${input.sellerCode}`,
       title: input.title,
@@ -397,11 +402,14 @@ export class ProductsService {
       price,
       listPrice,
       priceKurus: input.priceKurus,
-      listPriceKurus: input.listPriceKurus ?? null,
+      listPriceKurus: input.listPriceKurus ?? undefined,
+      lowestPrice30dKurus: input.priceKurus,
       vatRate: 20,
+      currency: 'TRY',
       stock: input.stock,
+      reservedStock: 0,
       maxPerOrder: input.maxPerOrder,
-      status: input.stock > 0 ? 'ACTIVE' : 'OUT_OF_STOCK',
+      status: input.stock > 0 ? ProductStatus.ACTIVE : ProductStatus.OUT_OF_STOCK,
       categoryId: input.categoryId,
       isUniversal: input.isUniversal,
       isFeatured: false,
@@ -411,7 +419,8 @@ export class ProductsService {
       ratingCount: 1,
       soldCount: 0,
       version: 1,
-      n11Url: 'https://www.n11.com/magaza/aduvagaraj',
+      createdAt: now,
+      updatedAt: now,
       image:
         input.imageUrl ??
         'https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=800&q=80',

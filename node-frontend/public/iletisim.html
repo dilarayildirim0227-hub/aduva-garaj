@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>İletişim - Aduva Garaj</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container header-inner">
+      <a href="/" class="logo" aria-label="Aduva Garaj Ana Sayfa">
+        <img src="/logo.png?v=5" alt="Aduva Garaj 3D Krom Logo" class="logo-img" width="40" height="40"/>
+        <span>Aduva Garaj</span>
+      </a>
+      <nav class="nav" aria-label="Ana navigasyon">
+        <a href="/" class="nav-link" data-page="home">Ana Sayfa</a>
+        <a href="/urunler" class="nav-link" data-page="products">Ürünler</a>
+        <a href="/kurumsal" class="nav-link" data-page="kurumsal">Kurumsal</a>
+        <a href="/iletisim" class="nav-link active" data-page="iletisim">İletişim</a>
+      </nav>
+      <div class="header-actions">
+        <button class="btn btn-ghost cart-trigger" aria-label="Sepet" aria-expanded="false" aria-controls="cart-drawer">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <circle cx="9" cy="21" r="1"/>
+            <circle cx="20" cy="21" r="1"/>
+            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+          </svg>
+          <span class="cart-count" aria-live="polite">0</span>
+        </button>
+        <div class="user-menu">
+          <button class="btn btn-ghost user-trigger" aria-label="Kullanıcı menüsü" aria-expanded="false">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+              <circle cx="12" cy="7" r="4"/>
+            </svg>
+          </button>
+          <div class="user-dropdown" role="menu" hidden>
+            <a href="/giris" class="dropdown-item" role="menuitem">Giriş Yap</a>
+            <a href="/kayit" class="dropdown-item" role="menuitem">Kayıt Ol</a>
+            <hr class="dropdown-divider">
+            <a href="/hesabim" class="dropdown-item" role="menuitem">Hesabım</a>
+            <a href="/siparislerim" class="dropdown-item" role="menuitem">Siparişlerim</a>
+            <a href="/araclarim" class="dropdown-item" role="menuitem">Araçlarım</a>
+            <hr class="dropdown-divider">
+            <button class="dropdown-item btn-logout" role="menuitem">Çıkış Yap</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <aside id="cart-drawer" class="cart-drawer" role="dialog" aria-label="Sepet" aria-hidden="true">
+    <div class="cart-drawer-inner">
+      <div class="cart-header"><h2>Sepetiniz</h2><button class="cart-close" aria-label="Sepeti kapat">&times;</button></div>
+      <div class="cart-body">
+        <div class="cart-empty" hidden><svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg><p>Sepetiniz boş</p><a href="/" class="btn btn-primary">Alışverişe Başla</a></div>
+        <ul class="cart-items" role="list"></ul>
+      </div>
+      <div class="cart-footer" hidden>
+        <div class="cart-summary">
+          <div class="summary-row"><span>Ara Toplam</span><span class="subtotal">₺0,00</span></div>
+          <div class="summary-row"><span>Kargo</span><span class="shipping">₺0,00</span></div>
+          <div class="summary-row total"><span>Toplam</span><span class="total">₺0,00</span></div>
+          <div class="free-shipping-bar"><div class="free-shipping-progress" style="width: 0%"></div></div>
+          <p class="free-shipping-text">Ücretsiz kargo için <span class="remaining">₺750,00</span> daha alışveriş yapın</p>
+        </div>
+        <div class="cart-actions">
+          <a href="/sepet" class="btn btn-secondary btn-block">Sepeti Görüntüle</a>
+          <a href="/odeme" class="btn btn-primary btn-block">Ödemeye Geç</a>
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="cart-overlay" aria-hidden="true"></div>
+
+  <main class="main">
+    <section class="page-header">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="/">Ana Sayfa</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">İletişim</span>
+        </nav>
+        <h1>İletişim</h1>
+        <p class="page-subtitle">Sorularınız, önerileriniz veya şikayetleriniz için bizimle iletişime geçin</p>
+      </div>
+    </section>
+
+    <section class="contact-layout">
+      <div class="container">
+        <div class="contact-grid">
+          <aside class="contact-info">
+            <div class="contact-card">
+              <h3>Müşteri Hizmetleri</h3>
+              <p>Siparişleriniz, iade/değişim, kargo takibi ve ürün sorularınız için:</p>
+              <ul class="contact-details">
+                <li>
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72"/></svg>
+                  <div>
+                    <strong>Telefon</strong>
+                    <a href="tel:+902125550000">0212 555 00 00</a>
+                    <span class="contact-hours">Hafta içi 09:00 - 18:00</span>
+                  </div>
+                </li>
+                <li>
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                  <div>
+                    <strong>E-posta</strong>
+                    <a href="mailto:destek@aduvagaraj.com">destek@aduvagaraj.com</a>
+                    <span class="contact-hours">7/24 yanıtlanmaya çalışılır</span>
+                  </div>
+                </li>
+                <li>
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                  <div>
+                    <strong>Adres</strong>
+                    <address>
+                      Aduva Garaj Merkez Ofis<br>
+                      Maslak Mah. Bilim Sk. No: 12<br>
+                      34398 Sarıyer / İstanbul
+                    </address>
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            <div class="contact-card">
+              <h3>Kurumsal Satış</h3>
+              <p>Flot tedariki, toplu sipariş ve özel fiyatlandırma için:</p>
+              <ul class="contact-details">
+                <li>
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72"/></svg>
+                  <div>
+                    <strong>Telefon</strong>
+                    <a href="tel:+902125550001">0212 555 00 01</a>
+                  </div>
+                </li>
+                <li>
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                  <div>
+                    <strong>E-posta</strong>
+                    <a href="mailto:kurumsal@aduvagaraj.com">kurumsal@aduvagaraj.com</a>
+                  </div>
+                </li>
+              </ul>
+              <a href="/kurumsal" class="btn btn-primary btn-block" style="margin-top: 16px;">Kurumsal Sayfası</a>
+            </div>
+
+            <div class="contact-card">
+              <h3>Sosyal Medya</h3>
+              <p>Bizi takip edin, kampanyalardan haberdar olun:</p>
+              <div class="social-links">
+                <a href="https://instagram.com/aduvagaraj" target="_blank" rel="noopener" class="social-link" aria-label="Instagram">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg>
+                  <span>@aduvagaraj</span>
+                </a>
+                <a href="https://linkedin.com/company/aduvagaraj" target="_blank" rel="noopener" class="social-link" aria-label="LinkedIn">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                  <span>Aduva Garaj</span>
+                </a>
+                <a href="https://twitter.com/aduvagaraj" target="_blank" rel="noopener" class="social-link" aria-label="Twitter/X">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83 7.72 7.72 0 0 0 3.2-3.76"/></svg>
+                  <span>@aduvagaraj</span>
+                </a>
+                <a href="https://youtube.com/@aduvagaraj" target="_blank" rel="noopener" class="social-link" aria-label="YouTube">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 2.5A2.5 2.5 0 0 1 4.5 0h15A2.5 2.5 0 0 1 22 2.5v19A2.5 2.5 0 0 1 19.5 24h-15A2.5 2.5 0 0 1 0 21.5v-19z"/><path d="M8 14l7-4-7-4"/></svg>
+                  <span>Aduva Garaj</span>
+                </a>
+              </div>
+            </div>
+          </aside>
+
+          <div class="contact-form-wrapper">
+            <h2>Bize Yazın</h2>
+            <form id="contact-form" class="contact-form" novalidate>
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="contact-first_name">Ad <span class="required" aria-hidden="true">*</span></label>
+                  <input type="text" id="contact-first_name" name="first_name" required placeholder="Adınız">
+                </div>
+                <div class="form-group">
+                  <label for="contact-last_name">Soyad <span class="required" aria-hidden="true">*</span></label>
+                  <input type="text" id="contact-last_name" name="last_name" required placeholder="Soyadınız">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="contact-email">E-posta <span class="required" aria-hidden="true">*</span></label>
+                <input type="email" id="contact-email" name="email" required placeholder="ornek@email.com">
+              </div>
+
+              <div class="form-group">
+                <label for="contact-phone">Telefon (İsteğe Bağlı)</label>
+                <input type="tel" id="contact-phone" name="phone" placeholder="05XX XXX XX XX">
+              </div>
+
+              <div class="form-group">
+                <label for="contact-subject">Konu <span class="required" aria-hidden="true">*</span></label>
+                <select id="contact-subject" name="subject" required>
+                  <option value="">Konu Seçin</option>
+                  <option value="order">Sipariş Durumu / Takip</option>
+                  <option value="return">İade / Değişim</option>
+                  <option value="product">Ürün Bilgisi / Uyumluluk</option>
+                  <option value="technical">Teknik Destek / Montaj</option>
+                  <option value="corporate">Kurumsal Satış / İş Birliği</option>
+                  <option value="complaint">Şikayet / Öneri</option>
+                  <option value="other">Diğer</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="contact-order_number">Sipariş Numarası (Varsa)</label>
+                <input type="text" id="contact-order_number" name="order_number" placeholder="ORD-2024-XXXXXX">
+              </div>
+
+              <div class="form-group">
+                <label for="contact-message">Mesaj <span class="required" aria-hidden="true">*</span></label>
+                <textarea id="contact-message" name="message" rows="6" required placeholder="Detaylı açıklayın..."></textarea>
+              </div>
+
+              <div class="form-group">
+                <label class="checkbox-label">
+                  <input type="checkbox" id="contact-kvkk" name="kvkk" required>
+                  <span><a href="/kvkk" target="_blank">KVKK Aydınlatma Metni</a>'ni okudum ve verilerimin işlenmesine onay veriyorum</span>
+                </label>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-block btn-lg" id="contact-submit">
+                <span class="btn-text">Gönder</span>
+                <span class="btn-loading" hidden>
+                  <svg class="spinner" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10" stroke-opacity="0.25"/><path d="M12 2a10 10 0 0 1 10 10" stroke-opacity="1"/></svg>
+                  Gönderiliyor...
+                </span>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-faq">
+      <div class="container">
+        <h2 class="section-title">Sık Sorulan Sorular</h2>
+        <div class="faq-list">
+          <details class="faq-item">
+            <summary>Siparişim nerede? Kargo takip numarası alabilir miyim?</summary>
+            <p>Siparişiniz kargoya verildiğinde SMS ve e-posta ile takip numarası gönderilir. Hesabınızdan "Siparişlerim" sayfasına girerek de anlık durumu görebilirsiniz. Kargo firmamız Aras/PTT/Yurtiçi Kargo'dır.</p>
+          </details>
+          <details class="faq-item">
+            <summary>İade/Değişim nasıl yapılır?</summary>
+            <p>14 gün içinde şartsız iade hakkınız vardır. "Siparişlerim" sayfasından iade talebi oluşturun, kargo bizim tarafından ücretsiz düzenlenir. Ürün elimize ulaştığında 3-5 iş günü içinde iade işlemi yapılır.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Aracıma uygun mu nasıl anlarım?</summary>
+            <p>Ana sayfadan veya ürün sayfasındaki "Araç Seç" butonuyla marka, model, yıl ve motor bilgilerinizi girin. Sistem otomatik olarak uyumlu ürünleri filtreler. Emin değilseniz destek@aduvagaraj.com'a VIN numaranızı yazın, biz kontrol edelim.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Kapıda ödeme var mı?</summary>
+            <p>Evet, kapıda ödeme (nakit/kredi kartı) seçeneği mevcuttur. 500 TL üzeri siparişlerde kapıda ödeme komisyonu (15 TL) ücretsizdir.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Fatura nasıl alabilirim?</summary>
+            <p>Bireysel faturalar sipariş onay e-postasına eklenir. Kurumsal fatura için kayıt sırasında veya sipariş verirken vergi dairesi/numarası bilginizi girin. E-fatura portalımızdan da ulaşabilirsiniz.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Ürün garanti kapsamında mı?</summary>
+            <p>Tüm ürünlerimiz satıcı garantisi altındadır. Garanti süresi ürün başına farklılık gösterir (genelde 1-2 yıl). Montaj hatası, yanlış kullanım ve darbe hasarı garanti kapsamı dışındadır.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="map-section">
+      <div class="container">
+        <h2 class="section-title">Merkez Ofisimiz</h2>
+        <div class="map-wrapper">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3008.123456789!2d29.012345!3d41.123456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab123456789ab%3A0x123456789abcdef!2sMaslak%20Mah.%20Bilim%20Sk.%20No%3A12%2C%20Sar%C4%B1yer%2F%C4%B0stanbul!5e0!3m2!1str!2str!4v1234567890"
+            width="100%"
+            height="400"
+            style="border:0; border-radius: 12px;"
+            allowfullscreen=""
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Aduva Garaj Merkez Ofis Konumu">
+          </iframe>
+        </div>
+        <address class="map-address">
+          <strong>Aduva Garaj Merkez Ofis</strong><br>
+          Maslak Mah. Bilim Sk. No: 12, 34398 Sarıyer / İstanbul<br>
+          <a href="https://maps.google.com/?q=Maslak+Mah.+Bilim+Sk.+No:12+Sar%C4%B1yer+%C4%B0stanbul" target="_blank" rel="noopener">Yolda Git &rarr;</a>
+        </address>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand"><a href="/" class="logo"><svg width="32" height="32" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="8" fill="currentColor"/><path d="M8 16L14 22L24 10" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Aduva Garaj</span></a><p>Türkiye'nin güvenilir oto aksesuar mağazası.</p></div>
+        <nav class="footer-nav"><h4>Kurumsal</h4><ul><li><a href="/hakkimizda">Hakkımızda</a></li><li><a href="/kariyer">Kariyer</a></li></ul></nav>
+        <nav class="footer-nav"><h4>Müşteri Hizmetleri</h4><ul><li><a href="/yardim">Yardım</a></li><li><a href="/iade-degisim">İade & Değişim</a></li></ul></nav>
+        <nav class="footer-nav"><h4>Yasal</h4><ul><li><a href="/kvkk">KVKK</a></li><li><a href="/gizlilik">Gizlilik</a></li></ul></nav>
+      </div>
+      <div class="footer-bottom"><p>&copy; 2026 Aduva Garaj.</p></div>
+    </div>
+  </footer>
+
+  <script type="module" src="/app-contact.js"></script>
+</body>
+</html>

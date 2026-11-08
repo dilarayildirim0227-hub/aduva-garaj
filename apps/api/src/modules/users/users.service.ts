@@ -13,6 +13,7 @@ import {
   ProductAlertInput,
   ReviewCreateInput,
 } from './users.schemas';
+import { AppointmentStatus, CouponType } from '@aduva/shared';
 
 export interface StoredAddress {
   id: string;
@@ -382,7 +383,7 @@ export class UsersService {
       if (!belongsToUser || !eligibleStatuses.has(String(o.status))) {
         return false;
       }
-      return Array.isArray(o.items) && o.items.some((it: { productId?: string }) => it.productId === input.productId);
+      return Array.isArray(o.items) && o.items.some((it) => (it as { productId?: string }).productId === input.productId);
     });
 
     if (!matchingOrder) {
@@ -509,18 +510,18 @@ export class UsersService {
 
     const created = {
       id: `apt_${randomUUID().slice(0, 10)}`,
-      userId,
+      userId: userId ?? undefined,
       customerName: input.customerName,
       phone: input.phone,
       vehicleInfo: input.vehicleInfo,
-      vehicleId: input.vehicleId ?? null,
-      productId: input.productId ?? null,
-      orderId: input.orderId ?? null,
+      vehicleId: input.vehicleId ?? undefined,
+      productId: input.productId ?? undefined,
+      orderId: input.orderId ?? undefined,
       serviceType: input.serviceType,
       scheduledAt,
       bayNumber,
-      notes: input.notes ?? null,
-      status: 'CONFIRMED',
+      notes: input.notes ?? undefined,
+      status: AppointmentStatus.CONFIRMED,
       createdAt: new Date().toISOString(),
     };
 
@@ -540,7 +541,7 @@ export class UsersService {
         HttpStatus.FORBIDDEN,
       );
     }
-    apt.status = 'CANCELLED';
+    apt.status = AppointmentStatus.CANCELLED;
     apt.cancelledAt = new Date().toISOString();
     return apt;
   }
@@ -566,17 +567,18 @@ export class UsersService {
     const created = {
       id: `cpn_${randomUUID().slice(0, 8)}`,
       code: input.code,
-      type: input.type,
+      type: input.type as CouponType,
       value: input.type === 'FREE_SHIPPING' ? 0 : input.value,
       minTotal: input.minTotalKurus,
       minCartTotal: Math.round(input.minTotalKurus / 100),
-      maxUses: input.maxUses ?? null,
+      maxUses: input.maxUses ?? undefined,
       perUserLimit: input.perUserLimit ?? 1,
-      categoryId: input.categoryId ?? null,
+      categoryId: input.categoryId ?? undefined,
       usedCount: 0,
-      startsAt: input.startsAt ?? null,
-      endsAt: input.endsAt ?? null,
+      startsAt: input.startsAt ?? undefined,
+      endsAt: input.endsAt ?? undefined,
       active: true,
+      isActive: true,
       description: input.description ?? '',
       createdAt: new Date().toISOString(),
     };
@@ -634,11 +636,12 @@ export class UsersService {
       title: input.title,
       subtitle: input.subtitle,
       badge: input.badge,
-      categoryId: input.categoryId ?? null,
+      categoryId: input.categoryId ?? undefined,
       discountPercent: input.discountPercent,
-      startsAt: input.startsAt ?? null,
-      endsAt: input.endsAt ?? null,
+      startsAt: input.startsAt ?? undefined,
+      endsAt: input.endsAt ?? undefined,
       isActive: input.isActive,
+      sortOrder: 0,
       createdAt: new Date().toISOString(),
     };
     this.prisma.store.banners.unshift(created);

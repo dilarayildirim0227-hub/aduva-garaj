@@ -55,7 +55,7 @@ export const applyCouponSchema = z
 
 export type ApplyCouponInput = z.infer<typeof applyCouponSchema>;
 
-/** n11 senkronundan gelen yerel veritabanı stok/fiyat sağlayıcı soyutlaması */
+/** Yerel veritabanı stok/fiyat sağlayıcı soyutlaması */
 export interface StockSnapshot {
   productId: string;
   variantId: string | null;
@@ -69,7 +69,7 @@ export interface StockSnapshot {
   fitmentVehicleIds: string[];
 }
 
-export abstract class N11StockProvider {
+export abstract class StockProvider {
   abstract getStockSnapshot(productId: string, variantId?: string | null): Promise<StockSnapshot | null>;
 }
 

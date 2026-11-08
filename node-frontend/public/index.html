@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aduva Garaj - Oto Aksesuar Mağazası</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container header-inner">
+      <a href="/" class="logo" aria-label="Aduva Garaj Ana Sayfa">
+        <img src="/logo.png?v=5" alt="Aduva Garaj 3D Krom Logo" class="logo-img" width="40" height="40"/>
+        <span>Aduva Garaj</span>
+      </a>
+
+      <nav class="nav" aria-label="Ana navigasyon">
+        <a href="/" class="nav-link active" data-page="home">Ana Sayfa</a>
+        <a href="/kurumsal" class="nav-link" data-page="kurumsal">Kurumsal</a>
+        <a href="/iletisim" class="nav-link" data-page="iletisim">İletişim</a>
+      </nav>
+
+      <div class="header-actions">
+        <button class="btn btn-ghost cart-trigger" aria-label="Sepet" aria-expanded="false" aria-controls="cart-drawer">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <circle cx="9" cy="21" r="1"/>
+            <circle cx="20" cy="21" r="1"/>
+            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+          </svg>
+          <span class="cart-count" aria-live="polite">0</span>
+        </button>
+
+        <div class="user-menu">
+          <button class="btn btn-ghost user-trigger" aria-label="Kullanıcı menüsü" aria-expanded="false">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+              <circle cx="12" cy="7" r="4"/>
+            </svg>
+          </button>
+          <div class="user-dropdown" role="menu" hidden>
+            <a href="/giris" class="dropdown-item" role="menuitem">Giriş Yap</a>
+            <a href="/kayit" class="dropdown-item" role="menuitem">Kayıt Ol</a>
+            <hr class="dropdown-divider">
+            <a href="/hesabim" class="dropdown-item" role="menuitem">Hesabım</a>
+            <a href="/siparislerim" class="dropdown-item" role="menuitem">Siparişlerim</a>
+            <a href="/araclarim" class="dropdown-item" role="menuitem">Araçlarım</a>
+            <hr class="dropdown-divider">
+            <button class="dropdown-item btn-logout" role="menuitem">Çıkış Yap</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Cart Drawer -->
+  <aside id="cart-drawer" class="cart-drawer" role="dialog" aria-label="Sepet" aria-hidden="true">
+    <div class="cart-drawer-inner">
+      <div class="cart-header">
+        <h2>Sepetiniz</h2>
+        <button class="cart-close" aria-label="Sepeti kapat">&times;</button>
+      </div>
+      <div class="cart-body">
+        <div class="cart-empty" hidden>
+          <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+            <circle cx="9" cy="21" r="1"/>
+            <circle cx="20" cy="21" r="1"/>
+            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+          </svg>
+          <p>Sepetiniz boş</p>
+          <a href="/" class="btn btn-primary">Alışverişe Başla</a>
+        </div>
+        <ul class="cart-items" role="list" aria-label="Sepet ürünleri"></ul>
+      </div>
+      <div class="cart-footer" hidden>
+        <div class="cart-summary">
+          <div class="summary-row">
+            <span>Ara Toplam</span>
+            <span class="subtotal">₺0,00</span>
+          </div>
+          <div class="summary-row">
+            <span>Kargo</span>
+            <span class="shipping">₺0,00</span>
+          </div>
+          <div class="summary-row total">
+            <span>Toplam</span>
+            <span class="total">₺0,00</span>
+          </div>
+          <div class="free-shipping-bar">
+            <div class="free-shipping-progress" style="width: 0%"></div>
+          </div>
+          <p class="free-shipping-text">Ücretsiz kargo için <span class="remaining">₺750,00</span> daha alışveriş yapın</p>
+        </div>
+        <div class="cart-actions">
+          <a href="/sepet" class="btn btn-secondary btn-block">Sepeti Görüntüle</a>
+          <a href="/odeme" class="btn btn-primary btn-block">Ödemeye Geç</a>
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="cart-overlay" aria-hidden="true"></div>
+
+  <main id="main-content" class="main">
+    <!-- Hero Section -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="container">
+        <div class="hero-content">
+          <h1 id="hero-title">Aracınız İçin Doğru Parçayı Bulun</h1>
+          <p class="hero-subtitle">Marka, model ve motor seçerek aracınıza %100 uyumlu oto aksesuarları keşfedin</p>
+          <div class="vehicle-selector" id="vehicle-selector" role="search" aria-label="Araç seçici">
+            <div class="selector-row">
+              <div class="select-wrapper">
+                <label for="brand-select">Marka</label>
+                <select id="brand-select" aria-label="Araç markası seçin">
+                  <option value="">Marka Seçin</option>
+                </select>
+              </div>
+              <div class="select-wrapper">
+                <label for="model-select">Model</label>
+                <select id="model-select" aria-label="Araç modeli seçin" disabled>
+                  <option value="">Önce Marka Seçin</option>
+                </select>
+              </div>
+            </div>
+            <div class="selector-row">
+              <div class="select-wrapper">
+                <label for="generation-select">Jenerasyon</label>
+                <select id="generation-select" aria-label="Araç jenerasyonu seçin" disabled>
+                  <option value="">Önce Model Seçin</option>
+                </select>
+              </div>
+              <div class="select-wrapper">
+                <label for="year-select">Yıl</label>
+                <select id="year-select" aria-label="Araç yılı seçin" disabled>
+                  <option value="">Önce Jenerasyon Seçin</option>
+                </select>
+              </div>
+            </div>
+            <div class="selector-row">
+              <div class="select-wrapper">
+                <label for="engine-select">Motor</label>
+                <select id="engine-select" aria-label="Araç motoru seçin" disabled>
+                  <option value="">Önce Yıl Seçin</option>
+                </select>
+              </div>
+              <div class="select-wrapper">
+                <button type="button" class="btn btn-primary btn-search" id="search-btn" disabled>
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <circle cx="11" cy="11" r="8"/>
+                    <path d="M21 21l-4.35-4.35"/>
+                  </svg>
+                  Ürünleri Göster
+                </button>
+              </div>
+            </div>
+            <p class="selector-hint" id="selector-hint" aria-live="polite">Lütfen aracınızı seçin</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Categories -->
+    <section class="categories" aria-labelledby="categories-title">
+      <div class="container">
+        <h2 id="categories-title" class="section-title">Kategoriler</h2>
+        <div class="category-grid" id="category-grid" role="list">
+          <!-- Categories loaded dynamically -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Products -->
+    <section class="products" aria-labelledby="products-title">
+      <div class="container">
+        <div class="section-header">
+          <h2 id="products-title" class="section-title">Öne Çıkan Ürünler</h2>
+          <a href="/urunler" class="btn btn-ghost">Tümünü Gör</a>
+        </div>
+        <div class="product-grid" id="product-grid" role="list">
+          <!-- Products loaded dynamically -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Benefits -->
+    <section class="benefits" aria-labelledby="benefits-title">
+      <div class="container">
+        <h2 id="benefits-title" class="section-title" style="text-align: center;">Neden Aduva Garaj?</h2>
+        <div class="benefits-grid">
+          <article class="benefit-card">
+            <div class="benefit-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              </svg>
+            </div>
+            <h3>Güvenli Alışveriş</h3>
+            <p>SSL sertifikalı, KVKK uyumlu altyapı ile verileriniz güvende</p>
+          </article>
+          <article class="benefit-card">
+            <div class="benefit-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+              </svg>
+            </div>
+            <h3>Hızlı Teslimat</h3>
+            <p>Yurtiçi Kargo ve Aras Kargo ile 1-2 iş gününde kapınızda</p>
+          </article>
+          <article class="benefit-card">
+            <div class="benefit-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M21 12V7H5v5l7 7 7-7z"/>
+                <path d="M17 17v5"/>
+                <path d="M7 17v5"/>
+              </svg>
+            </div>
+            <h3>Kolay İade</h3>
+            <p>14 gün içinde şartsız iade, kargo bedavaya bizden</p>
+          </article>
+          <article class="benefit-card">
+            <div class="benefit-icon">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <circle cx="12" cy="12" r="10"/>
+                <path d="M12 6v6l4 2"/>
+              </svg>
+            </div>
+            <h3>Uzman Destek</h3>
+            <p>Pazartesi-Cuma 09:00-18:00 arası teknik destek hattı</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="/" class="logo" aria-label="Aduva Garaj Ana Sayfa">
+            <img src="/logo.png?v=5" alt="Aduva Garaj 3D Krom Logo" class="logo-img" width="40" height="40"/>
+            <span>Aduva Garaj</span>
+          </a>
+          <p>Türkiye'nin güvenilir oto aksesuar mağazası. 2000+ ürün, 50+ marka, %100 uyumluluk garantisi.</p>
+        </div>
+        <nav class="footer-nav" aria-label="Footer navigasyon">
+          <h4>Kurumsal</h4>
+          <ul>
+            <li><a href="/hakkimizda">Hakkımızda</a></li>
+            <li><a href="/kariyer">Kariyer</a></li>
+            <li><a href="/basin">Basın</a></li>
+            <li><a href="/surdurulebilirlik">Sürdürülebilirlik</a></li>
+          </ul>
+        </nav>
+        <nav class="footer-nav" aria-label="Müşteri hizmetleri">
+          <h4>Müşteri Hizmetleri</h4>
+          <ul>
+            <li><a href="/yardim">Yardım Merkezi</a></li>
+            <li><a href="/sikca-sorulanlar">SSS</a></li>
+            <li><a href="/iade-degisim">İade & Değişim</a></li>
+            <li><a href="/kargo-teslimat">Kargo & Teslimat</a></li>
+          </ul>
+        </nav>
+        <nav class="footer-nav" aria-label="Yasal">
+          <h4>Yasal</h4>
+          <ul>
+            <li><a href="/kvkk">KVKK Aydınlatma</a></li>
+            <li><a href="/gizlilik">Gizlilik Politikası</a></li>
+            <li><a href="/kullanim-sartlari">Kullanım Şartları</a></li>
+            <li><a href="/mesafeli-sozlesme">Mesafeli Satış Sözleşmesi</a></li>
+          </ul>
+        </nav>
+        <div class="footer-contact">
+          <h4>İletişim</h4>
+          <address>
+            <p>📍 İstanbul, Türkiye</p>
+            <p>📞 <a href="tel:+902125550000">+90 212 555 00 00</a></p>
+            <p>✉️ <a href="mailto:info@aduvagaraj.com">info@aduvagaraj.com</a></p>
+          </address>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Aduva Garaj. Tüm hakları saklıdır.</p>
+        <div class="payment-methods" aria-label="Ödeme yöntemleri">
+          <span class="payment-icon" aria-label="Visa">💳</span>
+          <span class="payment-icon" aria-label="Mastercard">💳</span>
+          <span class="payment-icon" aria-label="Troy">💳</span>
+          <span class="payment-icon" aria-label="BKM Express">📱</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="/app.js"></script>
+</body>
+</html>

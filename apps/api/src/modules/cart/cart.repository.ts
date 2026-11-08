@@ -1,7 +1,7 @@
 import { Injectable } from '@nestjs/common';
 import { randomUUID } from 'crypto';
 import { PrismaService } from '../../common/prisma';
-import { N11StockProvider, StockSnapshot } from './cart.types';
+import { StockProvider, StockSnapshot } from './cart.types';
 
 export interface StoredCartItem {
   id: string;
@@ -41,10 +41,10 @@ export interface StoredCoupon {
 const CART_TTL_MS = 30 * 24 * 60 * 60 * 1000; // 30 gün
 
 /**
- * n11 senkronundan gelen yerel veritabanından stok/fiyat okuyan sağlayıcı
+ * Yerel veritabanından stok/fiyat okuyan sağlayıcı
  */
 @Injectable()
-export class LocalN11StockProvider extends N11StockProvider {
+export class LocalStockProvider extends StockProvider {
   constructor(private readonly prisma: PrismaService) {
     super();
   }
@@ -76,7 +76,7 @@ export class LocalN11StockProvider extends N11StockProvider {
         maxPerOrder: p.maxPerOrder || 10,
         available: p.status === 'ACTIVE' && !p.isHidden && stock > 0,
         isUniversal: p.isUniversal,
-        fitmentVehicleIds: p.fitments.map((f) => f.vehicleId),
+        fitmentVehicleIds: p.fitments.map((f: { vehicleId: string }) => f.vehicleId),
       };
     }
 
@@ -122,7 +122,7 @@ export class CartRepository {
     await prev;
     try {
       if (this.prisma.isConnected) {
-        return await this.prisma.$transaction(async (tx) => {
+        return await this.prisma.$transaction(async (tx: Parameters<Parameters<typeof this.prisma.$transaction>[0]>[0]) => {
           await tx.$executeRaw`SELECT pg_advisory_xact_lock(hashtext(${lockKey}))`;
           return fn();
         });

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Araçlarım - Aduva Garaj</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container header-inner">
+      <a href="/" class="logo" aria-label="Aduva Garaj Ana Sayfa">
+        <img src="/logo.png?v=5" alt="Aduva Garaj 3D Krom Logo" class="logo-img" width="40" height="40"/>
+        <span>Aduva Garaj</span>
+      </a>
+      <nav class="nav" aria-label="Ana navigasyon">
+        <a href="/" class="nav-link" data-page="home">Ana Sayfa</a>
+        <a href="/urunler" class="nav-link" data-page="products">Ürünler</a>
+        <a href="/kurumsal" class="nav-link" data-page="kurumsal">Kurumsal</a>
+        <a href="/iletisim" class="nav-link" data-page="iletisim">İletişim</a>
+      </nav>
+      <div class="header-actions">
+        <button class="btn btn-ghost cart-trigger" aria-label="Sepet" aria-expanded="false" aria-controls="cart-drawer">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <circle cx="9" cy="21" r="1"/>
+            <circle cx="20" cy="21" r="1"/>
+            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+          </svg>
+          <span class="cart-count" aria-live="polite">0</span>
+        </button>
+        <div class="user-menu">
+          <button class="btn btn-ghost user-trigger" aria-label="Kullanıcı menüsü" aria-expanded="false">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+              <circle cx="12" cy="7" r="4"/>
+            </svg>
+          </button>
+          <div class="user-dropdown" role="menu" hidden>
+            <a href="/hesabim" class="dropdown-item" role="menuitem">Hesabım</a>
+            <a href="/siparislerim" class="dropdown-item" role="menuitem">Siparişlerim</a>
+            <a href="/araclarim" class="dropdown-item" role="menuitem">Araçlarım</a>
+            <hr class="dropdown-divider">
+            <button class="dropdown-item btn-logout" role="menuitem">Çıkış Yap</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <aside id="cart-drawer" class="cart-drawer" role="dialog" aria-label="Sepet" aria-hidden="true">
+    <div class="cart-drawer-inner">
+      <div class="cart-header"><h2>Sepetiniz</h2><button class="cart-close" aria-label="Sepeti kapat">&times;</button></div>
+      <div class="cart-body">
+        <div class="cart-empty" hidden><svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg><p>Sepetiniz boş</p><a href="/" class="btn btn-primary">Alışverişe Başla</a></div>
+        <ul class="cart-items" role="list"></ul>
+      </div>
+      <div class="cart-footer" hidden>
+        <div class="cart-summary">
+          <div class="summary-row"><span>Ara Toplam</span><span class="subtotal">₺0,00</span></div>
+          <div class="summary-row"><span>Kargo</span><span class="shipping">₺0,00</span></div>
+          <div class="summary-row total"><span>Toplam</span><span class="total">₺0,00</span></div>
+          <div class="free-shipping-bar"><div class="free-shipping-progress" style="width: 0%"></div></div>
+          <p class="free-shipping-text">Ücretsiz kargo için <span class="remaining">₺750,00</span> daha alışveriş yapın</p>
+        </div>
+        <div class="cart-actions">
+          <a href="/sepet" class="btn btn-secondary btn-block">Sepeti Görüntüle</a>
+          <a href="/odeme" class="btn btn-primary btn-block">Ödemeye Geç</a>
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="cart-overlay" aria-hidden="true"></div>
+
+  <main class="main">
+    <section class="page-header">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="/">Ana Sayfa</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">Araçlarım</span>
+        </nav>
+        <h1>Araçlarım</h1>
+        <p class="page-subtitle">Araçlarınızı ekleyin, uyumlu ürünleri hızlı bulun</p>
+      </div>
+    </section>
+
+    <section class="vehicles-page">
+      <div class="container">
+        <div class="vehicles-header">
+          <h2>Kayıtlı Araçlarınız</h2>
+          <button type="button" class="btn btn-primary" id="add-vehicle-btn">Araç Ekle</button>
+        </div>
+
+        <div class="vehicles-grid" id="vehicles-grid" role="list">
+          <div class="vehicles-loading" hidden>
+            <svg class="spinner" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10" stroke-opacity="0.25"/><path d="M12 2a10 10 0 0 1 10 10" stroke-opacity="1"/></svg>
+            <p>Araçlar yükleniyor...</p>
+          </div>
+          <div class="vehicles-empty" hidden>
+            <svg width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg>
+            <h2>Henüz Araç Eklenmemiş</h2>
+            <p>Araç ekleyerek size özel uyumlu ürünleri görün.</p>
+            <button type="button" class="btn btn-primary" id="add-first-vehicle-btn">İlk Aracımı Ekle</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Add/Edit Vehicle Modal -->
+    <dialog id="vehicle-modal" class="modal" role="dialog" aria-labelledby="vehicle-modal-title" aria-modal="true">
+      <form id="vehicle-form" class="modal-content" method="dialog">
+        <header class="modal-header">
+          <h3 id="vehicle-modal-title">Araç Ekle</h3>
+          <button type="button" class="modal-close" aria-label="Kapat" value="cancel">&times;</button>
+        </header>
+        <div class="modal-body">
+          <input type="hidden" id="vehicle-id" name="id">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="vehicle-brand">Marka <span class="required" aria-hidden="true">*</span></label>
+              <select id="vehicle-brand" name="brand" required>
+                <option value="">Marka Seçin</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="vehicle-model">Model <span class="required" aria-hidden="true">*</span></label>
+              <select id="vehicle-model" name="model" required disabled>
+                <option value="">Önce Marka Seçin</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="vehicle-year">Yıl <span class="required" aria-hidden="true">*</span></label>
+              <select id="vehicle-year" name="year" required disabled>
+                <option value="">Önce Model Seçin</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="vehicle-engine">Motor <span class="required" aria-hidden="true">*</span></label>
+              <select id="vehicle-engine" name="engine" required disabled>
+                <option value="">Önce Yıl Seçin</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="vehicle-plate">Plaka (İsteğe Bağlı)</label>
+            <input type="text" id="vehicle-plate" name="plate" placeholder="34 ABC 123" style="text-transform: uppercase;">
+          </div>
+          <div class="form-group">
+            <label for="vehicle-vin">VIN / Şasi No (İsteğe Bağlı)</label>
+            <input type="text" id="vehicle-vin" name="vin" placeholder="17 karakterlik VIN numarası" maxlength="17">
+          </div>
+          <div class="form-group">
+            <label for="vehicle-mileage">Kilometre (İsteğe Bağlı)</label>
+            <input type="number" id="vehicle-mileage" name="mileage" min="0" placeholder="Örn: 85000">
+          </div>
+          <div class="form-group">
+            <label for="vehicle-fuel_type">Yakıt Tipi</label>
+            <select id="vehicle-fuel_type" name="fuel_type">
+              <option value="">Seçiniz</option>
+              <option value="GASOLINE">Benzin</option>
+              <option value="DIESEL">Dizel</option>
+              <option value="LPG">LPG</option>
+              <option value="HYBRID">Hibrit</option>
+              <option value="ELECTRIC">Elektrik</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="vehicle-transmission">Vites</label>
+            <select id="vehicle-transmission" name="transmission">
+              <option value="">Seçiniz</option>
+              <option value="MANUAL">Manuel</option>
+              <option value="AUTOMATIC">Otomatik</option>
+              <option value="CVT">CVT</option>
+              <option value="DSG">DSG/DCT</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="checkbox-label">
+              <input type="checkbox" id="vehicle-is_default" name="is_default">
+              <span>Varsayılan aracım olsun (uyumlu ürünlerde öncelikli)</span>
+            </label>
+          </div>
+        </div>
+        <footer class="modal-footer">
+          <button type="button" class="btn btn-secondary" value="cancel">İptal</button>
+          <button type="submit" class="btn btn-primary" id="vehicle-submit">
+            <span class="btn-text">Kaydet</span>
+            <span class="btn-loading" hidden>
+              <svg class="spinner" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10" stroke-opacity="0.25"/><path d="M12 2a10 10 0 0 1 10 10" stroke-opacity="1"/></svg>
+            </span>
+          </button>
+        </footer>
+      </form>
+    </dialog>
+    <div class="modal-overlay" id="vehicle-modal-overlay" hidden></div>
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand"><a href="/" class="logo"><svg width="32" height="32" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="8" fill="currentColor"/><path d="M8 16L14 22L24 10" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Aduva Garaj</span></a><p>Türkiye'nin güvenilir oto aksesuar mağazası.</p></div>
+        <nav class="footer-nav"><h4>Kurumsal</h4><ul><li><a href="/hakkimizda">Hakkımızda</a></li><li><a href="/kariyer">Kariyer</a></li></ul></nav>
+        <nav class="footer-nav"><h4>Müşteri Hizmetleri</h4><ul><li><a href="/yardim">Yardım</a></li><li><a href="/iade-degisim">İade & Değişim</a></li></ul></nav>
+        <nav class="footer-nav"><h4>Yasal</h4><ul><li><a href="/kvkk">KVKK</a></li><li><a href="/gizlilik">Gizlilik</a></li></ul></nav>
+      </div>
+      <div class="footer-bottom"><p>&copy; 2026 Aduva Garaj.</p></div>
+    </div>
+  </footer>
+
+  <script type="module" src="/app-vehicles.js"></script>
+</body>
+</html>

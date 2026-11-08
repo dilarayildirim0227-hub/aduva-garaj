@@ -1,0 +1,8 @@
+<svg width="400" height="250" viewBox="0 0 400 250" xmlns="http://www.w3.org/2000/svg">
+  <rect width="400" height="250" fill="#f3f4f6"/>
+  <rect x="0" y="0" width="400" height="4" fill="#d9a820"/>
+  <rect x="0" y="246" width="400" height="4" fill="#d9a820"/>
+  <text x="200" y="110" font-family="system-ui, sans-serif" font-size="48" text-anchor="middle" fill="#d9a820">📦</text>
+  <text x="200" y="145" font-family="system-ui, sans-serif" font-size="14" text-anchor="middle" fill="#9ca3af">Ürün Görseli</text>
+  <text x="200" y="165" font-family="system-ui, sans-serif" font-size="12" text-anchor="middle" fill="#9ca3af">ADUVA GARAJ</text>
+</svg>

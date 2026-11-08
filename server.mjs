@@ -50,20 +50,19 @@ const store = {
   },
   vehicles,
   categories: [
-    { id: 'cat-multimedya', n11Id: 'cat-Multimedya', name: 'Multimedya & CarPlay', slug: 'multimedya-carplay', icon: '📺' },
-    { id: 'cat-paspas', n11Id: 'cat-Paspas', name: '3D Havuzlu Paspas', slug: '3d-paspas', icon: '🛡️' },
-    { id: 'cat-kilif', n11Id: 'cat-Koltuk Kılıfı', name: 'Koltuk Kılıfı & Minder', slug: 'koltuk-kilifi', icon: '💺' },
-    { id: 'cat-krom', n11Id: 'cat-Krom Aksesuar', name: 'Krom & Dış Tuning', slug: 'krom-dis-tuning', icon: '✨' },
-    { id: 'cat-led', n11Id: 'cat-LED Aydınlatma', name: 'LED & Ambiyans', slug: 'led-ambiyans', icon: '💡' },
-    { id: 'cat-ses', n11Id: 'cat-Ses Sistemi', name: 'Ses Sistemleri & Kamera', slug: 'ses-kamera', icon: '🔊' },
-    { id: 'cat-bakim', n11Id: 'cat-Bakim', name: 'Periyodik Bakım & Fren', slug: 'periyodik-bakim-fren', icon: '🔧' },
+    { id: 'cat-multimedya', name: 'Multimedya & CarPlay', slug: 'multimedya-carplay', icon: '📺' },
+    { id: 'cat-paspas', name: '3D Havuzlu Paspas', slug: '3d-paspas', icon: '🛡️' },
+    { id: 'cat-kilif', name: 'Koltuk Kılıfı & Minder', slug: 'koltuk-kilifi', icon: '💺' },
+    { id: 'cat-krom', name: 'Krom & Dış Tuning', slug: 'krom-dis-tuning', icon: '✨' },
+    { id: 'cat-led', name: 'LED & Ambiyans', slug: 'led-ambiyans', icon: '💡' },
+    { id: 'cat-ses', name: 'Ses Sistemleri & Kamera', slug: 'ses-kamera', icon: '🔊' },
+    { id: 'cat-bakim', name: 'Periyodik Bakım & Fren', slug: 'periyodik-bakim-fren', icon: '🔧' },
   ],
   products: [
     {
       id: 'prd-1',
-      n11Id: '100000',
       sellerCode: 'ADV-1000',
-      slug: 'android-auto-carplay-9-multimedya-ekran-4gb-64gb-100000',
+      slug: 'android-auto-carplay-9-multimedya-ekran-4gb-64gb',
       title: 'Android Auto & CarPlay 9" Multimedya Ekran 4GB/64GB',
       description: 'Kablosuz CarPlay ve Android Auto destekli, DSP ses işlemcili, QLED IPS ekranlı yeni nesil multimedya sistemi. Direksiyon kumandası ile tam uyumlu.',
       brand: 'Aduva Pro',
@@ -80,16 +79,14 @@ const store = {
       ratingAvg: 4.9,
       ratingCount: 48,
       soldCount: 142,
-      n11Url: 'https://www.n11.com/magaza/aduvagaraj',
       image: 'https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=800&q=80',
       fitmentVehicleIds: ['veh-golf7', 'veh-passatb8', 'veh-egea', 'veh-clio5', 'veh-megane4', 'veh-corolla', 'veh-civic'],
       attributes: { RAM: '4 GB', Hafıza: '64 GB', Ekran: '9 inç QLED', Garanti: '2 Yıl' },
     },
     {
       id: 'prd-2',
-      n11Id: '100001',
       sellerCode: 'ADV-1001',
-      slug: 'vw-golf-7-uyumlu-3d-havuzlu-paspas-seti-100001',
+      slug: 'vw-golf-7-uyumlu-3d-havuzlu-paspas-seti',
       title: 'VW Golf 7 (2012-2020) 3D Havuzlu TPE Paspas Seti',
       description: 'Lazer kesim birebir Golf 7 taban ölçüsü. Koku yapmayan %100 TPE kauçuk hammadde, klips sabitlemeli, yüksek kenar bariyerli.',
       brand: 'Aduva Fit',
@@ -106,16 +103,14 @@ const store = {
       ratingAvg: 4.8,
       ratingCount: 64,
       soldCount: 215,
-      n11Url: 'https://www.n11.com/magaza/aduvagaraj',
       image: 'https://images.unsplash.com/photo-1617788138017-80ad40651399?auto=format&fit=crop&w=800&q=80',
       fitmentVehicleIds: ['veh-golf7'],
       attributes: { Materyal: 'TPE Kauçuk', Renk: 'Siyah', Parça: '5 Parça' },
     },
     {
       id: 'prd-3',
-      n11Id: '100002',
       sellerCode: 'ADV-1002',
-      slug: 'fiat-egea-deri-koltuk-kilifi-seti-siyah-kirmizi-100002',
+      slug: 'fiat-egea-deri-koltuk-kilifi-seti-siyah-kirmizi',
       title: 'Fiat Egea Özel Kesim Tay Tüyü & Deri Koltuk Kılıfı (Kırmızı Dikişli)',
       description: 'Airbag uyumlu zayıflatılmış dikiş teknolojisi, terletmeyen tay tüyü orta yüzey ve ortopedik yan destek süngerleri.',
       brand: 'Aduva Design',
@@ -132,16 +127,14 @@ const store = {
       ratingAvg: 4.7,
       ratingCount: 29,
       soldCount: 87,
-      n11Url: 'https://www.n11.com/magaza/aduvagaraj',
       image: 'https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=800&q=80',
       fitmentVehicleIds: ['veh-egea'],
       attributes: { Renk: 'Siyah / Kırmızı', Airbag: 'Uyumlu', Materyal: 'Deri + Tay Tüyü' },
     },
     {
       id: 'prd-4',
-      n11Id: '100003',
       sellerCode: 'ADV-1003',
-      slug: 'renault-clio-5-krom-cam-citasi-4-parca-100003',
+      slug: 'renault-clio-5-krom-cam-citasi-4-parca',
       title: 'Renault Clio 5 Paslanmaz 304 Kalite Krom Cam Çıtası 4 Parça',
       description: '3M çift taraflı akrilik bant ile delme/kesme gerektirmeden 5 dakikada kolay montaj. Kararmaz 304 paslanmaz çelik.',
       brand: 'Aduva Chrome',
@@ -158,16 +151,14 @@ const store = {
       ratingAvg: 4.6,
       ratingCount: 19,
       soldCount: 64,
-      n11Url: 'https://www.n11.com/magaza/aduvagaraj',
       image: 'https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=800&q=80',
       fitmentVehicleIds: ['veh-clio5'],
       attributes: { Çelik: '304 Paslanmaz', Montaj: '3M Bantlı' },
     },
     {
       id: 'prd-5',
-      n11Id: '100004',
       sellerCode: 'ADV-1004',
-      slug: 'ambiyans-rgb-led-torpido-seridi-6m-uygulama-kontrollu-100004',
+      slug: 'ambiyans-rgb-led-torpido-seridi-6m-uygulama-kontrollu',
       title: '64 Renk Bluetooth Uygulama Kontrollü Fiber Optik Torpido & Kapı Ambiyans LED',
       description: 'iOS/Android uygulama ve müziğe duyarlı ritim modu ile araç içi premium ambiyans aydınlatma.',
       brand: 'Aduva Light',
@@ -184,16 +175,14 @@ const store = {
       ratingAvg: 4.9,
       ratingCount: 93,
       soldCount: 310,
-      n11Url: 'https://www.n11.com/magaza/aduvagaraj',
       image: 'https://images.unsplash.com/photo-1542282088-72c9c27ed0cd?auto=format&fit=crop&w=800&q=80',
       fitmentVehicleIds: vehicles.map((v) => v.id),
       attributes: { Uzunluk: '6 Metre', Kontrol: 'Mobil Uygulama + Kumanda' },
     },
     {
       id: 'prd-6',
-      n11Id: '100005',
       sellerCode: 'ADV-1005',
-      slug: 'pioneer-16cm-2-yollu-oto-hoparlor-300w-100005',
+      slug: 'pioneer-16cm-2-yollu-oto-hoparlor-300w',
       title: 'Pioneer 16cm 300W Koaksiyel Kapı Hoparlör Seti + AHD Geri Görüş Kamerası',
       description: 'Net tiz ve derin bas performansı sunan 16cm kapı hoparlör takımı ve 170° balık gözü gece görüşlü AHD kamera paketi.',
       brand: 'Pioneer',
@@ -210,16 +199,14 @@ const store = {
       ratingAvg: 4.8,
       ratingCount: 37,
       soldCount: 98,
-      n11Url: 'https://www.n11.com/magaza/aduvagaraj',
       image: 'https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?auto=format&fit=crop&w=800&q=80',
       fitmentVehicleIds: vehicles.map((v) => v.id),
       attributes: { Güç: '300W Peak', Çap: '16 cm' },
     },
     {
       id: 'prd-7',
-      n11Id: '100006',
       sellerCode: 'ADV-1006',
-      slug: 'toyota-corolla-2019-2026-bagaj-havuzu-ve-paspas-100006',
+      slug: 'toyota-corolla-2019-2026-bagaj-havuzu-ve-paspas',
       title: 'Toyota Corolla Sedan (2019-2026) 3D Paspas + Bagaj Havuzu Tam Set',
       description: 'Toyota Corolla yeni kasa (Hybrid & Benzinli) ile %100 uyumlu 3D paspas ve bagaj havuzu kombinasyonu.',
       brand: 'Aduva Fit',
@@ -236,7 +223,6 @@ const store = {
       ratingAvg: 4.9,
       ratingCount: 41,
       soldCount: 129,
-      n11Url: 'https://www.n11.com/magaza/aduvagaraj',
       image: 'https://images.unsplash.com/photo-1580273916550-e323be2ae537?auto=format&fit=crop&w=800&q=80',
       fitmentVehicleIds: ['veh-corolla'],
       attributes: { Paket: 'Paspas + Bagaj Havuzu', Kasa: 'Sedan 2019+' },
@@ -254,7 +240,7 @@ const store = {
     {
       id: 'ord-101',
       orderNumber: 'ADV-2026-1042',
-      source: 'N11',
+      source: 'WEB',
       customerName: 'Mehmet Yılmaz',
       city: 'İstanbul / Kadıköy',
       status: 'SHIPPED',
@@ -345,7 +331,6 @@ store.vehicles.forEach((v, idx) => {
 const specialServerProducts = [
   {
     id: 'prd-opel-1',
-    n11Id: '100009',
     sellerCode: 'ADV-OPEL-01',
     oemCode: '13417363',
     slug: 'opel-astra-j-insignia-tesla-ekran-9-7-carplay-multimedya',
@@ -368,7 +353,6 @@ const specialServerProducts = [
     ratingAvg: 4.9,
     ratingCount: 76,
     soldCount: 284,
-    n11Url: 'https://www.n11.com/magaza/aduvagaraj',
     image: 'https://images.unsplash.com/photo-1549399542-7e3f8b79c341?auto=format&fit=crop&w=800&q=80',
     fitmentVehicleIds: ['veh-astraj', 'veh-insignia'],
     attributes: { OEM_No: '13417363', RAM_Hafiza: '4GB / 64GB', Ekran: '9.7" Tesla QLED', Garanti: '2 Yıl Resmi Garanti' },
@@ -376,7 +360,6 @@ const specialServerProducts = [
   },
   {
     id: 'prd-bakim-1',
-    n11Id: '100010',
     sellerCode: 'ADV-BKM-16',
     oemCode: '95526685-SET',
     slug: 'opel-astra-j-k-insignia-1-6-cdti-bosch-filtre-bakim-seti',
@@ -399,7 +382,6 @@ const specialServerProducts = [
     ratingAvg: 4.9,
     ratingCount: 112,
     soldCount: 410,
-    n11Url: 'https://www.n11.com/magaza/aduvagaraj',
     image: 'https://images.unsplash.com/photo-1486262715619-67b85e0b08d3?auto=format&fit=crop&w=800&q=80',
     fitmentVehicleIds: ['veh-astraj', 'veh-astrak', 'veh-insignia'],
     attributes: { Paket_Icerigi: 'Hava + Yağ + Yakıt + Karbonlu Polen', Motor: '1.6 CDTI 136BG', Uretim: 'Almanya' },
@@ -407,7 +389,6 @@ const specialServerProducts = [
   },
   {
     id: 'prd-fren-1',
-    n11Id: '100011',
     sellerCode: 'ADV-FRN-04',
     oemCode: '5Q0698151B',
     slug: 'vw-golf-7-passat-b8-on-seramik-fren-balata-takimi',
@@ -429,7 +410,6 @@ const specialServerProducts = [
     ratingAvg: 4.8,
     ratingCount: 53,
     soldCount: 165,
-    n11Url: 'https://www.n11.com/magaza/aduvagaraj',
     image: 'https://images.unsplash.com/photo-1580273916550-e323be2ae537?auto=format&fit=crop&w=800&q=80',
     fitmentVehicleIds: ['veh-golf7', 'veh-passatb8', 'veh-a3'],
     attributes: { Konum: 'Ön Aks', Sensor: 'Fişli Aşınma Sensörlü', Alasim: 'Seramik Low-Noise' },
@@ -437,7 +417,6 @@ const specialServerProducts = [
   },
   {
     id: 'prd-led-2',
-    n11Id: '100012',
     sellerCode: 'ADV-LED-H7',
     oemCode: 'H7-CSP-12000LM',
     slug: 'h7-mini-boy-canbus-led-xenon-far-ampulu-6000k',
@@ -459,7 +438,6 @@ const specialServerProducts = [
     ratingAvg: 4.8,
     ratingCount: 88,
     soldCount: 390,
-    n11Url: 'https://www.n11.com/magaza/aduvagaraj',
     image: 'https://images.unsplash.com/photo-1542282088-72c9c27ed0cd?auto=format&fit=crop&w=800&q=80',
     fitmentVehicleIds: store.vehicles.map((v) => v.id),
     attributes: { Soket: 'H7', Renk_Sicakligi: '6000K Beyaz', Lumen: '12.000 LM', CANBUS: 'Var (Arıza Yakmaz)' },
@@ -467,7 +445,6 @@ const specialServerProducts = [
   },
   {
     id: 'prd-krom-2',
-    n11Id: '100013',
     sellerCode: 'ADV-YRS-02',
     oemCode: 'PIANO-BLK-MIR',
     slug: 'piano-black-yarasa-ayna-kapagi-takimi',
@@ -489,7 +466,6 @@ const specialServerProducts = [
     ratingAvg: 4.7,
     ratingCount: 44,
     soldCount: 178,
-    n11Url: 'https://www.n11.com/magaza/aduvagaraj',
     image: 'https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=800&q=80',
     fitmentVehicleIds: ['veh-astraj', 'veh-golf7', 'veh-passatb8', 'veh-egea', 'veh-clio5', 'veh-megane4', 'veh-f30'],
     attributes: { Renk: 'Piano Black', Kutu: 'Sağ + Sol 2 Adet', Malzeme: '1. Sınıf ABS' },
@@ -509,7 +485,6 @@ for (let i = store.products.length + 1; i <= 105; i++) {
   const listPriceTl = hasVerifiedDiscount ? Math.round(priceTl * 1.15) : null;
   store.products.push({
     id: `prd-${i}`,
-    n11Id: String(100000 + i),
     sellerCode: `ADV-${1000 + i}`,
     oemCode: `OEM-${v.brand.slice(0, 3).toUpperCase()}-${1000 + i}`,
     slug: `${v.brand}-${v.model}-aksesuar-${i}`.toLowerCase().replace(/[^a-z0-9]+/g, '-'),
@@ -531,7 +506,6 @@ for (let i = store.products.length + 1; i <= 105; i++) {
     ratingAvg: 4.8,
     ratingCount: 18 + (i % 50),
     soldCount: 25 + ((i * 5) % 190),
-    n11Url: 'https://www.n11.com/magaza/aduvagaraj',
     image: store.products[i % 7].image,
     fitmentVehicleIds: [v.id],
     attributes: { Uyumlu_Arac: `${v.brand} ${v.model}`, KType: v.ktypeCode, Garanti: '2 Yıl Aduva Garaj' },
@@ -557,7 +531,7 @@ for (let i = store.orders.length + 1; i <= 55; i++) {
   store.orders.push({
     id: `ord-${100 + i}`,
     orderNumber: `ADV-2026-${1040 + i}`,
-    source: i % 3 === 0 ? 'N11' : i % 2 === 0 ? 'APP' : 'WEB',
+    source: i % 2 === 0 ? 'APP' : 'WEB',
     customerName: demoNames[i % demoNames.length],
     city: demoCities[i % demoCities.length],
     status: i % 4 === 0 ? 'PREPARING' : 'DELIVERED',
@@ -2133,10 +2107,10 @@ const server = createServer(async (req, res) => {
     return sendJson(res, 200, p, {}, req);
   }
 
-  // A7: n11 Delta Senkron ve Çakışma Çözümü (SEC-02: Admin Korumalı)
-  if (req.method === 'POST' && path === '/api/n11-sync/run') {
+  // A7: Senkron ve Çakışma Çözümü (SEC-02: Admin Korumalı)
+  if (req.method === 'POST' && path === '/api/sync/run') {
     if (!verifyAdminAccess(req)) {
-      return sendJson(res, 401, { error: { code: 'ADMIN_UNAUTHORIZED', message: 'n11 senkronu için yönetici yetkisi gereklidir.' } }, {}, req);
+      return sendJson(res, 401, { error: { code: 'ADMIN_UNAUTHORIZED', message: 'senkron i.in yönetici yetkisi gereklidir.' } }, {}, req);
     }
     const startedAt = new Date().toISOString();
     const preserved = store.products.filter((p) => (p.fitmentVehicleIds || []).length > 0).length;

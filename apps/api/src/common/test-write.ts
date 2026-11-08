@@ -1,1 +1,2 @@
-test content
+// Test file - placeholder
+export const testValue = 'test';

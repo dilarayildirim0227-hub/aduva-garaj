@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yardım Merkezi - Aduva Garaj</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container header-inner">
+      <a href="/" class="logo" aria-label="Aduva Garaj Ana Sayfa">
+        <img src="/logo.png?v=5" alt="Aduva Garaj 3D Krom Logo" class="logo-img" width="40" height="40"/>
+        <span>Aduva Garaj</span>
+      </a>
+      <nav class="nav" aria-label="Ana navigasyon">
+        <a href="/" class="nav-link" data-page="home">Ana Sayfa</a>
+        <a href="/urunler" class="nav-link" data-page="products">Ürünler</a>
+        <a href="/kurumsal" class="nav-link" data-page="kurumsal">Kurumsal</a>
+        <a href="/iletisim" class="nav-link" data-page="iletisim">İletişim</a>
+      </nav>
+      <div class="header-actions">
+        <button class="btn btn-ghost cart-trigger" aria-label="Sepet" aria-expanded="false" aria-controls="cart-drawer">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <circle cx="9" cy="21" r="1"/>
+            <circle cx="20" cy="21" r="1"/>
+            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+          </svg>
+          <span class="cart-count" aria-live="polite">0</span>
+        </button>
+        <div class="user-menu">
+          <button class="btn btn-ghost user-trigger" aria-label="Kullanıcı menüsü" aria-expanded="false">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+              <circle cx="12" cy="7" r="4"/>
+            </svg>
+          </button>
+          <div class="user-dropdown" role="menu" hidden>
+            <a href="/giris" class="dropdown-item" role="menuitem">Giriş Yap</a>
+            <a href="/kayit" class="dropdown-item" role="menuitem">Kayıt Ol</a>
+            <hr class="dropdown-divider">
+            <a href="/hesabim" class="dropdown-item" role="menuitem">Hesabım</a>
+            <a href="/siparislerim" class="dropdown-item" role="menuitem">Siparişlerim</a>
+            <a href="/araclarim" class="dropdown-item" role="menuitem">Araçlarım</a>
+            <hr class="dropdown-divider">
+            <button class="dropdown-item btn-logout" role="menuitem">Çıkış Yap</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <aside id="cart-drawer" class="cart-drawer" role="dialog" aria-label="Sepet" aria-hidden="true">
+    <div class="cart-drawer-inner">
+      <div class="cart-header"><h2>Sepetiniz</h2><button class="cart-close" aria-label="Sepeti kapat">&times;</button></div>
+      <div class="cart-body">
+        <div class="cart-empty" hidden><svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg><p>Sepetiniz boş</p><a href="/" class="btn btn-primary">Alışverişe Başla</a></div>
+        <ul class="cart-items" role="list"></ul>
+      </div>
+      <div class="cart-footer" hidden>
+        <div class="cart-summary">
+          <div class="summary-row"><span>Ara Toplam</span><span class="subtotal">₺0,00</span></div>
+          <div class="summary-row"><span>Kargo</span><span class="shipping">₺0,00</span></div>
+          <div class="summary-row total"><span>Toplam</span><span class="total">₺0,00</span></div>
+          <div class="free-shipping-bar"><div class="free-shipping-progress" style="width: 0%"></div></div>
+          <p class="free-shipping-text">Ücretsiz kargo için <span class="remaining">₺750,00</span> daha alışveriş yapın</p>
+        </div>
+        <div class="cart-actions">
+          <a href="/sepet" class="btn btn-secondary btn-block">Sepeti Görüntüle</a>
+          <a href="/odeme" class="btn btn-primary btn-block">Ödemeye Geç</a>
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="cart-overlay" aria-hidden="true"></div>
+
+  <main class="main">
+    <section class="page-header">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="/">Ana Sayfa</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">Yardım Merkezi</span>
+        </nav>
+        <h1>Yardım Merkezi</h1>
+        <p class="page-subtitle">Sık sorulan sorular ve rehberler</p>
+      </div>
+    </section>
+
+    <section class="help-page">
+      <div class="container">
+        <div class="help-layout">
+          <aside class="help-sidebar">
+            <nav class="help-categories" aria-label="Yardım kategorileri">
+              <h3>Kategoriler</h3>
+              <ul>
+                <li><a href="#siparis" class="active">Sipariş Süreçleri</a></li>
+                <li><a href="#kargo">Kargo ve Teslimat</a></li>
+                <li><a href="#iade">İade ve Değişim</a></li>
+                <li><a href="#odeme">Ödeme Yöntemleri</a></li>
+                <li><a href="#uyumluluk">Araç Uyumluluğu</a></li>
+                <li><a href="#hesap">Hesabım</a></li>
+                <li><a href="#kurumsal">Kurumsal</a></li>
+              </ul>
+            </nav>
+          </aside>
+
+          <div class="help-content">
+            <section id="siparis" class="help-section">
+              <h2>Sipariş Süreçleri</h2>
+              <details>
+                <summary>Siparişim nasıl oluşturulur?</summary>
+                <p>Ürünü sepete ekleyin, sepet sayfasından "Ödemeye Geç" butonuna tıklayın, iletişim ve teslimat bilgilerinizi girin, ödeme yöntemini seçin ve siparişi onaylayın.</p>
+              </details>
+              <details>
+                <summary>Sipariş durumumu nasıl takip ederim?</summary>
+                <p>Hesabınıza giriş yapın, "Siparişlerim" sayfasına gidin. Veya sipariş onay e-postanızdaki takip linkini kullanın.</p>
+              </details>
+              <details>
+                <summary>Siparişimi iptal edebilir miyim?</summary>
+                <p>Evet, kargoya verilmeden önce "Siparislerim" sayfasından iptal edebilirsiniz. Kargoya verildikten sonra iade talebi oluşturmanız gerekir.</p>
+              </details>
+              <details>
+                <summary>Sipariş notu ekleyebilir miyim?</summary>
+                <p>Evet, ödeme sayfasında "Sipariş Notu" alanına teslimat adresi detayı, kapı kodu, özel isteklerinizi yazabilirsiniz.</p>
+              </details>
+            </section>
+
+            <section id="kargo" class="help-section">
+              <h2>Kargo ve Teslimat</h2>
+              <details>
+                <summary>Kargo ücreti ne kadardır?</summary>
+                <p>₺750,00 ve üzeri alışverişlerde kargo ücretsizdir. Altında ₺29,90 sabit kargo ücreti uygulanır.</p>
+              </details>
+              <details>
+                <summary>Teslimat ne kadar sürer?</summary>
+                <p>İstanbul, Ankara, İzmir: Aynı gün (14:00 öncesi siparişlerde). Diğer iller: 1-2 iş günü. Ağır/irregular ürünlerde 2-3 gün.</p>
+              </details>
+              <details>
+                <summary>Kargo firması hangisi?</summary>
+                <p>Aras Kargo, PTT, Yurtiçi Kargo ve MNG Kargo ile çalışıyoruz. Bölgenize göre en hızlı firmayı otomatik seçiyoruz.</p>
+              </details>
+              <details>
+                <summary>Adres değişikliği yapabilir miyim?</summary>
+                <p>Kargoya verilmeden önce "Siparislerim" sayfasından adres güncelleyebilirsiniz. Kargoya verildikten sonra kargo firmasıyla iletişime geçmeniz gerekir.</p>
+              </details>
+            </section>
+
+            <section id="iade" class="help-section">
+              <h2>İade ve Değişim</h2>
+              <details>
+                <summary>İade şartları nelerdir?</summary>
+                <p>14 gün içinde, ürün kullanılmamış, ambalajı bozulmamış, etiketleri takılı durumda olmalıdır. Montaj yapılmış ürünlerde iade kabul edilmez.</p>
+              </details>
+              <details>
+                <summary>İade nasıl yapılır?</summary>
+                <p>"Siparişlerim" sayfasından ilgili siparişe tıklayın, "İade Talebi Oluştur" butonuna basın, sebep seçin ve onaylayın. Kargo kodu size SMS/e-posta ile gönderilir.</p>
+              </details>
+              <details>
+                <summary>İade kargo ücreti kim öder?</summary>
+                <p>Hatalı/bozuk ürün gönderiminde veya ürün açıklamasıyla uyuşmazlıkta kargo bizim tarafımızdan karşılanır. Düşünce değişiminde müşteri öder.</p>
+              </details>
+              <details>
+                <summary>Değişim nasıl yapılır?</summary>
+                <p>İade talebi oluştururken "Değişim" seçeneğini işaretleyin. Yeni ürün stokta varsa aynı kargoya eklenir, yoksa iade onaylandıktan sonra yeni sipariş vermeniz gerekir.</p>
+              </details>
+            </section>
+
+            <section id="odeme" class="help-section">
+              <h2>Ödeme Yöntemleri</h2>
+              <details>
+                <summary>Hangi ödeme yöntemleri mevcut?</summary>
+                <p>Kredi/Banka Kartı (tak sitli), Havale/EFT, Kapıda Ödem (nakit/kart), Vadeli Ödem (kurumsal).</p>
+              </details>
+              <details>
+                <summary>Kapıda ödeme komisyonu var mı?</summary>
+                <p>₺500,00 altındaki siparişlerde ₺15,00 kapıda ödeme komisyonu uygulanır. Üzerinde ücretsizdir.</p>
+              </details>
+              <details>
+                <summary>Taksit seçenekleri nelerdir?</summary>
+                <p>Garanti BBVA, İş Bankası, Yapı Kredi, Akbank, Denizbank, Ziraat Bankası kartlarında 12 taksita kadar. Banka kampanyalarına göre 0% taksit de olabilir.</p>
+              </details>
+              <details>
+                <summary>Faturam nasıl alınır?</summary>
+                <p>Bireysel fatura sipariş onay e-postanıza eklenir. Kurumsal fatura için kayıt/siparişte vergi dairesi/numarası giriniz. E-fatura portalından da ulaşabilirsiniz.</p>
+              </details>
+            </section>
+
+            <section id="uyumluluk" class="help-section">
+              <h2>Araç Uyumluluğu</h2>
+              <details>
+                <summary>Aracıma uygun mu nasıl anlarım?</summary>
+                <p>Ana sayfadan "Araç Seç" butonuyla marka, model, yıl, motor girin. Sistem sadece uyumlu ürünleri gösterir. Ürün sayfasında da "Uyumluluğu Kontrol Et" butonu vardır.</p>
+              </details>
+              <details>
+                <summary>VIN/Şasi numarası ile kontrol edebilir miyim?</summary>
+                <p>Evet, destek@aduvagaraj.com'a VIN numaranızı ve ihtiyacınızı yazın, uzmanlarımız 1 saatin içinde dönüş yapar.</p>
+              </details>
+              <details>
+                <summary>Yanlış ürün gelirse ne olur?</summary>
+                <p>14 gün içinde şartsız iade/değişim hakkınız vardır. Kargo ücretini biz öderiz, doğru ürünü tekrar göndeririz.</p>
+              </details>
+            </section>
+
+            <section id="hesap" class="help-section">
+              <h2>Hesabım</h2>
+              <details>
+                <summary>Şifremi unuttum, ne yapmalıyım?</summary>
+                <p>Giriş sayfasındaki "Şifremi Unuttum" linkine tıklayın, e-posta adresinizi girin. Sıfırlama linki e-postanıza gelecektir.</p>
+              </details>
+              <details>
+                <summary>E-posta adresimi nasıl değiştiririm?</summary>
+                <p>"Hesabım > Profil Bilgileri" sayfasından e-posta adresinizi güncelleyebilirsiniz. Doğrulama kodu yeni adresinize gönderilecektir.</p>
+              </details>
+              <details>
+                <summary>Araçlarımı nasıl eklerim?</summary>
+                <p>"Araçlarım" sayfasından "Araç Ekle" butonuyla marka, model, yıl, motor, plaka/VIN bilgilerini girin. Kaydedilen araçlar için uyumlu ürünler öncelikli listelenir.</p>
+              </details>
+            </section>
+
+            <section id="kurumsal" class="help-section">
+              <h2>Kurumsal</h2>
+              <details>
+                <summary>Kurumsal hesap nasıl açılır?</summary>
+                <p>/kurumsal sayfasındaki formu doldurun veya kurumsal@aduvagaraj.com'a yazın. 1 iş günü içinde özel fiyat listesi ve hesap yöneticinizle iletişime geçeriz.</p>
+              </details>
+              <details>
+                <summary>Vadeli ödeme nasıl çalışır?</summary>
+                <p>Kurumsal sözleşme ve kredi risk analizi sonrası 30/60/90 gün vadeli ödeme limiti tanımlanır. Faturalar ay bazında toplanır, tek ödemede tahsil edilir.</p>
+              </details>
+              <details>
+                <summary>API entegrasyonu var mı?</summary>
+                <p>Evet, RESTful API ile stok sorgulama, sipariş oluşturma, fatura indirme, teslimat takibi işlemlerini kendi yazılımınızdan yapabilirsiniz.</p>
+              </details>
+            </section>
+          </div>
+        </div>
+
+        <div class="help-contact">
+          <h3>Yine de çözüm bulamadınız mı?</h3>
+          <p>Müşteri temsilcilerimiz size yardımcı olmaktan mutluluk duyar.</p>
+          <div class="help-contact-actions">
+            <a href="mailto:destek@aduvagaraj.com" class="btn btn-primary">E-posta Gönder</a>
+            <a href="tel:+902125550000" class="btn btn-secondary">Ara: 0212 555 00 00</a>
+            <a href="/iletisim" class="btn btn-ghost">İletişim Formu</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand"><a href="/" class="logo"><svg width="32" height="32" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="8" fill="currentColor"/><path d="M8 16L14 22L24 10" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Aduva Garaj</span></a><p>Türkiye'nin güvenilir oto aksesuar mağazası.</p></div>
+        <nav class="footer-nav"><h4>Kurumsal</h4><ul><li><a href="/hakkimizda">Hakkımızda</a></li><li><a href="/kariyer">Kariyer</a></li></ul></nav>
+        <nav class="footer-nav"><h4>Müşteri Hizmetleri</h4><ul><li><a href="/yardim">Yardım</a></li><li><a href="/iade-degisim">İade & Değişim</a></li></ul></nav>
+        <nav class="footer-nav"><h4>Yasal</h4><ul><li><a href="/kvkk">KVKK</a></li><li><a href="/gizlilik">Gizlilik</a></li></ul></nav>
+      </div>
+      <div class="footer-bottom"><p>&copy; 2026 Aduva Garaj.</p></div>
+    </div>
+  </footer>
+
+  <script type="module" src="/app-common.js"></script>
+</body>
+</html>

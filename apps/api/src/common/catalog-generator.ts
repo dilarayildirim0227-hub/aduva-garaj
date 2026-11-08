@@ -104,7 +104,6 @@ export function generateProducts105(vehicles: GeneratedVehicle[]) {
       const oemCode = `${v.brand.slice(0, 3).toUpperCase()}-${tpl.prefix}-${1000 + seq}`;
       items.push({
         id,
-        n11Id: String(200000 + seq),
         sellerCode: `ADV-${tpl.prefix}-${String(seq).padStart(3, '0')}`,
         oemCode,
         slug: `${v.brand}-${v.model}-${tpl.prefix}-${seq}`
@@ -129,7 +128,6 @@ export function generateProducts105(vehicles: GeneratedVehicle[]) {
         ratingAvg: Number((4.6 + (seq % 4) * 0.1).toFixed(1)),
         ratingCount: 15 + (seq % 80),
         soldCount: 35 + (seq * 7) % 240,
-        n11Url: 'https://www.n11.com/magaza/aduvagaraj',
         image: tpl.img,
         fitmentVehicleIds: [v.id],
         attributes: { ...tpl.attrs, Uyumlu_Kasa: `${v.brand} ${v.model} (${v.generation})`, KType: v.ktypeCode },
@@ -156,7 +154,6 @@ export function generateProducts105(vehicles: GeneratedVehicle[]) {
     const id = `prd-${seq}`;
     items.push({
       id,
-      n11Id: String(200000 + seq),
       sellerCode: `ADV-UNI-${String(seq).padStart(3, '0')}`,
       oemCode: u.oem,
       slug: `universal-${u.oem.toLowerCase()}-${seq}`,
@@ -179,7 +176,6 @@ export function generateProducts105(vehicles: GeneratedVehicle[]) {
       ratingAvg: 4.9,
       ratingCount: 94,
       soldCount: 310,
-      n11Url: 'https://www.n11.com/magaza/aduvagaraj',
       image: 'https://images.unsplash.com/photo-1542282088-72c9c27ed0cd?auto=format&fit=crop&w=800&q=80',
       fitmentVehicleIds: vehicles.map((v) => v.id),
       attributes: { Uyumluluk: 'Tüm Araçlar (Üniversal)', Garanti: '2 Yıl' },
@@ -194,7 +190,7 @@ export function generateProducts105(vehicles: GeneratedVehicle[]) {
 export function generateOrders55(products: any[], vehicles: GeneratedVehicle[]) {
   const cities = ['İstanbul / Ümraniye', 'Ankara / Çankaya', 'İzmir / Bornova', 'Bursa / Nilüfer', 'Kocaeli / İzmit', 'Antalya / Muratpaşa'];
   const names = ['Ahmet Yılmaz', 'Mehmet Kaya', 'Burak Demir', 'Caner Şahin', 'Emre Çelik', 'Serkan Aydın', 'Murat Özkan', 'Tolga Yıldız'];
-  const sources = ['WEB', 'APP', 'N11'] as const;
+  const sources = ['WEB', 'APP'] as const;
   const statuses = ['DELIVERED', 'SHIPPED', 'PREPARING', 'PAID'] as const;
 
   const orders: any[] = [];

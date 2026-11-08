@@ -4,7 +4,6 @@ import { z } from 'zod';
 import { PrismaService } from '../../common/prisma';
 import { CurrentUser, Roles } from '../../common/security';
 import { validateWithZod } from '../../common/zod-validation';
-import { N11SyncService } from '../../n11/n11-sync.service';
 
 export interface AuditLogRecord {
   id: string;
@@ -19,7 +18,7 @@ export interface AuditLogRecord {
 
 const updateSettingsSchema = z
   .object({
-    order_mode: z.enum(['DIRECT_CHECKOUT', 'N11_REDIRECT', 'WHATSAPP']).optional(),
+    order_mode: z.enum(['DIRECT_CHECKOUT', 'WHATSAPP']).optional(),
     free_shipping_threshold: z.number().min(0).optional(),
     shipping_flat_rate: z.number().min(0).optional(),
     cod_fee: z.number().min(0).optional(),
@@ -41,10 +40,7 @@ export class AdminService {
     },
   ];
 
-  constructor(
-    private readonly prisma: PrismaService,
-    private readonly n11SyncService: N11SyncService,
-  ) {}
+  constructor(private readonly prisma: PrismaService) {}
 
   recordAudit(
     actorId: string,
@@ -96,8 +92,7 @@ export class AdminService {
         pendingAppointmentsCount: this.prisma.store.appointments.filter((a) => a.status === 'CONFIRMED').length,
       },
       lowStockProducts,
-      latestSync: this.prisma.store.syncLogs[0] ?? null,
-      n11CircuitBreaker: this.n11SyncService.getCircuitState(),
+      latestSync: null,
     };
   }
 
@@ -119,17 +114,16 @@ export class AdminService {
       return cells.join(';');
     });
     // UTF-8 BOM ile Excel'de Türkçe karakterlerin doğru açılmasını garanti eder
-    return '\uFEFF' + [header, ...rows].join('\r\n');
+    return '﻿' + [header, ...rows].join('\r\n');
   }
 
   exportProductsCsv(): string {
-    const header = 'UrunID;N11ID;StokKodu;Baslik;Marka;FiyatTL;Stok;Durum';
+    const header = 'UrunID;StokKodu;Baslik;Marka;FiyatTL;Stok;Durum';
     const rows = this.prisma.store.products
       .filter((p) => !p.deletedAt)
       .map((p) => {
         const cells = [
           p.id,
-          p.n11Id ?? '',
           p.sellerCode ?? '',
           p.title ?? '',
           p.brand ?? '',
@@ -139,7 +133,7 @@ export class AdminService {
         ].map((val) => `"${String(val).replace(/"/g, '""')}"`);
         return cells.join(';');
       });
-    return '\uFEFF' + [header, ...rows].join('\r\n');
+    return '﻿' + [header, ...rows].join('\r\n');
   }
 
   updateSettings(actor: { sub: string; role?: string }, body: unknown) {

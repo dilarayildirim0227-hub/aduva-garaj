@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KVKK Aydınlatma Metni - Aduva Garaj</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container header-inner">
+      <a href="/" class="logo" aria-label="Aduva Garaj Ana Sayfa">
+        <img src="/logo.png?v=5" alt="Aduva Garaj 3D Krom Logo" class="logo-img" width="40" height="40"/>
+        <span>Aduva Garaj</span>
+      </a>
+      <nav class="nav" aria-label="Ana navigasyon">
+        <a href="/" class="nav-link" data-page="home">Ana Sayfa</a>
+        <a href="/urunler" class="nav-link" data-page="products">Ürünler</a>
+        <a href="/kurumsal" class="nav-link" data-page="kurumsal">Kurumsal</a>
+        <a href="/iletisim" class="nav-link" data-page="iletisim">İletişim</a>
+      </nav>
+      <div class="header-actions">
+        <button class="btn btn-ghost cart-trigger" aria-label="Sepet" aria-expanded="false" aria-controls="cart-drawer">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <circle cx="9" cy="21" r="1"/>
+            <circle cx="20" cy="21" r="1"/>
+            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+          </svg>
+          <span class="cart-count" aria-live="polite">0</span>
+        </button>
+        <div class="user-menu">
+          <button class="btn btn-ghost user-trigger" aria-label="Kullanıcı menüsü" aria-expanded="false">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+              <circle cx="12" cy="7" r="4"/>
+            </svg>
+          </button>
+          <div class="user-dropdown" role="menu" hidden>
+            <a href="/giris" class="dropdown-item" role="menuitem">Giriş Yap</a>
+            <a href="/kayit" class="dropdown-item" role="menuitem">Kayıt Ol</a>
+            <hr class="dropdown-divider">
+            <a href="/hesabim" class="dropdown-item" role="menuitem">Hesabım</a>
+            <a href="/siparislerim" class="dropdown-item" role="menuitem">Siparişlerim</a>
+            <a href="/araclarim" class="dropdown-item" role="menuitem">Araçlarım</a>
+            <hr class="dropdown-divider">
+            <button class="dropdown-item btn-logout" role="menuitem">Çıkış Yap</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <aside id="cart-drawer" class="cart-drawer" role="dialog" aria-label="Sepet" aria-hidden="true">
+    <div class="cart-drawer-inner">
+      <div class="cart-header"><h2>Sepetiniz</h2><button class="cart-close" aria-label="Sepeti kapat">&times;</button></div>
+      <div class="cart-body">
+        <div class="cart-empty" hidden><svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg><p>Sepetiniz boş</p><a href="/" class="btn btn-primary">Alışverişe Başla</a></div>
+        <ul class="cart-items" role="list"></ul>
+      </div>
+      <div class="cart-footer" hidden>
+        <div class="cart-summary">
+          <div class="summary-row"><span>Ara Toplam</span><span class="subtotal">₺0,00</span></div>
+          <div class="summary-row"><span>Kargo</span><span class="shipping">₺0,00</span></div>
+          <div class="summary-row total"><span>Toplam</span><span class="total">₺0,00</span></div>
+          <div class="free-shipping-bar"><div class="free-shipping-progress" style="width: 0%"></div></div>
+          <p class="free-shipping-text">Ücretsiz kargo için <span class="remaining">₺750,00</span> daha alışveriş yapın</p>
+        </div>
+        <div class="cart-actions">
+          <a href="/sepet" class="btn btn-secondary btn-block">Sepeti Görüntüle</a>
+          <a href="/odeme" class="btn btn-primary btn-block">Ödemeye Geç</a>
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="cart-overlay" aria-hidden="true"></div>
+
+  <main class="main">
+    <section class="page-header">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="/">Ana Sayfa</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">KVKK</span>
+        </nav>
+        <h1>KVKK Aydınlatma Metni</h1>
+        <p class="page-subtitle">Kişisel Verilerin Korunması Hakkında Kanun kapsamında aydınlatma metni</p>
+      </div>
+    </section>
+
+    <section class="content-page">
+      <div class="container">
+        <div class="content-wrapper">
+          <p><strong>Son Güncelleme:</strong> 01 Ocak 2026</p>
+
+          <h2>1. Veri Sorumlusu</h2>
+          <p><strong>Aduva Garaj</strong> (ticari unvan: Aduva Otomotiv Ticaret A.Ş.), Maslak Mah. Bilim Sk. No: 12, 34398 Sarıyer/İstanbul adresinde bulunan, 6698 7788 990 Mersis No'lu şirketimiz, Kişisel Verilerin Korunması Hakkında 6698 sayılı Kanun ("KVKK") uyarınca veri sorumlusu niteliğindedir.</p>
+
+          <h2>2. İşlenen Kişisel Veriler</h2>
+          <p>Sitemizi kullandığınızda, sipariş verdiğinizde veya iletişime geçtiğinizde aşağıdaki kategorilerde kişisel verileriniz işlenebilir:</p>
+          <ul class="policy-list">
+            <li><strong>Kimlik Bilgileri:</strong> Ad, soyad, T.C. Kimlik No (faturalama için), doğum tarihi.</li>
+            <li><strong>İletişim Bilgileri:</strong> E-posta adresi, telefon numarası, adres bilgileri (faturalama/teslimat).</li>
+            <li><strong>İşlem Güvenliği Bilgileri:</strong> IP adresi, tarayıcı/cihaz bilgileri, çerezler, oturum kayıtları.</li>
+            <li><strong>Müşteri İşlem Bilgileri:</strong> Sipariş geçmişi, iade/değişim kayıtları, garanti talepleri.</li>
+            <li><strong>Finansal Bilgiler:</strong> Ödeme yöntemi, maske kart numarası (son 4 hane), fatura bilgileri.</li>
+            <li><strong>Araç Bilgileri:</strong> Marka, model, yıl, motor, VIN/şasi no (uyumluluk kontrolü için).</li>
+          </ul>
+
+          <h2>3. İşleme Amaçları ve Hukuki Dayanaklar</h2>
+          <table class="policy-table">
+            <thead>
+              <tr><th>Amaç</th><th>Hukuki Dayanak (KVKK Madde 5/6)</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>Sipariş oluşturma, ödeme, kargo, fatura, iade/garanti süreçleri</td><td>Sözleşmenin ifası (M.5/2-c)</td></tr>
+              <tr><td>Müşteri hizmetleri, destek, şikayet yönetimi</td><td>Meşru menfaat (M.5/2-f)</td></tr>
+              <tr><td>Yasal yükümlülükler (muhasebe, vergi, e-fatura, tüketici hukuku)</td><td>Yasal yükümlülük (M.5/2-ç)</td></tr>
+              <tr><td>Pazarlama iletişimi (izinli e-posta/SMS)</td><td>Açık rıza (M.5/1)</td></tr>
+              <tr><td>Dolandırıcılık önleme, güvenlik, site analitiği</td><td>Meşru menfaat (M.5/2-f)</td></tr>
+              <tr><td>Araç uyumluluk kontrolü, ürün önerileri</td><td>Sözleşmenin ifası / Meşru menfaat</td></tr>
+            </tbody>
+          </table>
+
+          <h2>4. Veri Aktarımı</h2>
+          <p>Kişisel verileriniz aşağıdaki taraflarla, yukarıdaki amaçlar için paylaşılabilir:</p>
+          <ul class="policy-list">
+            <li>Kargo firmaları (Aras, PTT, Yurtiçi, MNG) - teslimat için</li>
+            <li>Ödeme kuruluşları (banka, POS sağlayıcı) - ödeme için</li>
+            <li>E-fatura/e-arşiv sağlayıcıları (GİB entegre) - fatura için</li>
+            <li>Yasal merciler (mahkeme, savcılık, GVK, BTK) - yasal zorunlulukta</li>
+            <li>Altyapı sağlayıcıları (barındırma, CDN, analitik, e-posta/SMS servisleri) - hizmet vermek için</li>
+            <li>Kurumsal müşteriler (yetkili kişiler) - sözleşme performansı için</li>
+          </ul>
+
+          <h2>5. Veri Saklama Süreleri</h2>
+          <ul class="policy-list">
+            <li>Sipariş/fatura/muhasebe kayıtları: 10 yıl (VUK M.292, Vergi Usul Kanunu)</li>
+            <li>Tüketici hukuku kayıtları (iade/şikayet): 3 yıl (Tüketicinin Korunması Hakkında Kanun)</li>
+            <li>Pazarlama izni verilen veriler: İzin geri çekilene kadar / 3 yıl</li>
+            <li>Güvenlik/analitik logları: 1 yıl (en fazla)</li>
+            <li>Hesap silinmesi talebi sonrası: 30 gün içinde silinir (yasal tutundurma dışında)</li>
+          </ul>
+
+          <h2>6. Kişinin Hakları (KVKK Madde 11)</h2>
+          <p>KVKK Madde 11 uyarınca aşağıdaki haklarınız vardır:</p>
+          <ul class="policy-list">
+            <li>Kişisel verilerinizin işlenip işlenmediğini öğrenme</li>
+            <li>İşlenmişse buna ilişkin bilgi talep etme</li>
+            <li>İşleme amacını ve bunların amacına uygun kullanılıp kullanılmadığını öğrenme</li>
+            <li>Yurt içinde veya yurt dışında aktarıldığı üçüncü kişileri bilme</li>
+            <li>Eksik/yanlış işlenmişse düzeltme talep etme ve bunun üçüncü kişilere bildirilmesini isteme</li>
+            <li>KVKK M.7'de öngörülen şartlar oluştuğunda silinme/yok edilme talep etme ve bunun üçüncü kişilere bildirilmesini isteme</li>
+            <li>İşlenen verilerinizin münhasıran otomatik sistemler yoluyla analiz edilmesi sonucunda aleyhinize bir sonucun ortaya çıkmasına itiraz etme</li>
+            <li>Kanuna aykırı işleme sebebiyle zarara uğramanız hâlinde zararın giderilmesini talep etme</li>
+          </ul>
+
+          <h2>7. Haklarınızı Kullanma</h2>
+          <p>Haklarınızı kullanmak için <a href="mailto:kvkk@aduvagaraj.com">kvkk@aduvagaraj.com</a> adresine yazabilir veya <a href="/iletisim">iletişim formu</a>ndan "KVKK Başvurusu" konusunu seçerek talepte bulunabilirsiniz. Başvurularınız en geç 30 gün içinde yanıtlanır.</p>
+
+          <h2>8. Çerezler (Cookies)</h2>
+          <p>Sitemiz oturum yönetimi, güvenlik, sepet, analitik ve tercihlerinizi hatırlamak için çerezler kullanır. Tarayıcı ayarlarınızdan çerezleri yönetebilirsiniz. Detaylı bilgi için <a href="/gizlilik">Gizlilik Politikası</a> sayfamızı inceleyin.</p>
+
+          <h2>9. Güvenlik</h2>
+          <p>Verileriniz SSL/TLS şifreleme, erişim kontrolü, şifre hashleme (bcrypt), API rate limiting, WAF ve düzenli penetrasyon testleri ile korunur. Veri ihlali durumunda 72 saat içinde KVK ve ilgili kişilere bildirim yapılır.</p>
+
+          <h2>10. Değişiklikler</h2>
+          <p>Bu metin yasal düzenlemeler ve iş süreçlerimiz değiştiğinde güncellenebilir. Güncel versiyon her zaman bu sayfada yer alacaktır.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand"><a href="/" class="logo"><svg width="32" height="32" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="8" fill="currentColor"/><path d="M8 16L14 22L24 10" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Aduva Garaj</span></a><p>Türkiye'nin güvenilir oto aksesuar mağazası.</p></div>
+        <nav class="footer-nav"><h4>Kurumsal</h4><ul><li><a href="/hakkimizda">Hakkımızda</a></li><li><a href="/kariyer">Kariyer</a></li></ul></nav>
+        <nav class="footer-nav"><h4>Müşteri Hizmetleri</h4><ul><li><a href="/yardim">Yardım</a></li><li><a href="/iade-degisim">İade & Değişim</a></li></ul></nav>
+        <nav class="footer-nav"><h4>Yasal</h4><ul><li><a href="/kvkk">KVKK</a></li><li><a href="/gizlilik">Gizlilik</a></li></ul></nav>
+      </div>
+      <div class="footer-bottom"><p>&copy; 2026 Aduva Garaj.</p></div>
+    </div>
+  </footer>
+
+  <script type="module" src="/app-common.js"></script>
+</body>
+</html>

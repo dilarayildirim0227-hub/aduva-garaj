@@ -211,7 +211,7 @@ export class GlobalExceptionFilter implements ExceptionFilter {
   }
 }
 
-// Dış Servisler (n11 SOAP, iyzico 3DS, Kargo API) İçin Circuit Breaker
+// Dış Servisler (iyzico 3DS, Kargo API) İçin Circuit Breaker
 export type CircuitState = 'CLOSED' | 'OPEN' | 'HALF_OPEN';
 
 export class CircuitBreaker {

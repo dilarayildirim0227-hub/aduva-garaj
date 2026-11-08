@@ -35,13 +35,13 @@ async function main() {
   });
 
   const categories = [
-    { id: 'cat-multimedya', n11Id: 'cat-Multimedya', name: 'Multimedya & CarPlay', slug: 'multimedya-carplay', icon: '📺' },
-    { id: 'cat-paspas', n11Id: 'cat-Paspas', name: '3D Havuzlu Paspas', slug: '3d-paspas', icon: '🛡️' },
-    { id: 'cat-kilif', n11Id: 'cat-Koltuk Kılıfı', name: 'Koltuk Kılıfı & Minder', slug: 'koltuk-kilifi', icon: '💺' },
-    { id: 'cat-krom', n11Id: 'cat-Krom Aksesuar', name: 'Krom & Dış Tuning', slug: 'krom-dis-tuning', icon: '✨' },
-    { id: 'cat-led', n11Id: 'cat-LED Aydınlatma', name: 'LED & Ambiyans', slug: 'led-ambiyans', icon: '💡' },
-    { id: 'cat-ses', n11Id: 'cat-Ses Sistemi', name: 'Ses Sistemleri & Kamera', slug: 'ses-kamera', icon: '🔊' },
-    { id: 'cat-bakim', n11Id: 'cat-Bakim', name: 'Periyodik Bakım & Fren', slug: 'periyodik-bakim-fren', icon: '🔧' },
+    { id: 'cat-multimedya', name: 'Multimedya & CarPlay', slug: 'multimedya-carplay', icon: '📺' },
+    { id: 'cat-paspas', name: '3D Havuzlu Paspas', slug: '3d-paspas', icon: '🛡️' },
+    { id: 'cat-kilif', name: 'Koltuk Kılıfı & Minder', slug: 'koltuk-kilifi', icon: '💺' },
+    { id: 'cat-krom', name: 'Krom & Dış Tuning', slug: 'krom-dis-tuning', icon: '✨' },
+    { id: 'cat-led', name: 'LED & Ambiyans', slug: 'led-ambiyans', icon: '💡' },
+    { id: 'cat-ses', name: 'Ses Sistemleri & Kamera', slug: 'ses-kamera', icon: '🔊' },
+    { id: 'cat-bakim', name: 'Periyodik Bakım & Fren', slug: 'periyodik-bakim-fren', icon: '🔧' },
   ];
 
   for (const c of categories) {
@@ -66,7 +66,7 @@ async function main() {
   const products = generateProducts105(vehicles);
   for (const p of products) {
     await prisma.product.upsert({
-      where: { n11Id: p.n11Id },
+      where: { sellerCode: p.sellerCode },
       update: {
         title: p.title,
         price: p.price,
@@ -80,7 +80,6 @@ async function main() {
       },
       create: {
         id: p.id,
-        n11Id: p.n11Id,
         sellerCode: p.sellerCode,
         oemCode: p.oemCode,
         slug: p.slug,
@@ -102,7 +101,6 @@ async function main() {
         ratingAvg: p.ratingAvg,
         ratingCount: p.ratingCount,
         soldCount: p.soldCount,
-        n11Url: p.n11Url,
         attributes: p.attributes,
         images: { create: [{ url: p.image, sortOrder: 0 }] },
       },

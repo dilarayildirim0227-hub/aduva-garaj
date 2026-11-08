@@ -203,7 +203,7 @@ export class EnterpriseDatabaseService {
     newPriceKurus: number;
     stockDelta?: number;
     expectedVersion?: number;
-    source: 'N11_SYNC' | 'ADMIN_MANUAL' | 'CAMPAIGN';
+    source: 'ADMIN_MANUAL' | 'CAMPAIGN';
     actorId?: string;
   }) {
     const product = this.prisma.store.products.find((p) => p.id === input.productId);
@@ -247,7 +247,7 @@ export class EnterpriseDatabaseService {
         delta: input.stockDelta,
         previousStock: oldStock,
         newStock,
-        reason: input.source === 'N11_SYNC' ? 'N11_SYNC' : 'MANUAL_ADJUST',
+        reason: input.source === 'CAMPAIGN' ? 'CAMPAIGN' : 'MANUAL_ADJUST',
         createdAt: new Date().toISOString(),
       });
       product.stock = newStock;
@@ -264,42 +264,6 @@ export class EnterpriseDatabaseService {
     );
 
     return product;
-  }
-
-  // ==========================================================================
-  // A7: N11 SENKRONİZASYON MOTORU (Çakışma Çözümü + DLQ Retry Kuyruğu)
-  // ==========================================================================
-  runN11DeltaSync(trigger: 'CRON' | 'WEBHOOK' | 'MANUAL_ADMIN' = 'MANUAL_ADMIN') {
-    const startedAt = new Date().toISOString();
-    let updated = 0;
-    let preservedFitments = 0;
-
-    for (const p of this.prisma.store.products) {
-      // Çakışma Kuralı (A7): Stok ve Fiyat -> N11_MASTER; Araç Uyumluluk (fitmentVehicleIds) ve OEM -> LOCAL_MASTER
-      p.lastSyncedAt = new Date().toISOString();
-      if (Array.isArray(p.fitmentVehicleIds) && p.fitmentVehicleIds.length > 0) {
-        preservedFitments++;
-      }
-      updated++;
-    }
-
-    const syncRun = {
-      id: `sync_${randomUUID().slice(0, 8)}`,
-      type: 'PRODUCTS_AND_STOCK',
-      status: 'SUCCESS',
-      trigger,
-      startedAt,
-      finishedAt: new Date().toISOString(),
-      total: this.prisma.store.products.length,
-      created: 0,
-      updated,
-      preservedLocalFitments: preservedFitments,
-      failed: 0,
-      conflictPolicy: 'PRICE_STOCK=N11_MASTER | FITMENT_OEM=LOCAL_MASTER',
-    };
-
-    this.prisma.store.syncLogs.unshift(syncRun);
-    return syncRun;
   }
 
   // ==========================================================================
@@ -405,7 +369,7 @@ export class EnterpriseDatabaseService {
       curDay.vatKurus += vatKurus;
       dailyMap.set(day, curDay);
 
-      const vBrand = o.vehicleBrand || 'Opel';
+      const vBrand = 'Bilinmeyen';
       const curBrand = brandMap.get(vBrand) || { brand: vBrand, orderCount: 0, revenueKurus: 0 };
       curBrand.orderCount += 1;
       curBrand.revenueKurus += grandKurus;

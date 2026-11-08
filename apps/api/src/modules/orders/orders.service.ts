@@ -11,6 +11,14 @@ import type {
   ReturnOrderInput,
   ShippingCalculateInput,
 } from './orders.schemas';
+import {
+  ProductStatus,
+  OrderStatus,
+  OrderSource,
+  PaymentMethod,
+  type LocalOrder,
+  type LocalOrderItem,
+} from '@aduva/shared';
 
 export type OrderStatusLiteral =
   | 'PENDING_PAYMENT'
@@ -20,6 +28,57 @@ export type OrderStatusLiteral =
   | 'DELIVERED'
   | 'CANCELLED'
   | 'REFUNDED';
+
+// Extended types for order service with additional properties
+type ExtendedOrder = LocalOrder & {
+  shippingAddress?: {
+    fullName: string;
+    phone: string;
+    city: string;
+    district: string;
+    neighborhood: string | null;
+    line: string;
+  };
+  billingAddress?: {
+    invoiceType?: string;
+    companyName?: string | null;
+    taxOffice?: string | null;
+    taxNumber?: string | null;
+    eInvoice?: unknown;
+  };
+  distanceSalesContract?: {
+    accepted: boolean;
+    acceptedAt: string;
+    version: string;
+  };
+  statusEvents: Array<{
+    id: string;
+    fromStatus: OrderStatus | null;
+    toStatus: OrderStatus;
+    changedBy: string;
+    note: string;
+    createdAt: string;
+  }>;
+  paymentTransaction?: {
+    id: string;
+    provider: string;
+    conversationId: string;
+    amountKurus: number;
+    installmentCount?: number;
+    status: string;
+    webhookSignaturePreview: string;
+  };
+  rmaCode?: string;
+  userId?: string | null;
+  trackingCode?: string | null;
+  codFeeKurus?: number;
+};
+
+type ExtendedOrderItem = LocalOrderItem & {
+  productId?: string;
+  unitPriceKurus?: number;
+  lineTotalKurus?: number;
+};
 
 // Katı Sipariş Durum Makinesi: Yalnızca izin verilen geçişlere onay verir
 const ALLOWED_ORDER_TRANSITIONS: Record<OrderStatusLiteral, readonly OrderStatusLiteral[]> = {
@@ -186,7 +245,7 @@ export class OrdersService {
     const extraDesi = Math.max(0, Math.ceil(input.totalDesi - 3));
     const rawShippingKurus = meta.baseKurus + extraDesi * meta.perDesiKurus;
     const shippingKurus = input.subtotalKurus >= freeThresholdKurus ? 0 : rawShippingKurus;
-    const codFeeKurus = input.paymentMethod === 'CASH_ON_DELIVERY' ? 4990 : 0;
+    const codFeeKurus = input.paymentMethod === PaymentMethod.CASH_ON_DELIVERY ? 4990 : 0;
 
     return {
       carrier: input.carrier,
@@ -225,7 +284,7 @@ export class OrdersService {
         const product = store.products.find(
           (p) => p.id === reqItem.productId || p.sellerCode === reqItem.productId,
         );
-        if (!product || product.status !== 'ACTIVE' || product.isHidden) {
+        if (!product || product.status !== ProductStatus.ACTIVE || product.isHidden) {
           throw new AppDomainError(
             ErrorCode.PRODUCT_UNAVAILABLE,
             `"${reqItem.productId}" kodlu ürün şu anda satışta değil.`,
@@ -302,7 +361,7 @@ export class OrdersService {
       for (const r of resolvedItems) {
         const previousStock = r.product.stock;
         r.product.stock = Math.max(0, previousStock - r.quantity);
-        if (r.product.stock === 0) r.product.status = 'OUT_OF_STOCK';
+        if (r.product.stock === 0) r.product.status = ProductStatus.OUT_OF_STOCK;
         r.product.soldCount = (r.product.soldCount ?? 0) + r.quantity;
         store.stockMovements.unshift({
           id: `sm_${Date.now()}_${Math.floor(Math.random() * 1000)}`,
@@ -317,17 +376,17 @@ export class OrdersService {
       }
 
       const initialStatus: OrderStatusLiteral =
-        input.paymentMethod === 'BANK_TRANSFER' ? 'PENDING_PAYMENT' : 'PAID';
+        input.paymentMethod === PaymentMethod.BANK_TRANSFER ? 'PENDING_PAYMENT' : 'PAID';
 
       const conversationId = `conv_${orderNumber}_${Date.now()}`;
       const paymentWebhookSign = this.computeWebhookSignature(orderNumber, conversationId, grandTotalKurus);
       const invoiceSnapshot = EInvoiceAdapter.issueInvoiceSnapshot(orderNumber, input, grandTotalKurus);
 
-      const orderRecord = {
+      const orderRecord: ExtendedOrder = {
         id: `ord-${Date.now()}-${Math.floor(Math.random() * 1000)}`,
         orderNumber,
-        userId: userId ?? null,
-        source: 'WEB',
+        userId: userId ?? undefined,
+        source: OrderSource.WEB,
         customerName: input.customerName,
         phone: input.phone,
         city: `${input.city} / ${input.district}`,
@@ -351,8 +410,8 @@ export class OrdersService {
           acceptedAt: new Date().toISOString(),
           version: 'v2026.2',
         },
-        status: initialStatus,
-        paymentMethod: input.paymentMethod,
+        status: initialStatus as OrderStatus,
+        paymentMethod: input.paymentMethod as PaymentMethod,
         subtotalKurus,
         discountKurus,
         shippingKurus,
@@ -360,24 +419,21 @@ export class OrdersService {
         vatTotalKurus,
         grandTotalKurus,
         total: Number((grandTotalKurus / 100).toFixed(2)),
-        trackingCode: null as string | null,
+        trackingCode: undefined,
         carrier: shippingCalc.carrierName,
         createdAt: new Date().toISOString(),
         items: resolvedItems.map((r) => ({
-          productId: r.product.id,
           title: r.product.title,
           skuSnapshot: r.product.sellerCode,
           oemCodeSnapshot: r.product.oemCode,
           quantity: r.quantity,
           unitPrice: Number((r.unitPriceKurus / 100).toFixed(2)),
-          unitPriceKurus: r.unitPriceKurus,
-          lineTotalKurus: r.lineTotalKurus,
-        })),
+        })) as ExtendedOrderItem[],
         statusEvents: [
           {
             id: `evt_${randomUUID()}`,
             fromStatus: null,
-            toStatus: initialStatus,
+            toStatus: initialStatus as OrderStatus,
             changedBy: userId ?? 'GUEST_CHECKOUT',
             note: 'Sipariş oluşturuldu ve stok rezerve edildi.',
             createdAt: new Date().toISOString(),
@@ -385,7 +441,7 @@ export class OrdersService {
         ],
         paymentTransaction: {
           id: `pay_${randomUUID()}`,
-          provider: input.paymentMethod === 'CARD' ? 'IYZICO_3DS' : input.paymentMethod,
+          provider: input.paymentMethod === PaymentMethod.CARD ? 'IYZICO_3DS' : input.paymentMethod,
           conversationId,
           amountKurus: grandTotalKurus,
           installmentCount: input.installmentCount,
@@ -394,7 +450,7 @@ export class OrdersService {
         },
       };
 
-      store.orders.unshift(orderRecord);
+      store.orders.unshift(orderRecord as LocalOrder);
       return orderRecord;
     });
   }
@@ -408,12 +464,12 @@ export class OrdersService {
     const store = this.prisma.store;
     const order = store.orders.find(
       (o) => o.id === orderIdOrNo || o.orderNumber === orderIdOrNo,
-    );
+    ) as ExtendedOrder | undefined;
     if (!order) {
       throw new AppDomainError(ErrorCode.ORDER_NOT_FOUND, 'Sipariş bulunamadı.', 404);
     }
 
-    const currentStatus = order.status as OrderStatusLiteral;
+    const currentStatus = order.status as unknown as OrderStatusLiteral;
     const allowed = ALLOWED_ORDER_TRANSITIONS[currentStatus] ?? [];
     if (!allowed.includes(input.toStatus)) {
       throw new AppDomainError(
@@ -424,15 +480,15 @@ export class OrdersService {
       );
     }
 
-    order.status = input.toStatus;
+    order.status = input.toStatus as OrderStatus;
     if (input.trackingCode) order.trackingCode = input.trackingCode;
     if (input.carrier) order.carrier = input.carrier;
 
     if (!Array.isArray(order.statusEvents)) order.statusEvents = [];
     order.statusEvents.push({
       id: `evt_${randomUUID()}`,
-      fromStatus: currentStatus,
-      toStatus: input.toStatus,
+      fromStatus: currentStatus as unknown as OrderStatus,
+      toStatus: input.toStatus as OrderStatus,
       changedBy: actorId,
       note: input.note ?? `Durum ${currentStatus} -> ${input.toStatus} olarak güncellendi.`,
       createdAt: new Date().toISOString(),
@@ -492,7 +548,7 @@ export class OrdersService {
     }
 
     // Başarısız ödemede siparişi iptal et ve rezerve stoku iade et
-    if (order.status !== 'CANCELLED') {
+    if (order.status !== OrderStatus.CANCELLED) {
       this.cancelOrder(
         order.id,
         { reason: payload.errorMessage ?? '3D Secure ödeme başarısız oldu' },
@@ -528,16 +584,16 @@ export class OrdersService {
 
     this.transitionOrderState(
       order.id,
-      { toStatus: 'CANCELLED', note: input.reason },
+      { toStatus: OrderStatus.CANCELLED, note: input.reason },
       actorUserId ?? 'SYSTEM',
     );
 
     for (const item of order.items ?? []) {
-      const prd = store.products.find((p) => p.id === item.productId || p.title === item.title);
+      const prd = store.products.find((p) => p.id === (item as ExtendedOrderItem).productId || p.title === item.title);
       if (prd) {
         const prev = prd.stock;
         prd.stock += Number(item.quantity || 1);
-        if (prd.status === 'OUT_OF_STOCK' && prd.stock > 0) prd.status = 'ACTIVE';
+        if (prd.status === ProductStatus.OUT_OF_STOCK && prd.stock > 0) prd.status = ProductStatus.ACTIVE;
         store.stockMovements.unshift({
           id: `sm_cancel_${Date.now()}_${Math.floor(Math.random() * 1000)}`,
           productId: prd.id,
@@ -562,7 +618,7 @@ export class OrdersService {
     const store = this.prisma.store;
     const order = store.orders.find(
       (o) => o.id === orderIdOrNo || o.orderNumber === orderIdOrNo,
-    );
+    ) as ExtendedOrder | undefined;
     if (!order) {
       throw new AppDomainError(ErrorCode.ORDER_NOT_FOUND, 'Sipariş bulunamadı.', 404);
     }
@@ -579,7 +635,9 @@ export class OrdersService {
     if (input.items && input.items.length > 0) {
       refundAmountKurus = 0;
       for (const reqItem of input.items) {
-        const matched = (order.items ?? []).find((oi: { productId?: string }) => oi.productId === reqItem.productId);
+        const matched = (order.items ?? []).find(
+          (oi: ExtendedOrderItem) => oi.productId === reqItem.productId,
+        ) as ExtendedOrderItem | undefined;
         if (matched) {
           const unitKurus = matched.unitPriceKurus ?? Math.round(Number(matched.unitPrice || 0) * 100);
           const qty = Math.min(Number(matched.quantity || 1), reqItem.quantity);

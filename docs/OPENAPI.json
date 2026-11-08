@@ -3,7 +3,7 @@
   "info": {
     "title": "Aduva Garaj E-Ticaret, Araç Uyumluluk ve Sepet REST API",
     "version": "1.0.0",
-    "description": "Web (Next.js) ve Mobil (Expo) istemcilerden bağımsız, kuruş (integer) hassasiyetli, n11 senkronlu ve KVKK uyumlu REST API spesifikasyonu."
+    "description": "Web (Next.js) ve Mobil (Expo) istemcilerden bağımsız, kuruş (integer) hassasiyetli ve KVKK uyumlu REST API spesifikasyonu."
   },
   "servers": [
     { "url": "http://localhost:4000", "description": "Yerel Geliştirme Sunucusu" }

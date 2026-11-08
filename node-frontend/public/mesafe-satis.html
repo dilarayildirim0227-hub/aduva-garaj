@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mesafe Satış Sözleşmesi - Aduva Garaj</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container header-inner">
+      <a href="/" class="logo" aria-label="Aduva Garaj Ana Sayfa">
+        <img src="/logo.png?v=5" alt="Aduva Garaj 3D Krom Logo" class="logo-img" width="40" height="40"/>
+        <span>Aduva Garaj</span>
+      </a>
+      <nav class="nav" aria-label="Ana navigasyon">
+        <a href="/" class="nav-link" data-page="home">Ana Sayfa</a>
+        <a href="/urunler" class="nav-link" data-page="products">Ürünler</a>
+        <a href="/kurumsal" class="nav-link" data-page="kurumsal">Kurumsal</a>
+        <a href="/iletisim" class="nav-link" data-page="iletisim">İletişim</a>
+      </nav>
+      <div class="header-actions">
+        <button class="btn btn-ghost cart-trigger" aria-label="Sepet" aria-expanded="false" aria-controls="cart-drawer">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <circle cx="9" cy="21" r="1"/>
+            <circle cx="20" cy="21" r="1"/>
+            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+          </svg>
+          <span class="cart-count" aria-live="polite">0</span>
+        </button>
+        <div class="user-menu">
+          <button class="btn btn-ghost user-trigger" aria-label="Kullanıcı menüsü" aria-expanded="false">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+              <circle cx="12" cy="7" r="4"/>
+            </svg>
+          </button>
+          <div class="user-dropdown" role="menu" hidden>
+            <a href="/giris" class="dropdown-item" role="menuitem">Giriş Yap</a>
+            <a href="/kayit" class="dropdown-item" role="menuitem">Kayıt Ol</a>
+            <hr class="dropdown-divider">
+            <a href="/hesabim" class="dropdown-item" role="menuitem">Hesabım</a>
+            <a href="/siparislerim" class="dropdown-item" role="menuitem">Siparişlerim</a>
+            <a href="/araclarim" class="dropdown-item" role="menuitem">Araçlarım</a>
+            <hr class="dropdown-divider">
+            <button class="dropdown-item btn-logout" role="menuitem">Çıkış Yap</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <aside id="cart-drawer" class="cart-drawer" role="dialog" aria-label="Sepet" aria-hidden="true">
+    <div class="cart-drawer-inner">
+      <div class="cart-header"><h2>Sepetiniz</h2><button class="cart-close" aria-label="Sepeti kapat">&times;</button></div>
+      <div class="cart-body">
+        <div class="cart-empty" hidden><svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg><p>Sepetiniz boş</p><a href="/" class="btn btn-primary">Alışverişe Başla</a></div>
+        <ul class="cart-items" role="list"></ul>
+      </div>
+      <div class="cart-footer" hidden>
+        <div class="cart-summary">
+          <div class="summary-row"><span>Ara Toplam</span><span class="subtotal">₺0,00</span></div>
+          <div class="summary-row"><span>Kargo</span><span class="shipping">₺0,00</span></div>
+          <div class="summary-row total"><span>Toplam</span><span class="total">₺0,00</span></div>
+          <div class="free-shipping-bar"><div class="free-shipping-progress" style="width: 0%"></div></div>
+          <p class="free-shipping-text">Ücretsiz kargo için <span class="remaining">₺750,00</span> daha alışveriş yapın</p>
+        </div>
+        <div class="cart-actions">
+          <a href="/sepet" class="btn btn-secondary btn-block">Sepeti Görüntüle</a>
+          <a href="/odeme" class="btn btn-primary btn-block">Ödemeye Geç</a>
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="cart-overlay" aria-hidden="true"></div>
+
+  <main class="main">
+    <section class="page-header">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="/">Ana Sayfa</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">Mesafe Satış Sözleşmesi</span>
+        </nav>
+        <h1>Mesafe Satış Sözleşmesi</h1>
+        <p class="page-subtitle">Tüketicinin Korunması Hakkında Kanun ve Mesafe Sözleşmeleri Yönetmeliği kapsamında</p>
+      </div>
+    </section>
+
+    <section class="content-page">
+      <div class="container">
+        <div class="content-wrapper">
+          <p><strong>Sözleşme Tarihi:</strong> 01 Ocak 2026<br>
+          <strong>Satıcı:</strong> Aduva Otomotiv Ticaret A.Ş. (Aduva Garaj)<br>
+          <strong>Adres:</strong> Maslak Mah. Bilim Sk. No: 12, 34398 Sarıyer/İstanbul<br>
+          <strong>Mersis No:</strong> 6698 7788 990<br>
+          <strong>Telefon:</strong> 0212 555 00 00<br>
+          <strong>E-posta:</strong> destek@aduvagaraj.com</p>
+
+          <h2>1. Taraflar ve Kapsam</h2>
+          <p>Bu sözleşme, Aduva Garaj (bundan böyle "Satıcı") ile www.aduvagaraj.com internet sitesi üzerinden ürün satın alan gerçek/kurumsal kişiler (bundan böyle "Alıcı") arasında, 6502 sayılı Tüketicinin Korunması Hakkında Kanun ve Mesafe Sözleşmeleri Yönetmeliği uyarınca hak ve yükümlülükleri düzenler.</p>
+
+          <h2>2. Ürün Bilgileri ve Fiyatlandırma</h2>
+          <ul class="policy-list">
+            <li>Ürün özellikleri, marka, model, uyumlu araçlar, teknik özellikler ürün sayfasında yer alır.</li>
+            <li>Fiyatlar KDV dahildir. Kargo ücreti ₺750,00 altı siparişlerde ₺29,90'dir (kampanyalar hariç).</li>
+            <li>Fiyatlarda yazım hatası olursa Satıcı düzeltme hakkını saklı tutar, Alıcı bilgilendirilir.</li>
+            <li>Stok durumu gerçek zamanlıdır, ancak eşzamanlı siparişlerde stok tutarsızlığı olabilir.</li>
+          </ul>
+
+          <h2>3. Sipariş ve Sözleşmenin Kuruluşu</h2>
+          <ol class="policy-steps">
+            <li>Alıcı ürünü sepete ekler, ödeme sayfasında bilgileri girer, ödeme yöntemini seçer.</li>
+            <li>"Siparişi Tamamla" butonuna basması teklif (offer) niteliğindedir.</li>
+            <li>Satıcı sipariş onay e-postası gönderdiğinde sözleşme kurulmuş sayılır.</li>
+            <li>Stok/yasal sebep ile Satıcı siparişi reddederse/iptal ederse Alıcıya bildirilir, ödeme iade edilir.</li>
+          </ul>
+
+          <h2>4. Teslimat</h2>
+          <ul class="policy-list">
+            <li>Teslimat adresi Alıcı tarafından belirlenir, adres hatasında gecikme Satıcı sorumluluğunda değildir.</li>
+            <li>İstanbul/Ankara/İzmir: Aynı gün (14:00 öncesi), Diğer iller: 1-2 iş günü.</li>
+            <li>Kargo firması: Aras/PTT/Yurtiçi/MNG (bölgeye göre). Takip kodu SMS/e-posta ile gönderilir.</li>
+            <li>Alıcı teslimatta mevcut değilse kargo ikinci kez gelir, sonra iade olur.</li>
+            <li>Hasarlı/bozuk ambalaj teslim alınırken "hasarlı teslim alındı" notu düşülmelidir.</li>
+          </ul>
+
+          <h2>5. Haklı Çekilme (İade) Hakkı</h2>
+          <ul class="policy-list">
+            <li>Alıcı, ürün teslim tarihten itibaren 14 gün içinde, herhangi bir sebep göstermeden ve cezasız iade edebilir (6502 Sk. M.48).</li>
+            <li>İade hakkı kullanımı için "Siparişlerim" sayfasından veya yazılı bildirimle talep yeterlidir.</li>
+            <li>İade kargo ücreti: Hatalı/bozuk/yanlış ürün Satıcı aleyhine; düşünce değişimi Alıcı aleyhine (₺59,80 gidiş-dönüş).</li>
+            <li>Ürün orijinal ambalajında, kullanılmamış, etiketli, montaj yapılmamış olmalıdır.</li>
+            <li>Para iadesi: Alıcının ödeme yöntemine 14 gün içinde yapılır (KVKK M.48/3).</li>
+          </ul>
+
+          <h2>6. İade Hakkı Kullanılamayan Durumlar</h2>
+          <ul class="policy-list">
+            <li>Montaj yapılmış, kullanılmış, hasar görmüş ürünler.</li>
+            <li>Ambalajı bozulmuş, etiketi sökülmüş, seri numarası silinmiş ürünler.</li>
+            <li>Kişisel bakım/hijyen ürünleri (paketi açıldıysa).</li>
+            <li>Özel sipariş/özel üretim ürünleri (Alıcı onaylıysa).</li>
+            <li>Dijital içerikler (kod, lisans, yazılım) indirildiyse/etkinleştirildiyse.</li>
+          </ul>
+
+          <h2>7. Garanti ve Sorumluluk</h2>
+          <ul class="policy-list">
+            <li>Tüm ürünler satıcı/üretici garantisi altındadır (süre ürün başına farklıdır, min. 1 yıl).</li>
+            <li>Garanti kapsamı: Üretim hatası, malzeme kusuru. Montaj hatası, darbe, yanlış kullanım, doğal afet hariç.</li>
+            <li>Garanti talebi: destek@aduvagaraj.com'a fotoğraf/video ile başvuru yeterlidir.</li>
+            <li>Satıcı sorumluluğu: Yasal mevzuat çerçevesinde, kasıt/groksüzlük dışında dolaylı zararlardan sorumlu tutulamaz.</li>
+          </ul>
+
+          <h2>8. Ödeme ve Güvenlik</h2>
+          <ul class="policy-list">
+            <li>Kredi kartı: 3D Secure, taksit opsiyonu. Kapıda ödeme: ₺500 altı ₺15 komisyon.</li>
+            <li>Havale/EFT: Sipariş onayı sonrası 24 saat içinde ödeme, aksi halde iptal.</li>
+            <li>Vadeli ödeme: Sadece kurumsal sözleşmeli müşteriler için, kredi risk analizi sonrası.</li>
+            <li>Ödeme verileri PCI-DSS uyumlu sağlayıcılar tarafından işlenir, Satıcı tam kart numarasını saklamaz.</li>
+          </ul>
+
+          <h2>9. Fikri Mülkiyet</h2>
+          <p>Site içeriği (marka, logo, fotoğraf, metin, yazılım, veritabanı) Satıcıya aittir. İzinsiz kopyalanamaz, dağıtılamaz, ticari kullanılamaz.</p>
+
+          <h2>10. Kişisel Veriler</h2>
+          <p>Kişisel verileriniz <a href="/kvkk">KVKK Aydınlatma Metni</a> ve <a href="/gizlilik">Gizlilik Politikası</a> kapsamında işlenir. Sözleşme imzalanması bu metinlerin kabulü sayılır.</p>
+
+          <h2>11. Uyuşmazlık Çözümü</h2>
+          <ul class="policy-list">
+            <li>Tüketici Hakem Heyetleri (TL 104.000 altı - 2024 rakamı) yetkilidir.</li>
+            <li>Tüketici Mahkemeleri (TL 104.000 üstü) yetkilidir.</li>
+            <li>İstanbul (Satıcı merkezi) mahkemeleri yetkilidir (Alıcı da kendi yerinde dava açabilir).</li>
+            <li>Arabuluculuk (6502 Sk. M.73/A) ön şarttır.</li>
+          </ul>
+
+          <h2>12. Bildirimler</h2>
+          <p>Tüm bildirimler e-posta (destek@aduvagaraj.com) veya kargo ile yapılabilir. E-posta adresi değişikliği Alıcı sorumluluğundadır.</p>
+
+          <h2>13. Geçerlilik ve Değişiklik</h2>
+          <p>Bu sözleşme yayınlandığı tarihten geçerlidir. Satıcı tek taraflı değiştirebilir, değişiklikler sadece ileri dönük siparişleri bağlar. Güncel versiyon site üzerinde yer alır.</p>
+
+          <div class="policy-contact">
+            <p><strong>Bu sözleşmeyi okuyup anladığınızı, kabul ettiğinizi beyan edersiniz.</strong></p>
+            <p>Sorularınız için: <a href="mailto:destek@aduvagaraj.com">destek@aduvagaraj.com</a> | <a href="tel:+902125550000">0212 555 00 00</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand"><a href="/" class="logo"><svg width="32" height="32" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="8" fill="currentColor"/><path d="M8 16L14 22L24 10" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Aduva Garaj</span></a><p>Türkiye'nin güvenilir oto aksesuar mağazası.</p></div>
+        <nav class="footer-nav"><h4>Kurumsal</h4><ul><li><a href="/hakkimizda">Hakkımızda</a></li><li><a href="/kariyer">Kariyer</a></li></ul></nav>
+        <nav class="footer-nav"><h4>Müşteri Hizmetleri</h4><ul><li><a href="/yardim">Yardım</a></li><li><a href="/iade-degisim">İade & Değişim</a></li></ul></nav>
+        <nav class="footer-nav"><h4>Yasal</h4><ul><li><a href="/kvkk">KVKK</a></li><li><a href="/gizlilik">Gizlilik</a></li></ul></nav>
+      </div>
+      <div class="footer-bottom"><p>&copy; 2026 Aduva Garaj.</p></div>
+    </div>
+  </footer>
+
+  <script type="module" src="/app-common.js"></script>
+</body>
+</html>

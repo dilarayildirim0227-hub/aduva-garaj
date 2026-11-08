@@ -1,10 +1,10 @@
 ﻿/**
- * Paylaţýlan Tip Tanýmlarý — API, Web, Mobil ortak kullaným
- * Prisma ţemasýndan türetilmiţ, ny yerine kullanýlýr.
+ * Paylaşılan Tip Tanımları — API, Web, Mobil ortak kullanım
+ * Prisma şemasından türetilmiş, any yerine kullanılır.
  */
 
 // ============================================
-// Temel Enum'lar (Prisma ţemasýyla senkron)
+// Temel Enum'lar (Prisma şemasıyla senkron)
 // ============================================
 
 export enum Role {
@@ -23,7 +23,6 @@ export enum ProductStatus {
 export enum OrderSource {
   APP = 'APP',
   WEB = 'WEB',
-  N11 = 'N11',
 }
 
 export enum OrderStatus {
@@ -80,7 +79,6 @@ export interface LocalVehicle {
 
 export interface LocalCategory {
   id: string;
-  n11Id?: string;
   name: string;
   slug: string;
   icon?: string;
@@ -95,7 +93,6 @@ export interface LocalProductImage {
 
 export interface LocalProduct {
   id: string;
-  n11Id: string;
   sellerCode: string;
   oemCode?: string;
   title: string;
@@ -115,7 +112,6 @@ export interface LocalProduct {
   maxPerOrder: number;
   status: ProductStatus;
   categoryId?: string;
-  n11Url?: string;
   isUniversal: boolean;
   isFeatured: boolean;
   isHidden: boolean;
@@ -125,7 +121,6 @@ export interface LocalProduct {
   ratingCount: number;
   soldCount: number;
   version: number;
-  lastSyncedAt: string;
   createdAt: string;
   updatedAt: string;
   deletedAt?: string;
@@ -170,6 +165,7 @@ export interface LocalOrderItem {
   title: string;
   quantity: number;
   unitPrice: number;
+  unitPriceKurus?: number;
   skuSnapshot?: string;
   oemCodeSnapshot?: string;
   variantName?: string;
@@ -179,7 +175,6 @@ export interface LocalOrder {
   id: string;
   orderNumber: string;
   source: OrderSource;
-  n11OrderId?: string;
   customerName: string;
   phone?: string;
   city: string;
@@ -198,31 +193,42 @@ export interface LocalOrder {
   userId?: string;
 }
 
+export interface LocalAddress {
+  id: string;
+  userId: string;
+  title: string;
+  fullName: string;
+  phone: string;
+  city: string;
+  district: string;
+  neighborhood?: string;
+  line: string;
+  postalCode?: string;
+  isCorporate: boolean;
+  companyName?: string;
+  taxOffice?: string;
+  taxNumber?: string;
+  isDefault: boolean;
+  createdAt: string;
+  deletedAt?: string;
+}
+
 export interface LocalAppointment {
   id: string;
+  userId?: string;
   customerName: string;
   phone: string;
   vehicleInfo?: string;
+  vehicleId?: string;
+  productId?: string;
+  orderId?: string;
   serviceType: string;
   scheduledAt: string;
   status: AppointmentStatus;
   bayNumber: number;
   notes?: string;
   createdAt: string;
-}
-
-export interface LocalSyncLog {
-  id: string;
-  type: 'PRODUCTS' | 'ORDERS' | 'FULL';
-  status: 'SUCCESS' | 'PARTIAL' | 'FAILED';
-  trigger: 'CRON' | 'MANUAL';
-  startedAt: string;
-  finishedAt?: string;
-  total: number;
-  created: number;
-  updated: number;
-  failed: number;
-  errors?: Array<{ n11Id: string; message: string }>;
+  cancelledAt?: string;
 }
 
 export interface LocalStockMovement {
@@ -244,7 +250,7 @@ export interface LocalSettings {
 }
 
 // ============================================
-// LocalStore Veri Yapýsý (tip güvenli)
+// LocalStore Veri Yapısı (tip güvenli)
 // ============================================
 
 export interface LocalStoreData {
@@ -256,7 +262,6 @@ export interface LocalStoreData {
   coupons: LocalCoupon[];
   orders: LocalOrder[];
   appointments: LocalAppointment[];
-  syncLogs: LocalSyncLog[];
   stockMovements: LocalStockMovement[];
 }
 
@@ -287,7 +292,7 @@ export const DEFAULT_PRICING_CONFIG: PricingConfig = {
 };
 
 // ============================================
-// Sipariţ Durum Makinesi
+// Sipariş Durum Makinesi
 // ============================================
 
 export const ALLOWED_ORDER_TRANSITIONS: Record<OrderStatus, readonly OrderStatus[]> = {
@@ -308,7 +313,7 @@ export function canTransitionOrderStatus(
 }
 
 // ============================================
-// Hata Kodlarý (Merkezi)
+// Hata Kodları (Merkezi)
 // ============================================
 
 export const ErrorCode = {
@@ -367,6 +372,7 @@ export const ErrorCode = {
   CIRCUIT_BREAKER_OPEN: 'CIRCUIT_BREAKER_OPEN',
   OPTIMISTIC_LOCK_CONFLICT: 'OPTIMISTIC_LOCK_CONFLICT',
   INTERNAL_SERVER_ERROR: 'INTERNAL_SERVER_ERROR',
+  NETWORK_ERROR: 'NETWORK_ERROR',
 
   // Aliases
   ACCOUNT_LOCKED: 'AUTH_ACCOUNT_LOCKED',
@@ -386,7 +392,7 @@ export const ErrorCode = {
 export type ErrorCodeType = (typeof ErrorCode)[keyof typeof ErrorCode];
 
 // ============================================
-// Yardýmcý Fonksiyonlar
+// Yardımcı Fonksiyonlar
 // ============================================
 
 export function toTurkishSlug(text: string): string {
@@ -439,6 +445,9 @@ export interface PublicUser {
   firstName: string | null;
   lastName: string | null;
   role: Role;
+  emailVerified: boolean;
+  phoneVerified: boolean;
+  createdAt: string;
 }
 
 export interface CartIdentity {
@@ -454,15 +463,61 @@ export interface CartSummaryView {
 }
 
 // ============================================
-// n11 Tipleri
+// Sepet Tipleri (API Response)
 // ============================================
 
-export interface N11ProductSummary {
-  n11Id: string;
-  sellerCode?: string;
+export interface CartItemDto {
+  id: string;
+  productId: string;
+  variantId: string | null;
   title: string;
-  price: number;
-  listPrice?: number;
+  image: string | null;
+  quantity: number;
+  unitPrice: number; // kuruş
+  unitPriceSnapshot: number; // kuruş
+  lineTotal: number; // kuruş
   stock: number;
-  saleStatus: string;
+  maxPerOrder: number;
+  priceChanged: boolean;
+  unavailable: boolean;
+  fitmentWarning: boolean;
+}
+
+export interface CartDto {
+  id: string;
+  items: CartItemDto[];
+  subtotal: number; // kuruş
+  discount: number; // kuruş
+  shipping: number; // kuruş
+  tax: number; // kuruş
+  total: number; // kuruş
+  coupon: { code: string; type: 'PERCENT' | 'FIXED'; value: number } | null;
+  freeShippingRemaining: number; // kuruş
+  freeShippingThreshold: number; // kuruş
+  itemCount: number;
+  currency: 'TRY';
+}
+
+export interface CartSummaryDto {
+  itemCount: number;
+  total: number;
+  freeShippingRemaining: number;
+  currency: 'TRY';
+}
+
+// ============================================
+// Product List Params (for search/category/brand pages)
+// ============================================
+
+export interface ProductListParams {
+  q?: string;
+  category?: string;
+  brand?: string;
+  min?: number;
+  max?: number;
+  sort?: 'newest' | 'price_asc' | 'price_desc' | 'popular' | 'rating';
+  vehicle?: string;
+  page?: number;
+  limit?: number;
+  cursor?: string;
 }

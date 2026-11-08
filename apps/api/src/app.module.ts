@@ -14,8 +14,6 @@ import { NotificationsModule } from './modules/notifications/notifications.modul
 import { OrdersModule } from './modules/orders/orders.module';
 import { ProductsModule } from './modules/products/products.module';
 import { UsersModule } from './modules/users/users.module';
-import { N11Module } from './n11/n11.module';
-
 export const configImport = ConfigModule.forRoot({ isGlobal: true, envFilePath: ['.env', '../../.env'] });
 
 @Controller()
@@ -65,7 +63,6 @@ class RootPreviewController {
     configImport,
     ThrottlerModule.forRoot([{ ttl: 60_000, limit: 240 }]),
     PrismaModule,
-    N11Module,
     AuthModule,
     ProductsModule,
     CartModule,
@@ -84,9 +81,9 @@ class RootPreviewController {
 export class AppModule {}
 
 /**
- * Arka Plan İşçi Modülü (BullMQ / n11 senkron ve bildirim kuyruğu işçisi)
+ * Arka Plan İşçi Modülü (BullMQ / bildirim kuyruğu işçisi)
  */
 @Module({
-  imports: [configImport, PrismaModule, N11Module, NotificationsModule],
+  imports: [configImport, PrismaModule, NotificationsModule],
 })
 export class WorkerModule {}

@@ -1,8 +1,8 @@
 import { Injectable, Logger, Module, OnModuleDestroy, OnModuleInit } from '@nestjs/common';
 import { CartController } from './cart.controller';
-import { CartRepository, LocalN11StockProvider } from './cart.repository';
+import { CartRepository, LocalStockProvider } from './cart.repository';
 import { CartService } from './cart.service';
-import { N11StockProvider } from './cart.types';
+import { StockProvider } from './cart.types';
 
 /**
  * Süresi dolmuş (30 günü geçmiş) misafir sepetlerini temizleyen günlük zamanlayıcı (BullMQ / Cron işçisi)
@@ -39,8 +39,8 @@ export class ExpiredCartCleanupScheduler implements OnModuleInit, OnModuleDestro
     CartService,
     ExpiredCartCleanupScheduler,
     {
-      provide: N11StockProvider,
-      useClass: LocalN11StockProvider,
+      provide: StockProvider,
+      useClass: LocalStockProvider,
     },
   ],
   exports: [CartService, CartRepository],

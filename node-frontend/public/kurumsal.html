@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kurumsal - Aduva Garaj</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header class="header">
+    <div class="container header-inner">
+      <a href="/" class="logo" aria-label="Aduva Garaj Ana Sayfa">
+        <img src="/logo.png?v=5" alt="Aduva Garaj 3D Krom Logo" class="logo-img" width="40" height="40"/>
+        <span>Aduva Garaj</span>
+      </a>
+      <nav class="nav" aria-label="Ana navigasyon">
+        <a href="/" class="nav-link" data-page="home">Ana Sayfa</a>
+        <a href="/urunler" class="nav-link" data-page="products">Ürünler</a>
+        <a href="/kurumsal" class="nav-link active" data-page="kurumsal">Kurumsal</a>
+        <a href="/iletisim" class="nav-link" data-page="iletisim">İletişim</a>
+      </nav>
+      <div class="header-actions">
+        <button class="btn btn-ghost cart-trigger" aria-label="Sepet" aria-expanded="false" aria-controls="cart-drawer">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <circle cx="9" cy="21" r="1"/>
+            <circle cx="20" cy="21" r="1"/>
+            <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+          </svg>
+          <span class="cart-count" aria-live="polite">0</span>
+        </button>
+        <div class="user-menu">
+          <button class="btn btn-ghost user-trigger" aria-label="Kullanıcı menüsü" aria-expanded="false">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+              <circle cx="12" cy="7" r="4"/>
+            </svg>
+          </button>
+          <div class="user-dropdown" role="menu" hidden>
+            <a href="/giris" class="dropdown-item" role="menuitem">Giriş Yap</a>
+            <a href="/kayit" class="dropdown-item" role="menuitem">Kayıt Ol</a>
+            <hr class="dropdown-divider">
+            <a href="/hesabim" class="dropdown-item" role="menuitem">Hesabım</a>
+            <a href="/siparislerim" class="dropdown-item" role="menuitem">Siparişlerim</a>
+            <a href="/araclarim" class="dropdown-item" role="menuitem">Araçlarım</a>
+            <hr class="dropdown-divider">
+            <button class="dropdown-item btn-logout" role="menuitem">Çıkış Yap</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <aside id="cart-drawer" class="cart-drawer" role="dialog" aria-label="Sepet" aria-hidden="true">
+    <div class="cart-drawer-inner">
+      <div class="cart-header"><h2>Sepetiniz</h2><button class="cart-close" aria-label="Sepeti kapat">&times;</button></div>
+      <div class="cart-body">
+        <div class="cart-empty" hidden><svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/></svg><p>Sepetiniz boş</p><a href="/" class="btn btn-primary">Alışverişe Başla</a></div>
+        <ul class="cart-items" role="list"></ul>
+      </div>
+      <div class="cart-footer" hidden>
+        <div class="cart-summary">
+          <div class="summary-row"><span>Ara Toplam</span><span class="subtotal">₺0,00</span></div>
+          <div class="summary-row"><span>Kargo</span><span class="shipping">₺0,00</span></div>
+          <div class="summary-row total"><span>Toplam</span><span class="total">₺0,00</span></div>
+          <div class="free-shipping-bar"><div class="free-shipping-progress" style="width: 0%"></div></div>
+          <p class="free-shipping-text">Ücretsiz kargo için <span class="remaining">₺750,00</span> daha alışveriş yapın</p>
+        </div>
+        <div class="cart-actions">
+          <a href="/sepet" class="btn btn-secondary btn-block">Sepeti Görüntüle</a>
+          <a href="/odeme" class="btn btn-primary btn-block">Ödemeye Geç</a>
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="cart-overlay" aria-hidden="true"></div>
+
+  <main class="main">
+    <section class="page-header">
+      <div class="container">
+        <nav class="breadcrumb" aria-label="Breadcrumb">
+          <a href="/">Ana Sayfa</a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="page">Kurumsal</span>
+        </nav>
+        <h1>Kurumsal Çözümler</h1>
+        <p class="page-subtitle">Flot yönetimi, toplu sipariş ve özel fiyatlandırma için bizimle iletişime geçin</p>
+      </div>
+    </section>
+
+    <section class="corporate-hero">
+      <div class="container">
+        <div class="corporate-hero-content">
+          <h2>Kurumsal Müşteriler İçin Özel Hizmetler</h2>
+          <p>Aduva Garaj olarak, oto yedek parça ve aksesuar ihtiyaçlarınızı merkezi bir noktadan, özel fiyatlandırma ve öncelikli destekle karşılıyoruz.</p>
+          <div class="corporate-benefits">
+            <div class="benefit">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+              <h3>Özel Fiyatlandırma</h3>
+              <p>Hacimli alımlarınızda özel indirim oranları ve tedarikçi fiyatları</p>
+            </div>
+            <div class="benefit">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11"/></svg>
+              <h3>Hızlı Teslimat</h3>
+              <p>Kurumsal siparişlerde öncelikli kargolama ve toplu teslimat seçenekleri</p>
+            </div>
+            <div class="benefit">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              <h3>Kurumsal Hesap Yönetimi</h3>
+              <p>Özel hesap yöneticisi, tek fatura altında toplu sipariş ve raporlama</p>
+            </div>
+            <div class="benefit">
+              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              <h3>Güvenli Öde</h3>
+              <p>Peşin, havale/EFT, kapıda ödeme ve vadeli ödeme seçenekleri</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="corporate-services">
+      <div class="container">
+        <h2 class="section-title">Hizmetlerimiz</h2>
+        <div class="services-grid">
+          <article class="service-card">
+            <div class="service-icon">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+                <path d="M3.27 6.96L12 12.01l8.73-5.05"/>
+                <path d="M12 22.08V12"/>
+              </svg>
+            </div>
+            <h3>Flot Yedek Parça Tedariki</h3>
+            <p>Otobüs, kamyon, hafif ticari ve personel araçlarınız için tüm marka ve modellere uygun orijinal ve alternatif yedek parça tedariki.</p>
+            <ul class="service-features">
+              <li>30.000+ ürün stok garantisi</li>
+              <li>OEM ve alternatif marka seçenekleri</li>
+              <li>Araç VIN numarası ile uyumluluk kontrolü</li>
+              <li>Periyodik bakım kitleri hazırlama</li>
+            </ul>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <rect x="2" y="7" width="20" height="14" rx="2" ry="2"/>
+                <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/>
+              </svg>
+            </div>
+            <h3>Toplu Sipariş Yönetimi</h3>
+            <p>Tek portal üzerinden tüm şubelerinizin/servislerinizin ihtiyaçlarını toplayın, onaylayın ve tek fatura ile ödeyin.</p>
+            <ul class="service-features">
+              <li>Çoklu teslimat adresi desteği</li>
+              <li>Bütçe limiti ve onay akışları</li>
+              <li>Otomatik tekrar sipariş (subscription)</li>
+              <li>Excel/CSV toplu sipariş yükleme</li>
+            </ul>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                <polyline points="22 4 12 14.01 9 11"/>
+              </svg>
+            </div>
+            <h3>Hız Lojistik & Teslimat</h3>
+            <p>7/24 operasyon merkezimizle acil ihtiyaçlarınızda aynı gün teslimat, planlı sevkiyat rotaları ve kutu bazlı takip.</p>
+            <ul class="service-features">
+              <li>İstanbul, Ankara, İzmir aynı gün teslimat</li>
+              <li>81 il-e kapıda teslimat</li>
+              <li>Soğuk hava zinciri gerektiren ürünler</li>
+              <li>Geri dönüşüm/ambalaj iade hizmeti</li>
+            </ul>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                <circle cx="9" cy="7" r="4"/>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+              </svg>
+            </div>
+            <h3>Teknik Destek ve Danışmanlık</h3>
+            <p>Uzman kadromuzla ürün seçiminde rehberlik, montaj desteği, garanti süreçleri ve teknik eğitimler.</p>
+            <ul class="service-features">
+              <li>Özel hesap yöneticisi ataması</li>
+              <li>Ürün seçimi ve uyumluluk danışmanlığı</li>
+              <li>Montaj videosu ve dokümantasyon desteği</li>
+              <li>Garanti ve iade süreçlerinde hızlı çözüm</li>
+            </ul>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <line x1="18" y1="20" x2="18" y2="10"/>
+                <line x1="12" y1="20" x2="12" y2="4"/>
+                <line x1="6" y1="20" x2="6" y2="14"/>
+              </svg>
+            </div>
+            <h3>Raporlama ve Analitik</h3>
+            <p>Harcama analizi, stok tüketim raporları, marka/model bazlı tüketim trendleri ve bütçe planlaması.</p>
+            <ul class="service-features">
+              <li>Aylık/çeyreklik harcama raporları</li>
+              <li>Araç bazlı maliyet takibi</li>
+              <li>Tedarikçi performans analizleri</li>
+              <li>API entegrasyonu (ERP/Flot yazılımları)</li>
+            </ul>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon">
+              <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+              </svg>
+            </div>
+            <h3>Esnek Ödeme Seçenekleri</h3>
+            <p>Kurumsal ihtiyaçlarınıza göre peşin, havale/EFT, kredi kartı, kapıda ödeme ve 30/60/90 gün vadeli ödeme.</p>
+            <ul class="service-features">
+              <li>Vadeli ödeme (30-60-90 gün)</li>
+              <li>Toplu fatura (aylık/çeyreklik)</li>
+              <li>Kredi kartı taksitleri (bankaya özel)</li>
+              <li>E-fatura / e-arşiv entegrasyonu</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="corporate-process">
+      <div class="container">
+        <h2 class="section-title">Nasıl Başlarız?</h2>
+        <div class="process-steps">
+          <div class="process-step">
+            <div class="step-number">1</div>
+            <h3>İletişim Formu</h3>
+            <p>Aşağıdaki formu doldurun, uzman ekibimiz 1 iş günü içinde size dönüş yapacak.</p>
+          </div>
+          <div class="process-step">
+            <div class="step-number">2</div>
+            <h3>İhtiyaç Analizi</h3>
+            <p>Flotunuzun marka/model/yıl bilgilerini paylaşın, özel fiyat listesi hazırlayalım.</p>
+          </div>
+          <div class="process-step">
+            <div class="step-number">3</div>
+            <h3>Sözleşme ve Açılış</h3>
+            <p>Kurumsal sözleşme imzalanır, özel portala erişim sağlanır.</p>
+          </div>
+          <div class="process-step">
+            <div class="step-number">4</div>
+            <h3>İlk Sipariş</h3>
+            <p>İlk siparişinizde özel indirim ve ücretsiz kargo avantajı.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="corporate-contact-form">
+      <div class="container">
+        <div class="contact-form-wrapper">
+          <h2>Kurumsal Hesap Açın</h2>
+          <p>Formu doldurun, size özel fiyat listesi ve hesap yöneticinizle iletişime geçelim.</p>
+          <form id="corporate-form" class="corporate-form" novalidate>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="company-name">Firma Adı <span class="required" aria-hidden="true">*</span></label>
+                <input type="text" id="company-name" name="company_name" required placeholder="Firma Adınız">
+              </div>
+              <div class="form-group">
+                <label for="tax-office">Vergi Dairesi <span class="required" aria-hidden="true">*</span></label>
+                <input type="text" id="tax-office" name="tax_office" required placeholder="Vergi Dairesi">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="tax-number">Vergi No <span class="required" aria-hidden="true">*</span></label>
+                <input type="text" id="tax-number" name="tax_number" required placeholder="1234567890" maxlength="10">
+              </div>
+              <div class="form-group">
+                <label for="contact-name">Yetkili Ad Soyad <span class="required" aria-hidden="true">*</span></label>
+                <input type="text" id="contact-name" name="contact_name" required placeholder="Ad Soyad">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="contact-email">E-posta <span class="required" aria-hidden="true">*</span></label>
+                <input type="email" id="contact-email" name="contact_email" required placeholder="ornek@firma.com">
+              </div>
+              <div class="form-group">
+                <label for="contact-phone">Telefon <span class="required" aria-hidden="true">*</span></label>
+                <input type="tel" id="contact-phone" name="contact_phone" required placeholder="05XX XXX XX XX">
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="fleet-size">Flot Büyüklüğü <span class="required" aria-hidden="true">*</span></label>
+              <select id="fleet-size" name="fleet_size" required>
+                <option value="">Seçiniz</option>
+                <option value="1-10">1-10 Araç</option>
+                <option value="11-50">11-50 Araç</option>
+                <option value="51-100">51-100 Araç</option>
+                <option value="101-500">101-500 Araç</option>
+                <option value="500+">500+ Araç</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="vehicle-types">Araç Tipleri</label>
+              <select id="vehicle-types" name="vehicle_types" multiple>
+                <option value="passenger">Binek Otomobil</option>
+                <option value="light_commercial">Hafif Ticari</option>
+                <option value="heavy_commercial">Ağır Ticari (Kamyon/Tır)</option>
+                <option value="bus">Otobüs/Midibüs</option>
+                <option value="construction">İnşaat Makinesi</option>
+                <option value="agricultural">Tarımsal Makine</option>
+              </select>
+              <small class="form-hint">Ctrl/Cmd tuşuyla birden fazla seçebilirsiniz</small>
+            </div>
+            <div class="form-group">
+              <label for="message">Mesaj / Özel İhtiyaçlar</label>
+              <textarea id="message" name="message" rows="4" placeholder="Aylık tahmini harcama, özel marka tercihleri, teslimat adresleri vb."></textarea>
+            </div>
+            <div class="form-group">
+              <label class="checkbox-label">
+                <input type="checkbox" id="corporate-kvkk" name="kvkk" required>
+                <span><a href="/kvkk" target="_blank">KVKK Aydınlatma Metni</a>'ni okudum ve kişisel verilerimin işlenmesine onay veriyorum</span>
+              </label>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block btn-lg" id="corporate-submit">
+              <span class="btn-text">Teklif Alın</span>
+              <span class="btn-loading" hidden>
+                <svg class="spinner" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10" stroke-opacity="0.25"/><path d="M12 2a10 10 0 0 1 10 10" stroke-opacity="1"/></svg>
+                Gönderiliyor...
+              </span>
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section class="corporate-faq">
+      <div class="container">
+        <h2 class="section-title">Sık Sorulan Sorular</h2>
+        <div class="faq-list">
+          <details class="faq-item">
+            <summary>Minimum sipariş tutarı var mı?</summary>
+            <p>Kurumsal hesaplarda minimum sipariş tutarı yoktur. Ancak ücretsiz kargo için ₺750,00 alt limiti geçerlidir. Vadeli ödeme seçeneği için aylık minimum ₺5.000,00 işlem hacmi aranır.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Vadeli ödeme nasıl çalışıyor?</summary>
+            <p>Kurumsal sözleşme sonrası kredi risk analizi yapılır. Onaylanan limit dahilinde 30, 60 veya 90 gün vadeli ödeme (peşin ödemesiz) sağlanır. Faturalar ay bazında toplanıp tek ödeme ile tahsil edilir.</p>
+          </details>
+          <details class="faq-item">
+            <summary>E-fatura kesiyor musunuz?</summary>
+            <p>Evet, GİB uyumlu e-fatura ve e-arşiv fatura kesimi yapmaktayız. ERP entegrasyonu için API desteği de sağlanmaktadır.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Ürün iade/garanti süreci nasıl işliyor?</summary>
+            <p>Kurumsal müşterilerimiz için özel iade portalı üzerinden 14 gün içinde şartsız iade, bozuk ürünlerde 1 yıl garanti kapsamında değiştirim/tamir hizmeti sunulur. Toplu iadelerde kargo bizim tarafından karşılanır.</p>
+          </details>
+          <details class="faq-item">
+            <summary>API entegrasyonu sağlıyor musunuz?</summary>
+            <p>Evet, RESTful API ile stok sorgulama, sipariş oluşturma, fatura indirme, teslimat takibi ve rapor alma işlemlerini kendi ERP/Flot yazılımınızdan otomatikleştirebilirsiniz.</p>
+          </details>
+          <details class="faq-item">
+            <summary>Türkiye geneli teslimat var mı?</summary>
+            <p>81 il ve ilçelerine kargo teslimatı yapılmaktadır. İstanbul, Ankara, İzmir'de aynı gün; diğer illerde 1-2 iş günü içinde teslimat sağlanmaktadır. Ağır/irregular ürünlerde özel lojistik çözümü üretilir.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section">
+      <div class="container">
+        <div class="cta-card">
+          <h2>Hemen Uzman Ekibimizle İletişime Geçin</h2>
+          <p>Özel fiyat listesi, demo hesap erişimi ve ihtiyaç analizi için bizimle iletişime geçin.</p>
+          <div class="cta-actions">
+            <a href="/iletisim" class="btn btn-primary btn-lg">İletişim Formu</a>
+            <a href="tel:+902125550000" class="btn btn-secondary btn-lg">Arayın: 0212 555 00 00</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand"><a href="/" class="logo"><svg width="32" height="32" viewBox="0 0 32 32" fill="none"><rect width="32" height="32" rx="8" fill="currentColor"/><path d="M8 16L14 22L24 10" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Aduva Garaj</span></a><p>Türkiye'nin güvenilir oto aksesuar mağazası.</p></div>
+        <nav class="footer-nav"><h4>Kurumsal</h4><ul><li><a href="/hakkimizda">Hakkımızda</a></li><li><a href="/kariyer">Kariyer</a></li></ul></nav>
+        <nav class="footer-nav"><h4>Müşteri Hizmetleri</h4><ul><li><a href="/yardim">Yardım</a></li><li><a href="/iade-degisim">İade & Değişim</a></li></ul></nav>
+        <nav class="footer-nav"><h4>Yasal</h4><ul><li><a href="/kvkk">KVKK</a></li><li><a href="/gizlilik">Gizlilik</a></li></ul></nav>
+      </div>
+      <div class="footer-bottom"><p>&copy; 2026 Aduva Garaj.</p></div>
+    </div>
+  </footer>
+
+  <script type="module" src="/app-corporate.js"></script>
+</body>
+</html>

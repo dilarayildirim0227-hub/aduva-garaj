@@ -9,7 +9,7 @@ import {
   CartItemView,
   CartSummaryView,
   CartView,
-  N11StockProvider,
+  StockProvider,
   UpdateCartItemInput,
 } from './cart.types';
 
@@ -27,7 +27,7 @@ export interface CartIdentity {
 export class CartService {
   constructor(
     private readonly repo: CartRepository,
-    private readonly stockProvider: N11StockProvider,
+    private readonly stockProvider: StockProvider,
     private readonly prisma: PrismaService,
   ) {}
 

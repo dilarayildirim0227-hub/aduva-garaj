@@ -1,12 +1,13 @@
 import { Global, Injectable, Logger, Module, OnModuleDestroy, OnModuleInit } from '@nestjs/common';
 import { PrismaClient } from '@prisma/client';
-import { createInitialLocalStore, LocalStoreData } from './local-store';
+import { localStore as localStoreData } from './local-store';
+import type { LocalStoreData } from '@aduva/shared';
 
 @Injectable()
 export class PrismaService extends PrismaClient implements OnModuleInit, OnModuleDestroy {
   private readonly logger = new Logger('PrismaService');
   public isConnected = false;
-  public readonly store: LocalStoreData = createInitialLocalStore();
+  public readonly store: LocalStoreData = localStoreData;
 
   async onModuleInit() {
     try {

@@ -29,8 +29,8 @@ Bu belge, Aduva Garaj platformundaki **28 PostgreSQL tablosunun** görevlerini, 
 
 | Tablo Adı | Birincil Anahtar | Kritik Kolonlar ve Kısıtlar | Açıklama |
 | :--- | :--- | :--- | :--- |
-| `categories` | `id (UUIDv7)` | `n11_id (UNIQUE)`, `name`, `slug (UNIQUE)`, `parent_id (Self-FK)` | Çok seviyeli kategori ağacı. |
-| `products` | `id (UUIDv7)` | `n11_id (UNIQUE)`, `seller_code (UNIQUE)`, `oem_code`, `price_kurus (INT >= 0)`, `stock (INT >= 0)`, `reserved_stock`, `max_per_order`, `is_universal`, `attributes (JSONB)`, `search_vector (TSVECTOR)`, `version (INT)` | Ana ürün tablosu. `turkish_unaccent` FTS + `pg_trgm` GIN indeksleriyle aranır. |
+| `categories` | `id (UUIDv7)` | `name`, `slug (UNIQUE)`, `parent_id (Self-FK)` | Çok seviyeli kategori ağacı. |
+| `products` | `id (UUIDv7)` | `seller_code (UNIQUE)`, `oem_code`, `price_kurus (INT >= 0)`, `stock (INT >= 0)`, `reserved_stock`, `max_per_order`, `is_universal`, `attributes (JSONB)`, `search_vector (TSVECTOR)`, `version (INT)` | Ana ürün tablosu. `turkish_unaccent` FTS + `pg_trgm` GIN indeksleriyle aranır. |
 | `product_variants` | `id (UUIDv7)` | `product_id (FK CASCADE)`, `sku (UNIQUE)`, `attributes (JSONB)`, `price_kurus (INT >= 0)`, `stock (INT >= 0)`, `version` | Renk/dikiş/boyut varyantları ve bağımsız stok/fiyat takibi. |
 | `product_images` | `id (UUIDv7)` | `product_id (FK CASCADE)`, `url`, `sort_order` | Sıralı ürün görselleri. |
 
@@ -55,8 +55,8 @@ Bu belge, Aduva Garaj platformundaki **28 PostgreSQL tablosunun** görevlerini, 
 | Tablo Adı | Birincil Anahtar | Görevi |
 | :--- | :--- | :--- |
 | `idempotency_keys` | `(actor_scope, key)` | 24 saatlik TTL ile çifte sepet ekleme ve çifte sipariş/ödeme isteklerini engeller. |
-| `n11_sync_runs` & `n11_sync_errors` | `id (UUIDv7)` | n11 delta senkron çalışmaları ve başarısız kayıtlar için üstel geri çekilmeli (exponential backoff) hata kuyruğu. |
+| `sync_runs` & `sync_errors` | `id (UUIDv7)` | Senkron çalışmaları ve başarısız kayıtlar için üstel geri çekilmeli (exponential backoff) hata kuyruğu. |
 | `price_history` | `id (BIGSERIAL)` | Ticaret Bakanlığı indirimli satış mevzuatı için son 30 günün en düşük fiyatını kanıtlayan tarihçe. |
-| `stock_movements` | `id (BIGSERIAL)` | Her stok artış/azalışının (`ORDER_RESERVED`, `N11_SYNC`, `RETURN_RESTOCK`) muhasebe defteri. |
+| `stock_movements` | `id (BIGSERIAL)` | Her stok artış/azalışının (`ORDER_RESERVED`, `ADMIN_MANUAL`, `RETURN_RESTOCK`) muhasebe defteri. |
 | `audit_logs` | `(id, created_at)` | Aylık `RANGE` bölümlendirmeli (partitioned), `aduva_app` rolü için `UPDATE/DELETE` yetkisi kapatılmış denetim izi tablosu. |
 | `mv_daily_sales_summary` | `(sale_date, source)` | Admin paneli için 15 dakikada bir `CONCURRENTLY` yenilenen Materialized View. |

@@ -62,6 +62,9 @@ export function toPublicUser(u: {
   role: Role | string;
   firstName?: string | null;
   lastName?: string | null;
+  createdAt?: Date | string;
+  emailVerified?: boolean;
+  phoneVerified?: boolean;
 }): PublicUser {
   let firstName = u.firstName ?? null;
   let lastName = u.lastName ?? null;
@@ -77,6 +80,9 @@ export function toPublicUser(u: {
     firstName,
     lastName,
     role: u.role as any,
+    createdAt: u.createdAt ? new Date(u.createdAt).toISOString() : new Date().toISOString(),
+    emailVerified: u.emailVerified ?? false,
+    phoneVerified: u.phoneVerified ?? false,
   };
 }
 

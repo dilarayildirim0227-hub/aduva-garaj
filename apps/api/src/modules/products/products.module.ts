@@ -122,7 +122,6 @@ export class StorefrontController {
       coupons: s.coupons,
       orders: s.orders,
       appointments: s.appointments,
-      syncLogs: s.syncLogs,
     };
   }
 
@@ -132,9 +131,9 @@ export class StorefrontController {
     const now = new Date();
     const log = {
       id: `sync-${Date.now()}`,
-      type: 'PRODUCTS',
-      status: 'SUCCESS',
-      trigger: 'manual',
+      type: 'PRODUCTS' as const,
+      status: 'SUCCESS' as const,
+      trigger: 'MANUAL' as const,
       startedAt: new Date(now.getTime() - 1200).toISOString(),
       finishedAt: now.toISOString(),
       total: this.prisma.store.products.length,
@@ -142,7 +141,6 @@ export class StorefrontController {
       updated: this.prisma.store.products.length,
       failed: 0,
     };
-    this.prisma.store.syncLogs.unshift(log);
     return log;
   }
 

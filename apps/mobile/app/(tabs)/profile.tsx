@@ -60,7 +60,6 @@ export default function Profile() {
 
         <View className="mx-4 rounded-2xl bg-surface border border-line overflow-hidden">
           <Row icon="logo-whatsapp" label="WhatsApp ile Yazın" onPress={() => Linking.openURL(`https://wa.me/${BRAND.contact.whatsapp}`)} />
-          <Row icon="storefront-outline" label="n11 Mağazamız" onPress={() => Linking.openURL(BRAND.contact.n11StoreUrl)} />
           <Row icon="shield-checkmark-outline" label="KVKK Aydınlatma Metni" onPress={() => Alert.alert('KVKK', t('soon'))} />
           {user && <Row icon="log-out-outline" label={t('auth.logout')} onPress={doLogout} />}
           {user && <Row icon="trash-outline" label="Hesabımı Sil" danger onPress={deleteAccount} />}

@@ -14,15 +14,6 @@ export interface AuthTokens {
   refreshToken: string;
 }
 
-export interface PublicUser {
-  id: string;
-  email: string | null;
-  phone: string | null;
-  firstName: string | null;
-  lastName: string | null;
-  role: 'CUSTOMER' | 'ADMIN' | 'OPERATIONS' | 'STAFF';
-}
-
 export interface Paginated<T> {
   items: T[];
   nextCursor: string | null;

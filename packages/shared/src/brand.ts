@@ -25,7 +25,6 @@ export const BRAND = {
     whatsapp: '905000000000',
     address: 'İstanbul, Türkiye',
     workingHours: 'Pzt–Cmt 09:00–19:00',
-    n11StoreUrl: 'https://www.n11.com/magaza/aduvagaraj',
   },
   shipping: {
     carrier: 'Yurtiçi Kargo',
